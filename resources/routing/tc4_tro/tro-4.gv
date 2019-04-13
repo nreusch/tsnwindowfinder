@@ -1,0 +1,469 @@
+digraph network {
+  ES1 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES1 </TD> <TD>[BT3, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="red">2_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="blue">21_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="purple">44_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="green">16_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink">16_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indianred">1_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indigo">14_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="khaki3">14_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="magenta1">13_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="maroon1">22_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumblue">22_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumorchid4">20_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumpurple4">7_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumvioletred">20_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mistyrose2">7_1</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES2 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES2 </TD> <TD>[BT2, BT5, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="navajowhite1">25_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="navyblue">42_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="olivedrab2">42_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orange2">27_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orangered2">27_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orchid2">5_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="palegreen1">48_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES3 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES3 </TD> <TD>[BT3, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="paleturquoise1">26_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="palevioletred1">26_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="peachpuff">24_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="peru">4_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumpurple4">7_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mistyrose2">7_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="pink4">30_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="plum4">37_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="purple3">37_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="red">2_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="navajowhite1">25_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orchid2">5_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="red3">45_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="rosybrown3">45_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="royalblue3">47_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="salmon2">47_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seagreen1">29_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seashell1">29_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES4 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES4 </TD> <TD>[BT2, BT5, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="indianred">1_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="sienna1">3_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="magenta1">13_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="skyblue1">3_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="slateblue1">35_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="slategray1">6_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumorchid4">20_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="navyblue">42_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumvioletred">20_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="springgreen">31_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="olivedrab2">42_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seagreen1">29_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seashell1">29_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES5 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES5 </TD> <TD>[BT3, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="springgreen">31_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="royalblue3">47_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="salmon2">47_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="steelblue">18_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="tan">28_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indigo">14_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="khaki3">14_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="thistle">28_1</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES6 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES6 </TD> <TD>[BT3, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="tomato">12_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="turquoise4">12_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="orchid2">5_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="seagreen1">29_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="seashell1">29_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="violetred3">17_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="wheat3">0_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="yellow1">34_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink1">10_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indianred1">33_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="ivory4">10_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="pink4">30_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="red3">45_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="rosybrown3">45_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="khaki4">46_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES7 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES7 </TD> <TD>[BT2, BT5, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="lavenderblush3">15_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lemonchiffon2">9_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lightblue2">9_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lightcyan1">19_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lightgoldenrod1">19_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="tomato">12_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="turquoise4">12_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightgray">11_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seagreen1">29_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seashell1">29_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES8 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES8 </TD>  </TR><TR><TD>S</TD><TD BGCOLOR="green">16_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="hotpink">16_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lightgray">11_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="palegreen1">48_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="sienna1">3_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="tomato">12_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="magenta1">13_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="skyblue1">3_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="turquoise4">12_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightpink3">23_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orchid2">5_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="slategray1">6_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightsalmon3">43_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightskyblue2">8_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="purple">44_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="slateblue1">35_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="khaki4">46_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES9 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES9 </TD>  </TR><TR><TD>S</TD><TD BGCOLOR="lightpink3">23_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="slategray1">6_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumorchid4">20_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumvioletred">20_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="royalblue3">47_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="salmon2">47_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="steelblue">18_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES10 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES10 </TD> <TD>[BT3, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="lightsalmon3">43_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indianred">1_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="peru">4_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink1">10_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="ivory4">10_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="steelblue">18_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES11 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES11 </TD> <TD>[BT2, BT5, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="wheat3">0_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="indigo">14_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="khaki3">14_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="maroon1">22_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lightslategrey">40_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumblue">22_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lightsteelblue4">36_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lightyellow4">49_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="green">16_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink">16_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lavenderblush3">15_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="tomato">12_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="peachpuff">24_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="turquoise4">12_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="yellow1">34_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="magenta2">41_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="maroon2">41_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="royalblue3">47_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="salmon2">47_1</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES12 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES12 </TD> <TD>[BT3, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="mediumorchid">39_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="hotpink1">10_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="ivory4">10_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="lightskyblue2">8_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="red3">45_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="rosybrown3">45_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumpurple">38_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumseagreen">39_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lavenderblush3">15_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="slateblue1">35_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="palegreen1">48_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES13 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES13 </TD> <TD>[BT3, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="tan">28_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="magenta2">41_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="midnightblue">32_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="maroon2">41_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="thistle">28_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="wheat3">0_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink1">10_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="ivory4">10_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="blue">21_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightsteelblue4">36_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightcyan1">19_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="plum4">37_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightgoldenrod1">19_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="purple3">37_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumpurple">38_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightyellow4">49_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES14 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES14 </TD> <TD>[BT2, BT5, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="orange2">27_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="orangered2">27_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="yellow1">34_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="khaki4">46_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumorchid">39_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indigo">14_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="khaki3">14_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="magenta1">13_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightslategrey">40_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="blue">21_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumpurple4">7_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mistyrose2">7_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="plum4">37_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="palegreen1">48_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="purple3">37_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumseagreen">39_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES15 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES15 </TD> <TD>[BT3, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="violetred3">17_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="indianred1">33_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="paleturquoise1">26_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="palevioletred1">26_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="peachpuff">24_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="peru">4_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="yellow1">34_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="midnightblue">32_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumpurple4">7_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mistyrose2">7_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lemonchiffon2">9_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightblue2">9_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightcyan1">19_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="lightgoldenrod1">19_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="pink4">30_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  B1 [ label="B1: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B2 [ label="B2: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B3 [ label="B3: BT3 [Int:1, Ext:4]" shape="box" style="rounded" ];
+  B4 [ label="B4: BT3 [Int:1, Ext:4]" shape="box" style="rounded" ];
+  B5 [ label="B5: BT3 [Int:1, Ext:4]" shape="box" style="rounded" ];
+  B6 [ label="B6: BT3 [Int:1, Ext:4]" shape="box" style="rounded" ];
+  B7 [ label="B7: BT3 [Int:1, Ext:4]" shape="box" style="rounded" ];
+  B8 [ label="B8: BT3 [Int:1, Ext:4]" shape="box" style="rounded" ];
+  B9 [ label="B9: BT3 [Int:1, Ext:4]" shape="box" style="rounded" ];
+  B10 [ label="B10: BT3 [Int:1, Ext:4]" shape="box" style="rounded" ];
+  B11 [ label="B11: BT5 [Int:2, Ext:6]" shape="box" style="rounded" ];
+  B12 [ label="B12: BT5 [Int:2, Ext:6]" shape="box" style="rounded" ];
+  B13 [ label="B13: BT5 [Int:2, Ext:6]" shape="box" style="rounded" ];
+  B14 [ label="B14: BT5 [Int:2, Ext:6]" shape="box" style="rounded" ];
+  B15 [ label="B15: BT6 [Int:2, Ext:8]" shape="box" style="rounded" ];
+  ES1 -> B3 [ style="dashed" arrowhead="none" ];
+  ES2 -> B11 [ style="dashed" arrowhead="none" ];
+  ES3 -> B4 [ style="dashed" arrowhead="none" ];
+  ES4 -> B12 [ style="dashed" arrowhead="none" ];
+  ES5 -> B5 [ style="dashed" arrowhead="none" ];
+  ES6 -> B6 [ style="dashed" arrowhead="none" ];
+  ES7 -> B1 [ style="dashed" arrowhead="none" ];
+  ES8 -> B15 [ style="dashed" arrowhead="none" ];
+  ES9 -> B2 [ style="dashed" arrowhead="none" ];
+  ES10 -> B7 [ style="dashed" arrowhead="none" ];
+  ES11 -> B13 [ style="dashed" arrowhead="none" ];
+  ES12 -> B8 [ style="dashed" arrowhead="none" ];
+  ES13 -> B9 [ style="dashed" arrowhead="none" ];
+  ES14 -> B14 [ style="dashed" arrowhead="none" ];
+  ES15 -> B10 [ style="dashed" arrowhead="none" ];
+  B1 -> B10 [ arrowhead="none" ];
+  B1 -> B11 [ style="dashed" arrowhead="none" ];
+  B1 -> B15 [ arrowhead="none" ];
+  B2 -> B5 [ arrowhead="none" ];
+  B2 -> B12 [ arrowhead="none" ];
+  B2 -> B15 [ arrowhead="none" ];
+  B3 -> B4 [ arrowhead="none" ];
+  B3 -> B12 [ arrowhead="none" ];
+  B3 -> B14 [ arrowhead="none" ];
+  B3 -> B15 [ arrowhead="none" ];
+  B4 -> B6 [ arrowhead="none" ];
+  B4 -> B7 [ arrowhead="none" ];
+  B4 -> B10 [ arrowhead="none" ];
+  B5 -> B11 [ arrowhead="none" ];
+  B5 -> B13 [ arrowhead="none" ];
+  B5 -> B14 [ arrowhead="none" ];
+  B6 -> B11 [ arrowhead="none" ];
+  B6 -> B13 [ arrowhead="none" ];
+  B6 -> B15 [ arrowhead="none" ];
+  B7 -> B10 [ arrowhead="none" ];
+  B7 -> B12 [ arrowhead="none" ];
+  B7 -> B14 [ arrowhead="none" ];
+  B8 -> B9 [ arrowhead="none" ];
+  B8 -> B11 [ arrowhead="none" ];
+  B8 -> B12 [ arrowhead="none" ];
+  B8 -> B15 [ arrowhead="none" ];
+  B9 -> B13 [ arrowhead="none" ];
+  B9 -> B14 [ arrowhead="none" ];
+  B9 -> B15 [ arrowhead="none" ];
+  B10 -> B11 [ arrowhead="none" ];
+  B11 -> B13 [ arrowhead="none" ];
+  B12 -> B13 [ arrowhead="none" ];
+  B12 -> B15 [ style="dashed" arrowhead="none" ];
+  B13 -> B14 [ style="dashed" arrowhead="none" ];
+  B14 -> B15 [ arrowhead="none" ];
+  B13 -> B6 [ label="0_0" color="wheat3" style="bold" ];
+  B13 -> B9 [ label="0_0" color="wheat3" style="bold" ];
+  B12 -> B3 [ label="1_0" color="indianred" style="bold" ];
+  B12 -> B7 [ label="1_0" color="indianred" style="bold" ];
+  B3 -> B4 [ label="2_0" color="red" style="bold" ];
+  B12 -> B15 [ label="3_0" color="sienna1" style="bold" ];
+  B12 -> B3 [ label="3_1" color="skyblue1" style="bold" ];
+  B3 -> B15 [ label="3_1" color="skyblue1" style="bold" ];
+  B4 -> B7 [ label="4_0" color="peru" style="bold" ];
+  B4 -> B10 [ label="4_0" color="peru" style="bold" ];
+  B6 -> B4 [ label="5_0" color="orchid2" style="bold" ];
+  B6 -> B11 [ label="5_0" color="orchid2" style="bold" ];
+  B6 -> B15 [ label="5_0" color="orchid2" style="bold" ];
+  B2 -> B12 [ label="6_0" color="slategray1" style="bold" ];
+  B2 -> B15 [ label="6_0" color="slategray1" style="bold" ];
+  B4 -> B3 [ label="7_0" color="mediumpurple4" style="bold" ];
+  B4 -> B10 [ label="7_0" color="mediumpurple4" style="bold" ];
+  B3 -> B14 [ label="7_0" color="mediumpurple4" style="bold" ];
+  B4 -> B6 [ label="7_1" color="mistyrose2" style="bold" ];
+  B4 -> B7 [ label="7_1" color="mistyrose2" style="bold" ];
+  B6 -> B15 [ label="7_1" color="mistyrose2" style="bold" ];
+  B7 -> B10 [ label="7_1" color="mistyrose2" style="bold" ];
+  B7 -> B14 [ label="7_1" color="mistyrose2" style="bold" ];
+  B15 -> B3 [ label="7_1" color="mistyrose2" style="bold" ];
+  B8 -> B15 [ label="8_0" color="lightskyblue2" style="bold" ];
+  B1 -> B11 [ label="9_0" color="lemonchiffon2" style="bold" ];
+  B11 -> B10 [ label="9_0" color="lemonchiffon2" style="bold" ];
+  B1 -> B10 [ label="9_1" color="lightblue2" style="bold" ];
+  B8 -> B15 [ label="10_0" color="ivory4" style="bold" ];
+  B15 -> B6 [ label="10_0" color="ivory4" style="bold" ];
+  B15 -> B9 [ label="10_0" color="ivory4" style="bold" ];
+  B15 -> B14 [ label="10_0" color="ivory4" style="bold" ];
+  B14 -> B7 [ label="10_0" color="ivory4" style="bold" ];
+  B8 -> B9 [ label="10_1" color="hotpink1" style="bold" ];
+  B8 -> B11 [ label="10_1" color="hotpink1" style="bold" ];
+  B8 -> B12 [ label="10_1" color="hotpink1" style="bold" ];
+  B11 -> B6 [ label="10_1" color="hotpink1" style="bold" ];
+  B12 -> B7 [ label="10_1" color="hotpink1" style="bold" ];
+  B15 -> B1 [ label="11_0" color="lightgray" style="bold" ];
+  B6 -> B4 [ label="12_0" color="turquoise4" style="bold" ];
+  B4 -> B3 [ label="12_0" color="turquoise4" style="bold" ];
+  B4 -> B10 [ label="12_0" color="turquoise4" style="bold" ];
+  B3 -> B12 [ label="12_0" color="turquoise4" style="bold" ];
+  B3 -> B15 [ label="12_0" color="turquoise4" style="bold" ];
+  B10 -> B1 [ label="12_0" color="turquoise4" style="bold" ];
+  B12 -> B13 [ label="12_0" color="turquoise4" style="bold" ];
+  B6 -> B11 [ label="12_1" color="tomato" style="bold" ];
+  B6 -> B13 [ label="12_1" color="tomato" style="bold" ];
+  B6 -> B15 [ label="12_1" color="tomato" style="bold" ];
+  B11 -> B1 [ label="12_1" color="tomato" style="bold" ];
+  B12 -> B3 [ label="13_0" color="magenta1" style="bold" ];
+  B12 -> B15 [ label="13_0" color="magenta1" style="bold" ];
+  B3 -> B14 [ label="13_0" color="magenta1" style="bold" ];
+  B13 -> B6 [ label="14_0" color="khaki3" style="bold" ];
+  B13 -> B9 [ label="14_0" color="khaki3" style="bold" ];
+  B13 -> B11 [ label="14_0" color="khaki3" style="bold" ];
+  B6 -> B4 [ label="14_0" color="khaki3" style="bold" ];
+  B9 -> B14 [ label="14_0" color="khaki3" style="bold" ];
+  B11 -> B5 [ label="14_0" color="khaki3" style="bold" ];
+  B4 -> B3 [ label="14_0" color="khaki3" style="bold" ];
+  B13 -> B5 [ label="14_1" color="indigo" style="bold" ];
+  B13 -> B12 [ label="14_1" color="indigo" style="bold" ];
+  B13 -> B14 [ label="14_1" color="indigo" style="bold" ];
+  B12 -> B3 [ label="14_1" color="indigo" style="bold" ];
+  B1 -> B11 [ label="15_0" color="lavenderblush3" style="bold" ];
+  B11 -> B8 [ label="15_0" color="lavenderblush3" style="bold" ];
+  B11 -> B13 [ label="15_0" color="lavenderblush3" style="bold" ];
+  B15 -> B3 [ label="16_0" color="hotpink" style="bold" ];
+  B15 -> B12 [ label="16_0" color="hotpink" style="bold" ];
+  B12 -> B13 [ label="16_0" color="hotpink" style="bold" ];
+  B15 -> B6 [ label="16_1" color="green" style="bold" ];
+  B15 -> B14 [ label="16_1" color="green" style="bold" ];
+  B6 -> B13 [ label="16_1" color="green" style="bold" ];
+  B14 -> B3 [ label="16_1" color="green" style="bold" ];
+  B10 -> B11 [ label="17_0" color="violetred3" style="bold" ];
+  B11 -> B6 [ label="17_0" color="violetred3" style="bold" ];
+  B5 -> B2 [ label="18_0" color="steelblue" style="bold" ];
+  B5 -> B14 [ label="18_0" color="steelblue" style="bold" ];
+  B14 -> B7 [ label="18_0" color="steelblue" style="bold" ];
+  B1 -> B10 [ label="19_0" color="lightgoldenrod1" style="bold" ];
+  B1 -> B15 [ label="19_0" color="lightgoldenrod1" style="bold" ];
+  B15 -> B9 [ label="19_0" color="lightgoldenrod1" style="bold" ];
+  B1 -> B11 [ label="19_1" color="lightcyan1" style="bold" ];
+  B11 -> B10 [ label="19_1" color="lightcyan1" style="bold" ];
+  B11 -> B13 [ label="19_1" color="lightcyan1" style="bold" ];
+  B13 -> B9 [ label="19_1" color="lightcyan1" style="bold" ];
+  B2 -> B12 [ label="20_0" color="mediumvioletred" style="bold" ];
+  B12 -> B3 [ label="20_0" color="mediumvioletred" style="bold" ];
+  B2 -> B15 [ label="20_1" color="mediumorchid4" style="bold" ];
+  B15 -> B3 [ label="20_1" color="mediumorchid4" style="bold" ];
+  B15 -> B12 [ label="20_1" color="mediumorchid4" style="bold" ];
+  B3 -> B14 [ label="21_0" color="blue" style="bold" ];
+  B3 -> B15 [ label="21_0" color="blue" style="bold" ];
+  B15 -> B9 [ label="21_0" color="blue" style="bold" ];
+  B13 -> B12 [ label="22_0" color="mediumblue" style="bold" ];
+  B12 -> B3 [ label="22_0" color="mediumblue" style="bold" ];
+  B13 -> B14 [ label="22_1" color="maroon1" style="bold" ];
+  B14 -> B3 [ label="22_1" color="maroon1" style="bold" ];
+  B2 -> B15 [ label="23_0" color="lightpink3" style="bold" ];
+  B4 -> B6 [ label="24_0" color="peachpuff" style="bold" ];
+  B4 -> B10 [ label="24_0" color="peachpuff" style="bold" ];
+  B6 -> B13 [ label="24_0" color="peachpuff" style="bold" ];
+  B11 -> B6 [ label="25_0" color="navajowhite1" style="bold" ];
+  B6 -> B4 [ label="25_0" color="navajowhite1" style="bold" ];
+  B4 -> B10 [ label="26_0" color="palevioletred1" style="bold" ];
+  B4 -> B7 [ label="26_1" color="paleturquoise1" style="bold" ];
+  B7 -> B10 [ label="26_1" color="paleturquoise1" style="bold" ];
+  B14 -> B13 [ label="27_0" color="orangered2" style="bold" ];
+  B13 -> B11 [ label="27_0" color="orangered2" style="bold" ];
+  B14 -> B5 [ label="27_1" color="orange2" style="bold" ];
+  B5 -> B11 [ label="27_1" color="orange2" style="bold" ];
+  B9 -> B13 [ label="28_0" color="tan" style="bold" ];
+  B13 -> B5 [ label="28_0" color="tan" style="bold" ];
+  B9 -> B14 [ label="28_1" color="thistle" style="bold" ];
+  B14 -> B5 [ label="28_1" color="thistle" style="bold" ];
+  B6 -> B4 [ label="29_0" color="seashell1" style="bold" ];
+  B6 -> B11 [ label="29_0" color="seashell1" style="bold" ];
+  B6 -> B15 [ label="29_0" color="seashell1" style="bold" ];
+  B11 -> B1 [ label="29_0" color="seashell1" style="bold" ];
+  B15 -> B12 [ label="29_0" color="seashell1" style="bold" ];
+  B6 -> B13 [ label="29_1" color="seagreen1" style="bold" ];
+  B13 -> B11 [ label="29_1" color="seagreen1" style="bold" ];
+  B13 -> B12 [ label="29_1" color="seagreen1" style="bold" ];
+  B11 -> B10 [ label="29_1" color="seagreen1" style="bold" ];
+  B10 -> B1 [ label="29_1" color="seagreen1" style="bold" ];
+  B10 -> B4 [ label="29_1" color="seagreen1" style="bold" ];
+  B4 -> B6 [ label="30_0" color="pink4" style="bold" ];
+  B4 -> B10 [ label="30_0" color="pink4" style="bold" ];
+  B5 -> B2 [ label="31_0" color="springgreen" style="bold" ];
+  B2 -> B12 [ label="31_0" color="springgreen" style="bold" ];
+  B9 -> B15 [ label="32_0" color="midnightblue" style="bold" ];
+  B15 -> B1 [ label="32_0" color="midnightblue" style="bold" ];
+  B1 -> B10 [ label="32_0" color="midnightblue" style="bold" ];
+  B10 -> B11 [ label="33_0" color="indianred1" style="bold" ];
+  B11 -> B6 [ label="33_0" color="indianred1" style="bold" ];
+  B14 -> B7 [ label="34_0" color="yellow1" style="bold" ];
+  B14 -> B13 [ label="34_0" color="yellow1" style="bold" ];
+  B14 -> B15 [ label="34_0" color="yellow1" style="bold" ];
+  B7 -> B10 [ label="34_0" color="yellow1" style="bold" ];
+  B15 -> B6 [ label="34_0" color="yellow1" style="bold" ];
+  B12 -> B8 [ label="35_0" color="slateblue1" style="bold" ];
+  B12 -> B15 [ label="35_0" color="slateblue1" style="bold" ];
+  B13 -> B9 [ label="36_0" color="lightsteelblue4" style="bold" ];
+  B4 -> B3 [ label="37_0" color="plum4" style="bold" ];
+  B3 -> B14 [ label="37_0" color="plum4" style="bold" ];
+  B3 -> B15 [ label="37_0" color="plum4" style="bold" ];
+  B15 -> B9 [ label="37_0" color="plum4" style="bold" ];
+  B4 -> B6 [ label="37_1" color="purple3" style="bold" ];
+  B4 -> B7 [ label="37_1" color="purple3" style="bold" ];
+  B6 -> B13 [ label="37_1" color="purple3" style="bold" ];
+  B7 -> B14 [ label="37_1" color="purple3" style="bold" ];
+  B13 -> B9 [ label="37_1" color="purple3" style="bold" ];
+  B8 -> B9 [ label="38_0" color="mediumpurple" style="bold" ];
+  B8 -> B15 [ label="39_0" color="mediumseagreen" style="bold" ];
+  B15 -> B14 [ label="39_0" color="mediumseagreen" style="bold" ];
+  B8 -> B9 [ label="39_1" color="mediumorchid" style="bold" ];
+  B9 -> B14 [ label="39_1" color="mediumorchid" style="bold" ];
+  B13 -> B14 [ label="40_0" color="lightslategrey" style="bold" ];
+  B9 -> B13 [ label="41_0" color="magenta2" style="bold" ];
+  B9 -> B14 [ label="41_1" color="maroon2" style="bold" ];
+  B14 -> B13 [ label="41_1" color="maroon2" style="bold" ];
+  B11 -> B13 [ label="42_0" color="navyblue" style="bold" ];
+  B13 -> B12 [ label="42_0" color="navyblue" style="bold" ];
+  B11 -> B8 [ label="42_1" color="olivedrab2" style="bold" ];
+  B8 -> B12 [ label="42_1" color="olivedrab2" style="bold" ];
+  B7 -> B12 [ label="43_0" color="lightsalmon3" style="bold" ];
+  B12 -> B15 [ label="43_0" color="lightsalmon3" style="bold" ];
+  B3 -> B15 [ label="44_0" color="purple" style="bold" ];
+  B8 -> B11 [ label="45_0" color="red3" style="bold" ];
+  B11 -> B6 [ label="45_0" color="red3" style="bold" ];
+  B6 -> B4 [ label="45_0" color="red3" style="bold" ];
+  B8 -> B12 [ label="45_1" color="rosybrown3" style="bold" ];
+  B8 -> B15 [ label="45_1" color="rosybrown3" style="bold" ];
+  B12 -> B3 [ label="45_1" color="rosybrown3" style="bold" ];
+  B15 -> B6 [ label="45_1" color="rosybrown3" style="bold" ];
+  B3 -> B4 [ label="45_1" color="rosybrown3" style="bold" ];
+  B14 -> B15 [ label="46_0" color="khaki4" style="bold" ];
+  B15 -> B6 [ label="46_0" color="khaki4" style="bold" ];
+  B5 -> B2 [ label="47_0" color="royalblue3" style="bold" ];
+  B5 -> B11 [ label="47_0" color="royalblue3" style="bold" ];
+  B5 -> B13 [ label="47_0" color="royalblue3" style="bold" ];
+  B11 -> B6 [ label="47_0" color="royalblue3" style="bold" ];
+  B6 -> B4 [ label="47_0" color="royalblue3" style="bold" ];
+  B5 -> B14 [ label="47_1" color="salmon2" style="bold" ];
+  B14 -> B3 [ label="47_1" color="salmon2" style="bold" ];
+  B14 -> B13 [ label="47_1" color="salmon2" style="bold" ];
+  B14 -> B15 [ label="47_1" color="salmon2" style="bold" ];
+  B3 -> B4 [ label="47_1" color="salmon2" style="bold" ];
+  B15 -> B2 [ label="47_1" color="salmon2" style="bold" ];
+  B15 -> B6 [ label="48_0" color="palegreen1" style="bold" ];
+  B15 -> B8 [ label="48_0" color="palegreen1" style="bold" ];
+  B15 -> B14 [ label="48_0" color="palegreen1" style="bold" ];
+  B6 -> B11 [ label="48_0" color="palegreen1" style="bold" ];
+  B13 -> B9 [ label="49_0" color="lightyellow4" style="bold" ];
+}

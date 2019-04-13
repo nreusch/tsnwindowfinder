@@ -1,0 +1,33 @@
+start time: Mon Jul 17 19:20:43 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 9
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+tc1-1,lns,CBU_AMIN,111,-63615.0,5.856669854182503,1,35,Mon Jul 17 19:20:43 CEST 2017*topology improvement*
+tc1-1,lns,CBU_AMIN,111,-63615.0,5.856669854182503,1,35,Mon Jul 17 19:20:43 CEST 2017
+tc1-1,lns,CBU_AMIN,109,-63615.0,5.711742317950618,2,97,Mon Jul 17 19:20:43 CEST 2017*topology improvement*
+tc1-1,lns,CBU_AMIN,109,-63615.0,5.711742317950618,2,97,Mon Jul 17 19:20:43 CEST 2017
+tc1-1,lns,CBU_AMIN,105,-63615.0,5.421887245486849,3,158,Mon Jul 17 19:20:43 CEST 2017*topology improvement*
+tc1-1,lns,CBU_AMIN,105,-63615.0,5.421887245486849,3,158,Mon Jul 17 19:20:43 CEST 2017
+tc1-1,lns,CBU_AMIN,99,-63615.0,4.987104636791197,4,230,Mon Jul 17 19:20:43 CEST 2017*topology improvement*
+tc1-1,lns,CBU_AMIN,99,-63615.0,4.987104636791197,4,230,Mon Jul 17 19:20:43 CEST 2017
+tc1-1,lns,CBU_AMIN,92,-63615.0,4.479858259979603,5,315,Mon Jul 17 19:20:43 CEST 2017*topology improvement*
+tc1-1,lns,CBU_AMIN,92,-63615.0,4.479858259979603,5,315,Mon Jul 17 19:20:43 CEST 2017
+tc1-1,lns,CBU_AMIN,85,-63604.0,3.9863972080630523,6,404,Mon Jul 17 19:20:43 CEST 2017*topology improvement*
+tc1-1,lns,CBU_AMIN,85,-63604.0,3.9863972080630523,6,404,Mon Jul 17 19:20:43 CEST 2017
+tc1-1,lns,CBU_AMIN,82,-63604.0,3.7690059037152266,7,772,Mon Jul 17 19:20:43 CEST 2017*topology improvement*
+tc1-1,lns,CBU_AMIN,82,-63604.0,3.7690059037152266,7,772,Mon Jul 17 19:20:43 CEST 2017
+tc1-1,lns,CBU_AMIN,76,-63646.0,3.2815884181475905,8,959,Mon Jul 17 19:20:44 CEST 2017*topology improvement*
+tc1-1,lns,CBU_AMIN,76,-63646.0,3.2815884181475905,8,959,Mon Jul 17 19:20:44 CEST 2017
+---
+Time for finding the optimum: 120272
+Time for finding the optimum__: 959
+Number of branches: 40811
+Number of failures: 107180
+start time: Mon Jul 17 19:22:43 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 9
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---

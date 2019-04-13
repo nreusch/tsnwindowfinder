@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The components library -->
+<Library>
+
+<MinimumCostTopology>58</MinimumCostTopology>
+
+ <EndSystem id="ES1"/>
+ <EndSystem id="ES2"/>
+ <EndSystem id="ES3"/>
+ <EndSystem id="ES4"/>
+ <EndSystem id="ES5"/>
+ <EndSystem id="ES6"/>
+ <EndSystem id="ES7"/>
+ <EndSystem id="ES8"/>
+ <EndSystem id="ES9"/>
+ <EndSystem id="ES10"/>
+<EndSystem id="ES11"/>
+<EndSystem id="ES12"/>
+<EndSystem id="ES13"/>
+<EndSystem id="ES14"/>
+<EndSystem id="ES15"/>
+ 
+<BridgeType id="BT1">
+<NOIntPorts>1</NOIntPorts>
+<NOPorts>2</NOPorts>
+<Cost>4</Cost>
+</BridgeType>
+
+<BridgeType id="BT2">
+<NOIntPorts>2</NOIntPorts>
+<NOPorts>3</NOPorts>
+<Cost>8</Cost>
+</BridgeType>
+
+<BridgeType id="BT3">
+<NOIntPorts>1</NOIntPorts>
+<NOPorts>4</NOPorts>
+<Cost>10</Cost>
+</BridgeType>
+
+<BridgeType id="BT4">
+<NOIntPorts>2</NOIntPorts>
+<NOPorts>5</NOPorts>
+<Cost>16</Cost>
+</BridgeType>
+
+<BridgeType id="BT5">
+<NOIntPorts>2</NOIntPorts>
+<NOPorts>6</NOPorts>
+<Cost>18</Cost>
+</BridgeType>
+
+<BridgeType id="BT6">
+<NOIntPorts>2</NOIntPorts>
+<NOPorts>8</NOPorts>
+<Cost>22</Cost>
+</BridgeType>
+
+</Library>

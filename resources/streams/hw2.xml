@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CurrentBest = 985.29 @ K = 100, hops = 20 -->
+<Applications>
+	<UBSApplication name="UBS_1">
+		<Size>12</Size>
+<Deadline>30</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>12</Burstiness>
+<LeakRate>3</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+		<Source name="ES4" />
+		<Destinations>
+			<Dest name="ES3" />
+			<Dest name="ES6" />
+			<Dest name="ES2" />
+		</Destinations>
+	</UBSApplication>
+
+	<UBSApplication name="UBS_2">
+		<Size>322</Size>
+<Deadline>50</Deadline>
+<UBSPattern>B</UBSPattern>
+<Burstiness>322</Burstiness>
+<LeakRate>18.941</LeakRate>
+<RedundancyLevel>3</RedundancyLevel>
+		<Source name="ES1" />
+		<Destinations>
+			<Dest name="ES4" />
+			<Dest name="ES5" />
+		</Destinations>
+	</UBSApplication>
+
+	<UBSApplication name="UBS_3">
+		<Size>400</Size>
+<Deadline>120</Deadline>
+<UBSPattern>C</UBSPattern>
+<Burstiness>4500</Burstiness>
+<LeakRate>250</LeakRate>
+<RedundancyLevel>1</RedundancyLevel>
+		<Source name="ES5" />
+		<Destinations>
+			<Dest name="ES4" />
+			<Dest name="ES2" />
+		</Destinations>
+	</UBSApplication>
+
+</Applications>

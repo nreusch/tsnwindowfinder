@@ -1,0 +1,27 @@
+start time: Fri Apr 07 11:48:22 CEST 2017
+WP_topo: 100.0
+WP_sched: 0.0
+maxNoB: 4
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+motiv-1,tro,CBU_AMIN,71,-26821.0,41.52542372881356,1,19,Fri Apr 07 11:48:22 CEST 2017*topology improvement*
+motiv-1,tro,CBU_AMIN,71,-26821.0,41.52542372881356,1,19,Fri Apr 07 11:48:22 CEST 2017
+motiv-1,tro,CBU_AMIN,67,-26821.0,38.13559322033898,2,32,Fri Apr 07 11:48:22 CEST 2017*topology improvement*
+motiv-1,tro,CBU_AMIN,67,-26821.0,38.13559322033898,2,32,Fri Apr 07 11:48:22 CEST 2017
+motiv-1,tro,CBU_AMIN,63,-26810.0,34.74576271186441,3,37,Fri Apr 07 11:48:22 CEST 2017*topology improvement*
+motiv-1,tro,CBU_AMIN,63,-26810.0,34.74576271186441,3,37,Fri Apr 07 11:48:22 CEST 2017
+motiv-1,tro,CBU_AMIN,60,-26783.0,32.20338983050847,4,44,Fri Apr 07 11:48:22 CEST 2017*topology improvement*
+motiv-1,tro,CBU_AMIN,60,-26783.0,32.20338983050847,4,44,Fri Apr 07 11:48:22 CEST 2017
+motiv-1,tro,CBU_AMIN,56,-26783.0,28.8135593220339,5,48,Fri Apr 07 11:48:22 CEST 2017*topology improvement*
+motiv-1,tro,CBU_AMIN,56,-26783.0,28.8135593220339,5,48,Fri Apr 07 11:48:22 CEST 2017
+motiv-1,tro,CBU_AMIN,49,-26826.0,22.88135593220339,6,137,Fri Apr 07 11:48:22 CEST 2017*topology improvement*
+motiv-1,tro,CBU_AMIN,49,-26826.0,22.88135593220339,6,137,Fri Apr 07 11:48:22 CEST 2017
+motiv-1,tro,CBU_AMIN,45,-26751.0,19.491525423728813,7,151,Fri Apr 07 11:48:22 CEST 2017*topology improvement*
+motiv-1,tro,CBU_AMIN,45,-26751.0,19.491525423728813,7,151,Fri Apr 07 11:48:22 CEST 2017
+motiv-1,tro,CBU_AMIN,41,-26804.0,16.101694915254235,8,203,Fri Apr 07 11:48:22 CEST 2017*topology improvement*
+motiv-1,tro,CBU_AMIN,41,-26804.0,16.101694915254235,8,203,Fri Apr 07 11:48:22 CEST 2017
+---
+Time for finding the optimum: 223
+Time for finding the optimum__: 203
+Number of branches: 6783
+Number of failures: 3408

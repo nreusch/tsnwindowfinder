@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Applications>
+	<AVBApplication name="rc0.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_DU1"></Dest>
+			<Dest name="ES_SM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc1.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_CM2CA"></Dest>
+			<Dest name="ES_STARTR1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc2.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU1"></Source>
+		<Destinations>
+			<Dest name="ES_LCM2"></Dest>
+			<Dest name="ES_GPS1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc3.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM1CA"></Source>
+		<Destinations>
+			<Dest name="ES_FCM2"></Dest>
+			<Dest name="ES_DU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc4.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_BFCU"></Dest>
+			<Dest name="ES_STARTR1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc5.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_GPS1"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CA"></Dest>
+			<Dest name="ES_MIMU3"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc6.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_BFCU"></Source>
+		<Destinations>
+			<Dest name="ES_FCM2"></Dest>
+			<Dest name="ES_MIMU3"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc7.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_FCM2"></Source>
+		<Destinations>
+			<Dest name="ES_SM2CB"></Dest>
+			<Dest name="ES_CMRIU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc8.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU1"></Source>
+		<Destinations>
+			<Dest name="ES_SMRIU1"></Dest>
+			<Dest name="ES_SM2CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc9.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_LCM2"></Source>
+		<Destinations>
+			<Dest name="ES_CMRIU1"></Dest>
+			<Dest name="ES_SMRIU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc10.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_MIMU1"></Dest>
+			<Dest name="ES_FCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc11.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_FCM2"></Source>
+		<Destinations>
+			<Dest name="ES_STARTR1"></Dest>
+			<Dest name="ES_RCM1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc12.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_STARTR2"></Dest>
+			<Dest name="ES_SM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc13.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU3"></Source>
+		<Destinations>
+			<Dest name="ES_SM2CA"></Dest>
+			<Dest name="ES_CMRIU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc14.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_CM1CA"></Dest>
+			<Dest name="ES_SM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc15.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_DU2"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CB"></Dest>
+			<Dest name="ES_SMRIU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc16.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_GPS2"></Source>
+		<Destinations>
+			<Dest name="ES_SM2CB"></Dest>
+			<Dest name="ES_MIMU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc17.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_CM2CB"></Dest>
+			<Dest name="ES_STARTR1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc18.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_DU1"></Source>
+		<Destinations>
+			<Dest name="ES_BFCU"></Dest>
+			<Dest name="ES_MIMU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc19.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SBAND2"></Source>
+		<Destinations>
+			<Dest name="ES_DU1"></Dest>
+			<Dest name="ES_SM2CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc20.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM1CB"></Source>
+		<Destinations>
+			<Dest name="ES_SM2CA"></Dest>
+			<Dest name="ES_DU3"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc21.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM2CA"></Source>
+		<Destinations>
+			<Dest name="ES_DU1"></Dest>
+			<Dest name="ES_LCM1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc22.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM1CA"></Source>
+		<Destinations>
+			<Dest name="ES_LCM2"></Dest>
+			<Dest name="ES_MIMU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc23.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_RCM2"></Source>
+		<Destinations>
+			<Dest name="ES_SM2CB"></Dest>
+			<Dest name="ES_CM2CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc24.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_GPS1"></Source>
+		<Destinations>
+			<Dest name="ES_LCM2"></Dest>
+			<Dest name="ES_SMRIU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc25.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_FCM1"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CB"></Dest>
+			<Dest name="ES_SMRIU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc26.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU1"></Source>
+		<Destinations>
+			<Dest name="ES_DU1"></Dest>
+			<Dest name="ES_CMRIU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc27.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_DU1"></Source>
+		<Destinations>
+			<Dest name="ES_MIMU1"></Dest>
+			<Dest name="ES_FCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc28.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_DU1"></Source>
+		<Destinations>
+			<Dest name="ES_LCM2"></Dest>
+			<Dest name="ES_FCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc29.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_MIMU3"></Dest>
+			<Dest name="ES_SM2CA"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc30.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU2"></Source>
+		<Destinations>
+			<Dest name="ES_CM1CA"></Dest>
+			<Dest name="ES_RCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc31.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU2"></Source>
+		<Destinations>
+			<Dest name="ES_SMRIU1"></Dest>
+			<Dest name="ES_CM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc32.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_RCM1"></Source>
+		<Destinations>
+			<Dest name="ES_SBAND1"></Dest>
+			<Dest name="ES_STARTR1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc33.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU1"></Source>
+		<Destinations>
+			<Dest name="ES_SM2CA"></Dest>
+			<Dest name="ES_MIMU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc34.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_LCM2"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CA"></Dest>
+			<Dest name="ES_RCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc35.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_FCM2"></Source>
+		<Destinations>
+			<Dest name="ES_DU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc36.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU3"></Source>
+		<Destinations>
+			<Dest name="ES_GPS2"></Dest>
+			<Dest name="ES_GPS1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc37.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SBAND2"></Source>
+		<Destinations>
+			<Dest name="ES_MIMU1"></Dest>
+			<Dest name="ES_DU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc38.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU2"></Source>
+		<Destinations>
+			<Dest name="ES_FCM2"></Dest>
+			<Dest name="ES_CM1CA"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc39.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM1CB"></Source>
+		<Destinations>
+			<Dest name="ES_MIMU2"></Dest>
+			<Dest name="ES_DU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc40.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU2"></Source>
+		<Destinations>
+			<Dest name="ES_SM2CA"></Dest>
+			<Dest name="ES_LCM1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc41.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_GPS2"></Dest>
+			<Dest name="ES_SM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc42.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_STARTR2"></Source>
+		<Destinations>
+			<Dest name="ES_CM2CB"></Dest>
+			<Dest name="ES_MIMU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc43.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM2CA"></Source>
+		<Destinations>
+			<Dest name="ES_CM1CA"></Dest>
+			<Dest name="ES_GPS2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc44.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM2CA"></Source>
+		<Destinations>
+			<Dest name="ES_LCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc45.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_STARTR2"></Source>
+		<Destinations>
+			<Dest name="ES_DU3"></Dest>
+			<Dest name="ES_MIMU3"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc46.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM1CB"></Source>
+		<Destinations>
+			<Dest name="ES_CM1CB"></Dest>
+			<Dest name="ES_MIMU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc47.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_BFCU"></Source>
+		<Destinations>
+			<Dest name="ES_CM2CB"></Dest>
+			<Dest name="ES_DU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc48.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_BFCU"></Source>
+		<Destinations>
+			<Dest name="ES_CMRIU2"></Dest>
+			<Dest name="ES_CM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc49.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM1CA"></Source>
+		<Destinations>
+			<Dest name="ES_SBAND1"></Dest>
+			<Dest name="ES_SM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc50.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_GPS2"></Source>
+		<Destinations>
+			<Dest name="ES_CM2CB"></Dest>
+			<Dest name="ES_CM1CA"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc51.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_RCM1"></Source>
+		<Destinations>
+			<Dest name="ES_FCM1"></Dest>
+			<Dest name="ES_SMRIU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc52.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_DU2"></Source>
+		<Destinations>
+			<Dest name="ES_CM2CA"></Dest>
+			<Dest name="ES_LCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc53.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_DU1"></Source>
+		<Destinations>
+			<Dest name="ES_CMRIU2"></Dest>
+			<Dest name="ES_CMRIU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc54.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM2CA"></Source>
+		<Destinations>
+			<Dest name="ES_LCM1"></Dest>
+			<Dest name="ES_CM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc55.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_RCM1"></Source>
+		<Destinations>
+			<Dest name="ES_DU3"></Dest>
+			<Dest name="ES_LCM1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc56.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SBAND1"></Source>
+		<Destinations>
+			<Dest name="ES_SMRIU1"></Dest>
+			<Dest name="ES_CM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc57.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU1"></Source>
+		<Destinations>
+			<Dest name="ES_MIMU2"></Dest>
+			<Dest name="ES_SBAND1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc58.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_DU3"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CA"></Dest>
+			<Dest name="ES_DU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc59.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM2CA"></Source>
+		<Destinations>
+			<Dest name="ES_LCM2"></Dest>
+			<Dest name="ES_FCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc60.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SBAND2"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CB"></Dest>
+			<Dest name="ES_CM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc61.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_GPS1"></Source>
+		<Destinations>
+			<Dest name="ES_SBAND2"></Dest>
+			<Dest name="ES_STARTR1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc62.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_STARTR1"></Source>
+		<Destinations>
+			<Dest name="ES_STARTR2"></Dest>
+			<Dest name="ES_GPS2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc63.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_GPS1"></Source>
+		<Destinations>
+			<Dest name="ES_FCM1"></Dest>
+			<Dest name="ES_CM2CA"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc64.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM2CB"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CB"></Dest>
+			<Dest name="ES_RCM1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc65.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM1CA"></Source>
+		<Destinations>
+			<Dest name="ES_SBAND1"></Dest>
+			<Dest name="ES_SMRIU1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc66.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_BFCU"></Source>
+		<Destinations>
+			<Dest name="ES_CM1CB"></Dest>
+			<Dest name="ES_SM1CA"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc67.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SBAND2"></Source>
+		<Destinations>
+			<Dest name="ES_SBAND1"></Dest>
+			<Dest name="ES_CM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc68.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SMRIU2"></Source>
+		<Destinations>
+			<Dest name="ES_DU3"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc69.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU1"></Source>
+		<Destinations>
+			<Dest name="ES_CM2CB"></Dest>
+			<Dest name="ES_SBAND1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc70.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU3"></Source>
+		<Destinations>
+			<Dest name="ES_CM1CB"></Dest>
+			<Dest name="ES_LCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc71.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CM1CB"></Source>
+		<Destinations>
+			<Dest name="ES_GPS2"></Dest>
+			<Dest name="ES_DU2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc72.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU3"></Source>
+		<Destinations>
+			<Dest name="ES_SMRIU1"></Dest>
+			<Dest name="ES_STARTR2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc73.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SBAND2"></Source>
+		<Destinations>
+			<Dest name="ES_GPS2"></Dest>
+			<Dest name="ES_CM2CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc74.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_LCM1"></Source>
+		<Destinations>
+			<Dest name="ES_FCM1"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc75.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU1"></Source>
+		<Destinations>
+			<Dest name="ES_SMRIU2"></Dest>
+			<Dest name="ES_GPS2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc76.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU1"></Source>
+		<Destinations>
+			<Dest name="ES_DU1"></Dest>
+			<Dest name="ES_CM1CA"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc77.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU1"></Source>
+		<Destinations>
+			<Dest name="ES_FCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc78.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SBAND1"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CB"></Dest>
+			<Dest name="ES_CM1CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc79.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_DU3"></Source>
+		<Destinations>
+			<Dest name="ES_MIMU3"></Dest>
+			<Dest name="ES_CM2CB"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc80.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU1"></Source>
+		<Destinations>
+			<Dest name="ES_SBAND1"></Dest>
+			<Dest name="ES_MIMU3"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc81.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_CMRIU2"></Source>
+		<Destinations>
+			<Dest name="ES_SBAND1"></Dest>
+			<Dest name="ES_SM1CA"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc82.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_STARTR1"></Source>
+		<Destinations>
+			<Dest name="ES_MIMU3"></Dest>
+			<Dest name="ES_SBAND2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc83.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU3"></Source>
+		<Destinations>
+			<Dest name="ES_SM1CA"></Dest>
+			<Dest name="ES_DU3"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc84.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_SM1CB"></Source>
+		<Destinations>
+			<Dest name="ES_RCM2"></Dest>
+			<Dest name="ES_STARTR2"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc85.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU3"></Source>
+		<Destinations>
+			<Dest name="ES_STARTR2"></Dest>
+			<Dest name="ES_CM1CA"></Dest>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="rc86.0">
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>1079</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES_MIMU2"></Source>
+		<Destinations>
+			<Dest name="ES_STARTR2"></Dest>
+			<Dest name="ES_RCM2"></Dest>
+		</Destinations>
+	</AVBApplication>
+</Applications>

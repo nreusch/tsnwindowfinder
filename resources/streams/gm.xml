@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CurrentBest = 985.29 @ K = 100, hops = 20 -->
+<Applications>
+
+<UBSApplication name="UBS1"><Size>800</Size><Deadline>2</Deadline><UBSPattern>A</UBSPattern><Burstiness>800</Burstiness><LeakRate>40</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="FRONT_CAM" />
+<Destinations> 
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="UBS2"><Size>400</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>400</Burstiness><LeakRate>10</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="FRONT_RAD" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="UBS3"><Size>1500</Size><Deadline>10</Deadline><UBSPattern>A</UBSPattern><Burstiness>1500</Burstiness><LeakRate>30</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="FRONT_SVCAM" />
+<Destinations> <Dest name="CTRL1" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS4"><Size>400</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>400</Burstiness><LeakRate>10</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="LEFT_FRONT_RAD" />
+<Destinations> 
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> 
+</UBSApplication>
+
+<UBSApplication name="UBS5"><Size>400</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>400</Burstiness><LeakRate>10</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="RIGHT_FRONT_RAD" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS6"><Size>1500</Size><Deadline>10</Deadline><UBSPattern>A</UBSPattern><Burstiness>1500</Burstiness><LeakRate>30</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="LEFT_SVCAM" />
+<Destinations> <Dest name="CTRL1" /> </Destinations> </UBSApplication>
+
+
+<UBSApplication name="UBS7"><Size>1500</Size><Deadline>10</Deadline><UBSPattern>A</UBSPattern><Burstiness>1500</Burstiness><LeakRate>30</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="RIGHT_SVCAM" />
+<Destinations> <Dest name="CTRL1" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS8"><Size>400</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>400</Burstiness><LeakRate>10</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="LEFT_REAR_RAD" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS9"><Size>400</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>400</Burstiness><LeakRate>10</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="RIGHT_REAR_RAD" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS10"><Size>600</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>600</Burstiness><LeakRate>15</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="REAR_CAM" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS11"><Size>400</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>400</Burstiness><LeakRate>10</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="REAR_RAD" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS12"><Size>1500</Size><Deadline>10</Deadline><UBSPattern>A</UBSPattern><Burstiness>1500</Burstiness><LeakRate>30</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="REAR_SVCAM" />
+<Destinations> <Dest name="CTRL1" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS13"><Size>100</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>5</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="CTRL1" />
+<Destinations> 
+<Dest name="FRONT_CAM" /> 
+<Dest name="FRONT_RAD" /> 
+<Dest name="REAR_CAM" /> 
+<Dest name="REAR_RAD" /> 
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS14"><Size>100</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>5</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="CTRL2" />
+<Destinations>
+<Dest name="FRONT_CAM" /> 
+<Dest name="FRONT_RAD" /> 
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS15"><Size>100</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>2.5</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="CTRL1" />
+<Destinations> <Dest name="ECM" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS16"><Size>100</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>2.5</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="CTRL2" />
+<Destinations> <Dest name="ECM" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS17"><Size>100</Size><Deadline>2</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>2.5</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="CTRL1" />
+<Destinations> <Dest name="EBCM" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS18"><Size>100</Size><Deadline>2</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>2.5</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="CTRL2" />
+<Destinations> <Dest name="EBCM" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS19"><Size>100</Size><Deadline>2</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>10</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="CTRL1" />
+<Destinations> <Dest name="EPS" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS20"><Size>100</Size><Deadline>2</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>10</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="CTRL2" />
+<Destinations> <Dest name="EPS" /> </Destinations> </UBSApplication>
+
+<UBSApplication name="UBS21"><Size>100</Size><Deadline>2</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>5</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="EPS" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS22"><Size>100</Size><Deadline>2</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>2.5</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="EBCM" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS23"><Size>100</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>2.5</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="ECM" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS24"><Size>200</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>200</Burstiness><LeakRate>4</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="IMU1" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+<Dest name="MAPLOC" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS25"><Size>200</Size><Deadline>4</Deadline><UBSPattern>A</UBSPattern><Burstiness>200</Burstiness><LeakRate>4</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="IMU2" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+<Dest name="MAPLOC" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS26"><Size>100</Size><Deadline>5</Deadline><UBSPattern>A</UBSPattern><Burstiness>100</Burstiness><LeakRate>1</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="MAPLOC" />
+<Destinations>
+<Dest name="CTRL1"/>
+<Dest name="CTRL2" />
+<Dest name="FRONT_CAM" />
+</Destinations> </UBSApplication>
+
+<UBSApplication name="UBS27"><Size>200</Size><Deadline>5</Deadline><UBSPattern>A</UBSPattern><Burstiness>200</Burstiness><LeakRate>2</LeakRate><RedundancyLevel>1</RedundancyLevel><Source name="FRONT_CAM" />
+<Destinations> <Dest name="MAPLOC" /> </Destinations> </UBSApplication>
+
+</Applications>

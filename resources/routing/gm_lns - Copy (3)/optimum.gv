@@ -1,0 +1,322 @@
+digraph network {
+  FRONT_CAM [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> FRONT_CAM </TD> <TD>[BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="red">0_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="blue">0_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="purple">26_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="green">25_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink">12_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indianred">13_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indigo">12_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  FRONT_RAD [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> FRONT_RAD </TD> <TD>[BT2, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="khaki3">1_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="magenta1">1_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink">12_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indianred">13_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indigo">12_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  FRONT_SVCAM [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> FRONT_SVCAM </TD> <TD>[BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="maroon1">2_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  LEFT_FRONT_RAD [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> LEFT_FRONT_RAD </TD> <TD>[BT2, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="mediumblue">3_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumorchid4">3_1</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  RIGHT_FRONT_RAD [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> RIGHT_FRONT_RAD </TD> <TD>[BT2, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="mediumpurple4">4_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumvioletred">4_1</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  LEFT_SVCAM [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> LEFT_SVCAM </TD> <TD>[BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="mistyrose2">5_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  RIGHT_SVCAM [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> RIGHT_SVCAM </TD> <TD>[BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="navajowhite1">6_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  LEFT_REAR_RAD [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> LEFT_REAR_RAD </TD> <TD>[BT2, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="navyblue">7_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  RIGHT_REAR_RAD [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> RIGHT_REAR_RAD </TD> <TD>[BT2, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="olivedrab2">8_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  REAR_CAM [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> REAR_CAM </TD> <TD>[BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="orange2">9_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="orangered2">9_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink">12_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indigo">12_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  REAR_RAD [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> REAR_RAD </TD> <TD>[BT2, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="orchid2">10_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="palegreen1">10_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink">12_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indigo">12_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  REAR_SVCAM [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> REAR_SVCAM </TD> <TD>[BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="paleturquoise1">11_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  CTRL1 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> CTRL1 </TD>  </TR><TR><TD>S</TD><TD BGCOLOR="palevioletred1">16_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="peachpuff">16_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="peru">14_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="hotpink">12_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="indigo">12_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="pink4">18_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="plum4">18_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orchid2">10_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="paleturquoise1">11_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="palegreen1">10_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="red">0_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="blue">0_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="khaki3">1_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="magenta1">1_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="maroon1">2_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="green">25_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumblue">3_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="purple3">24_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumorchid4">3_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumpurple4">4_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="red3">23_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumvioletred">4_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mistyrose2">5_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="rosybrown3">21_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="royalblue3">22_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="navajowhite1">6_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="salmon2">20_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seagreen1">21_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="navyblue">7_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="olivedrab2">8_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orange2">9_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orangered2">9_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seashell1">20_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  CTRL2 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> CTRL2 </TD>  </TR><TR><TD>S</TD><TD BGCOLOR="sienna1">17_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="skyblue1">15_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="indianred">13_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="slateblue1">19_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="red">0_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="blue">0_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="khaki3">1_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="magenta1">1_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="green">25_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumblue">3_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="purple3">24_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumorchid4">3_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumpurple4">4_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="red3">23_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumvioletred">4_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orchid2">10_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="rosybrown3">21_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="royalblue3">22_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="palegreen1">10_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="salmon2">20_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seagreen1">21_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="navyblue">7_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="olivedrab2">8_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orange2">9_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="orangered2">9_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="seashell1">20_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ECM [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ECM </TD>  </TR><TR><TD>S</TD><TD BGCOLOR="royalblue3">22_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="skyblue1">15_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="peru">14_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  EBCM [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> EBCM </TD>  </TR><TR><TD>S</TD><TD BGCOLOR="rosybrown3">21_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="seagreen1">21_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="palevioletred1">16_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="sienna1">17_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="peachpuff">16_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  EPS [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> EPS </TD>  </TR><TR><TD>S</TD><TD BGCOLOR="salmon2">20_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="seashell1">20_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="pink4">18_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="slateblue1">19_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="plum4">18_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  IMU1 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> IMU1 </TD> <TD>[BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="red3">23_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  IMU2 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> IMU2 </TD> <TD>[BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="purple3">24_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  MAPLOC [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> MAPLOC </TD>  </TR><TR><TD>S</TD><TD BGCOLOR="green">25_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="purple">26_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="purple3">24_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="red3">23_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  B1 [ label="B1: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B2 [ label="B2: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B3 [ label="B3: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B4 [ label="B4: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B5 [ label="B5: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B6 [ label="B6: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B7 [ label="B7: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B8 [ label="B8: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B9 [ label="B9: BT1 [Int:1, Ext:2]" shape="box" style="rounded" ];
+  B10 [ label="B10: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B11 [ label="B11: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B12 [ label="B12: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B13 [ label="B13: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B14 [ label="B14: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B15 [ label="B15: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B16 [ label="B16: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B17 [ label="B17: BT4 [Int:2, Ext:5]" shape="box" style="rounded" ];
+  B18 [ label="B18: BT6 [Int:2, Ext:8]" shape="box" style="rounded" ];
+  B19 [ label="B19: BT6 [Int:2, Ext:8]" shape="box" style="rounded" ];
+  B20 [ label="B20: BT6 [Int:2, Ext:8]" shape="box" style="rounded" ];
+  FRONT_CAM -> B1 [ style="dashed" arrowhead="none" ];
+  FRONT_RAD -> B10 [ style="dashed" arrowhead="none" ];
+  FRONT_SVCAM -> B2 [ style="dashed" arrowhead="none" ];
+  LEFT_FRONT_RAD -> B11 [ style="dashed" arrowhead="none" ];
+  RIGHT_FRONT_RAD -> B12 [ style="dashed" arrowhead="none" ];
+  LEFT_SVCAM -> B3 [ style="dashed" arrowhead="none" ];
+  RIGHT_SVCAM -> B4 [ style="dashed" arrowhead="none" ];
+  LEFT_REAR_RAD -> B13 [ style="dashed" arrowhead="none" ];
+  RIGHT_REAR_RAD -> B14 [ style="dashed" arrowhead="none" ];
+  REAR_CAM -> B5 [ style="dashed" arrowhead="none" ];
+  REAR_RAD -> B15 [ style="dashed" arrowhead="none" ];
+  REAR_SVCAM -> B6 [ style="dashed" arrowhead="none" ];
+  CTRL1 -> B18 [ style="dashed" arrowhead="none" ];
+  CTRL2 -> B19 [ style="dashed" arrowhead="none" ];
+  ECM -> B20 [ style="dashed" arrowhead="none" ];
+  EBCM -> B17 [ style="dashed" arrowhead="none" ];
+  EPS -> B7 [ style="dashed" arrowhead="none" ];
+  IMU1 -> B8 [ style="dashed" arrowhead="none" ];
+  IMU2 -> B9 [ style="dashed" arrowhead="none" ];
+  MAPLOC -> B16 [ style="dashed" arrowhead="none" ];
+  B1 -> B18 [ arrowhead="none" ];
+  B1 -> B19 [ arrowhead="none" ];
+  B2 -> B10 [ arrowhead="none" ];
+  B2 -> B18 [ arrowhead="none" ];
+  B3 -> B4 [ arrowhead="none" ];
+  B3 -> B18 [ arrowhead="none" ];
+  B4 -> B15 [ arrowhead="none" ];
+  B5 -> B13 [ arrowhead="none" ];
+  B5 -> B14 [ arrowhead="none" ];
+  B6 -> B17 [ arrowhead="none" ];
+  B6 -> B20 [ arrowhead="none" ];
+  B7 -> B17 [ arrowhead="none" ];
+  B7 -> B20 [ arrowhead="none" ];
+  B8 -> B16 [ arrowhead="none" ];
+  B8 -> B20 [ arrowhead="none" ];
+  B9 -> B16 [ arrowhead="none" ];
+  B9 -> B17 [ arrowhead="none" ];
+  B10 -> B18 [ style="dashed" arrowhead="none" ];
+  B10 -> B19 [ arrowhead="none" ];
+  B11 -> B12 [ style="dashed" arrowhead="none" ];
+  B11 -> B18 [ arrowhead="none" ];
+  B11 -> B19 [ arrowhead="none" ];
+  B12 -> B18 [ arrowhead="none" ];
+  B12 -> B19 [ arrowhead="none" ];
+  B13 -> B15 [ style="dashed" arrowhead="none" ];
+  B13 -> B19 [ arrowhead="none" ];
+  B14 -> B19 [ style="dashed" arrowhead="none" ];
+  B14 -> B20 [ arrowhead="none" ];
+  B15 -> B20 [ arrowhead="none" ];
+  B16 -> B17 [ style="dashed" arrowhead="none" ];
+  B17 -> B20 [ arrowhead="none" ];
+  B18 -> B19 [ arrowhead="none" ];
+  B18 -> B20 [ arrowhead="none" ];
+  B19 -> B20 [ arrowhead="none" ];
+  B1 -> B18 [ label="0_0" color="red" style="bold" ];
+  B18 -> B19 [ label="0_0" color="red" style="bold" ];
+  B1 -> B19 [ label="0_1" color="blue" style="bold" ];
+  B19 -> B20 [ label="0_1" color="blue" style="bold" ];
+  B20 -> B18 [ label="0_1" color="blue" style="bold" ];
+  B10 -> B2 [ label="1_0" color="khaki3" style="bold" ];
+  B2 -> B18 [ label="1_0" color="khaki3" style="bold" ];
+  B18 -> B19 [ label="1_0" color="khaki3" style="bold" ];
+  B10 -> B18 [ label="1_1" color="magenta1" style="bold" ];
+  B10 -> B19 [ label="1_1" color="magenta1" style="bold" ];
+  B2 -> B18 [ label="2_0" color="maroon1" style="bold" ];
+  B11 -> B18 [ label="3_0" color="mediumblue" style="bold" ];
+  B11 -> B19 [ label="3_0" color="mediumblue" style="bold" ];
+  B11 -> B12 [ label="3_1" color="mediumorchid4" style="bold" ];
+  B12 -> B18 [ label="3_1" color="mediumorchid4" style="bold" ];
+  B12 -> B19 [ label="3_1" color="mediumorchid4" style="bold" ];
+  B12 -> B18 [ label="4_0" color="mediumpurple4" style="bold" ];
+  B12 -> B19 [ label="4_0" color="mediumpurple4" style="bold" ];
+  B12 -> B11 [ label="4_1" color="mediumvioletred" style="bold" ];
+  B11 -> B18 [ label="4_1" color="mediumvioletred" style="bold" ];
+  B11 -> B19 [ label="4_1" color="mediumvioletred" style="bold" ];
+  B3 -> B18 [ label="5_0" color="mistyrose2" style="bold" ];
+  B4 -> B3 [ label="6_0" color="navajowhite1" style="bold" ];
+  B3 -> B18 [ label="6_0" color="navajowhite1" style="bold" ];
+  B13 -> B19 [ label="7_0" color="navyblue" style="bold" ];
+  B19 -> B18 [ label="7_0" color="navyblue" style="bold" ];
+  B14 -> B19 [ label="8_0" color="olivedrab2" style="bold" ];
+  B19 -> B18 [ label="8_0" color="olivedrab2" style="bold" ];
+  B5 -> B13 [ label="9_0" color="orange2" style="bold" ];
+  B13 -> B19 [ label="9_0" color="orange2" style="bold" ];
+  B19 -> B18 [ label="9_0" color="orange2" style="bold" ];
+  B5 -> B14 [ label="9_1" color="orangered2" style="bold" ];
+  B14 -> B19 [ label="9_1" color="orangered2" style="bold" ];
+  B14 -> B20 [ label="9_1" color="orangered2" style="bold" ];
+  B20 -> B18 [ label="9_1" color="orangered2" style="bold" ];
+  B15 -> B4 [ label="10_0" color="palegreen1" style="bold" ];
+  B4 -> B3 [ label="10_0" color="palegreen1" style="bold" ];
+  B3 -> B18 [ label="10_0" color="palegreen1" style="bold" ];
+  B18 -> B19 [ label="10_0" color="palegreen1" style="bold" ];
+  B15 -> B13 [ label="10_1" color="orchid2" style="bold" ];
+  B15 -> B20 [ label="10_1" color="orchid2" style="bold" ];
+  B13 -> B19 [ label="10_1" color="orchid2" style="bold" ];
+  B20 -> B18 [ label="10_1" color="orchid2" style="bold" ];
+  B6 -> B20 [ label="11_0" color="paleturquoise1" style="bold" ];
+  B20 -> B18 [ label="11_0" color="paleturquoise1" style="bold" ];
+  B18 -> B1 [ label="12_0" color="indigo" style="bold" ];
+  B18 -> B10 [ label="12_0" color="indigo" style="bold" ];
+  B18 -> B19 [ label="12_0" color="indigo" style="bold" ];
+  B18 -> B20 [ label="12_0" color="indigo" style="bold" ];
+  B19 -> B13 [ label="12_0" color="indigo" style="bold" ];
+  B20 -> B15 [ label="12_0" color="indigo" style="bold" ];
+  B13 -> B5 [ label="12_0" color="indigo" style="bold" ];
+  B18 -> B2 [ label="12_1" color="hotpink" style="bold" ];
+  B18 -> B3 [ label="12_1" color="hotpink" style="bold" ];
+  B18 -> B11 [ label="12_1" color="hotpink" style="bold" ];
+  B2 -> B10 [ label="12_1" color="hotpink" style="bold" ];
+  B3 -> B4 [ label="12_1" color="hotpink" style="bold" ];
+  B11 -> B19 [ label="12_1" color="hotpink" style="bold" ];
+  B4 -> B15 [ label="12_1" color="hotpink" style="bold" ];
+  B19 -> B1 [ label="12_1" color="hotpink" style="bold" ];
+  B19 -> B14 [ label="12_1" color="hotpink" style="bold" ];
+  B14 -> B5 [ label="12_1" color="hotpink" style="bold" ];
+  B19 -> B1 [ label="13_0" color="indianred" style="bold" ];
+  B19 -> B10 [ label="13_0" color="indianred" style="bold" ];
+  B18 -> B20 [ label="14_0" color="peru" style="bold" ];
+  B19 -> B20 [ label="15_0" color="skyblue1" style="bold" ];
+  B18 -> B20 [ label="16_0" color="peachpuff" style="bold" ];
+  B20 -> B17 [ label="16_0" color="peachpuff" style="bold" ];
+  B18 -> B19 [ label="16_1" color="palevioletred1" style="bold" ];
+  B19 -> B20 [ label="16_1" color="palevioletred1" style="bold" ];
+  B20 -> B6 [ label="16_1" color="palevioletred1" style="bold" ];
+  B6 -> B17 [ label="16_1" color="palevioletred1" style="bold" ];
+  B19 -> B20 [ label="17_0" color="sienna1" style="bold" ];
+  B20 -> B17 [ label="17_0" color="sienna1" style="bold" ];
+  B18 -> B19 [ label="18_0" color="plum4" style="bold" ];
+  B19 -> B20 [ label="18_0" color="plum4" style="bold" ];
+  B20 -> B17 [ label="18_0" color="plum4" style="bold" ];
+  B17 -> B7 [ label="18_0" color="plum4" style="bold" ];
+  B18 -> B20 [ label="18_1" color="pink4" style="bold" ];
+  B20 -> B7 [ label="18_1" color="pink4" style="bold" ];
+  B19 -> B20 [ label="19_0" color="slateblue1" style="bold" ];
+  B20 -> B7 [ label="19_0" color="slateblue1" style="bold" ];
+  B7 -> B20 [ label="20_0" color="seashell1" style="bold" ];
+  B20 -> B18 [ label="20_0" color="seashell1" style="bold" ];
+  B20 -> B19 [ label="20_0" color="seashell1" style="bold" ];
+  B7 -> B17 [ label="20_1" color="salmon2" style="bold" ];
+  B17 -> B20 [ label="20_1" color="salmon2" style="bold" ];
+  B20 -> B14 [ label="20_1" color="salmon2" style="bold" ];
+  B14 -> B19 [ label="20_1" color="salmon2" style="bold" ];
+  B19 -> B18 [ label="20_1" color="salmon2" style="bold" ];
+  B17 -> B6 [ label="21_0" color="seagreen1" style="bold" ];
+  B6 -> B20 [ label="21_0" color="seagreen1" style="bold" ];
+  B20 -> B14 [ label="21_0" color="seagreen1" style="bold" ];
+  B14 -> B19 [ label="21_0" color="seagreen1" style="bold" ];
+  B19 -> B18 [ label="21_0" color="seagreen1" style="bold" ];
+  B17 -> B20 [ label="21_1" color="rosybrown3" style="bold" ];
+  B20 -> B18 [ label="21_1" color="rosybrown3" style="bold" ];
+  B20 -> B19 [ label="21_1" color="rosybrown3" style="bold" ];
+  B20 -> B18 [ label="22_0" color="royalblue3" style="bold" ];
+  B20 -> B19 [ label="22_0" color="royalblue3" style="bold" ];
+  B8 -> B16 [ label="23_0" color="red3" style="bold" ];
+  B8 -> B20 [ label="23_0" color="red3" style="bold" ];
+  B20 -> B18 [ label="23_0" color="red3" style="bold" ];
+  B20 -> B19 [ label="23_0" color="red3" style="bold" ];
+  B9 -> B16 [ label="24_0" color="purple3" style="bold" ];
+  B9 -> B17 [ label="24_0" color="purple3" style="bold" ];
+  B17 -> B20 [ label="24_0" color="purple3" style="bold" ];
+  B20 -> B18 [ label="24_0" color="purple3" style="bold" ];
+  B20 -> B19 [ label="24_0" color="purple3" style="bold" ];
+  B16 -> B17 [ label="25_0" color="green" style="bold" ];
+  B17 -> B20 [ label="25_0" color="green" style="bold" ];
+  B20 -> B18 [ label="25_0" color="green" style="bold" ];
+  B20 -> B19 [ label="25_0" color="green" style="bold" ];
+  B18 -> B1 [ label="25_0" color="green" style="bold" ];
+  B1 -> B18 [ label="26_0" color="purple" style="bold" ];
+  B18 -> B20 [ label="26_0" color="purple" style="bold" ];
+  B20 -> B8 [ label="26_0" color="purple" style="bold" ];
+  B8 -> B16 [ label="26_0" color="purple" style="bold" ];
+}

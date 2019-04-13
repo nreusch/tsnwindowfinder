@@ -1,0 +1,8 @@
+start time: Wed May 31 18:54:20 CEST 2017
+WP_topo: 100.0
+WP_sched: 0.0
+maxNoB: 93
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+tc4,tro,CBU_AMIN,450,-122540.0,9.473684210526317,1,15642,Wed May 31 18:54:36 CEST 2017*topology improvement*
+tc4,tro,CBU_AMIN,450,-122540.0,9.473684210526317,1,15642,Wed May 31 18:54:36 CEST 2017

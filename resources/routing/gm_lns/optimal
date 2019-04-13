@@ -1,0 +1,8 @@
+start time: Tue Mar 27 14:03:59 CEST 2018
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 132
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+gm,lns,CBU_AMIN,432,-150277.0,3.062153588405783,1,26045,Tue Mar 27 14:04:25 CEST 2018*topology improvement*
+gm,lns,CBU_AMIN,432,-150277.0,3.062153588405783,1,26045,Tue Mar 27 14:04:25 CEST 2018

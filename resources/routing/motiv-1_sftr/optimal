@@ -1,0 +1,12 @@
+start time: Wed Apr 05 11:03:39 CEST 2017
+WP_topo: 80.0
+WP_sched: 20.0
+maxNoB: 4
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+motiv-1,sftr,CMS_AC,78,-26824.0,38.03594343650081,1,21,Wed Apr 05 11:03:39 CEST 2017
+---
+Time for finding the optimum: 58
+Time for finding the optimum__: 21
+Number of branches: 0
+Number of failures: 0

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- list of streams-->
+<Applications>
+
+	<UBSApplication name="UBS1">
+		<Size>100</Size>
+<Deadline>10</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>100</Burstiness>
+<LeakRate>2</LeakRate>
+<RedundancyLevel>1</RedundancyLevel>
+		<Source name="ES1" />
+		<Destinations>
+			<Dest name="ES3" />
+			<Dest name="ES4" />
+			</Destinations>
+	</UBSApplication>
+
+	<UBSApplication name="UBS2">
+		<Size>100</Size>
+<Deadline>10</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>100</Burstiness>
+<LeakRate>2</LeakRate>
+<RedundancyLevel>1</RedundancyLevel>
+		<Source name="ES2" />
+		<Destinations>
+			<Dest name="ES3" />
+			<Dest name="ES4" />
+			</Destinations>
+	</UBSApplication>
+	
+	<UBSApplication name="UBS3">
+		<Size>100</Size>
+<Deadline>7</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>100</Burstiness>
+<LeakRate>2</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+		<Source name="ES4" />
+		<Destinations>
+			<Dest name="ES1" />
+			<Dest name="ES2" />
+			</Destinations>
+	</UBSApplication>
+	
+	
+</Applications>

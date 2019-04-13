@@ -1,0 +1,11 @@
+start time: Mon Mar 20 09:45:03 CET 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 14
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+tc1-2,fc_sfr,CBU_AMIN,162,-126196.0,10.745912586841582,1,24,Mon Mar 20 09:45:03 CET 2017
+---
+Time for finding the optimum: 89
+Number of branches: 0
+Number of failures: 0

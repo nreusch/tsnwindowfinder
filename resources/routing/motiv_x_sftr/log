@@ -1,0 +1,10 @@
+start time: Mon Mar 27 17:33:23 CEST 2017
+Minimum topology cost: 22.0
+Maximum topology cost: 134.0
+Minimum schedulability cost: -33740.0
+Maximum schedulability cost: 0.0
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 6
+time|avgTopo|maxTopo|avgSched|maxSched|noFeasible
+---

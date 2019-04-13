@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Applications>
+	<AVBApplication name="AVB_1">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>50</PayloadSize>
+		<NoOfFrames>7</NoOfFrames>
+		<Source name="ES407"/>
+		<Destinations>
+			<Dest name="ES402"/>
+			<Dest name="ES414"/>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="AVB_2">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>800</PayloadSize>
+		<NoOfFrames>1</NoOfFrames>
+		<Source name="ES419"/>
+		<Destinations>
+			<Dest name="ES403"/>
+		</Destinations>
+	</AVBApplication>
+	
+	<AVBApplication name="AVB_3">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>400</PayloadSize>
+		<NoOfFrames>2</NoOfFrames>
+		<Source name="ES400"/>
+		<Destinations>
+			<Dest name="ES405"/>
+		</Destinations>
+	</AVBApplication>
+	
+	<AVBApplication name="AVB_4">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>15</PayloadSize>
+		<NoOfFrames>10</NoOfFrames>
+		<Source name="ES401"/>
+		<Destinations>
+			<Dest name="ES416"/>
+			<Dest name="ES411"/>
+		</Destinations>
+	</AVBApplication>
+	
+	<AVBApplication name="AVB_5">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>98</PayloadSize>
+		<NoOfFrames>3</NoOfFrames>
+		<Source name="ES413"/>
+		<Destinations>
+			<Dest name="ES414"/>
+			<Dest name="ES401"/>
+		</Destinations>
+	</AVBApplication>
+	
+	<AVBApplication name="AVB_6">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>88</PayloadSize>
+		<NoOfFrames>3</NoOfFrames>
+		<Source name="ES408"/>
+		<Destinations>
+			<Dest name="ES419"/>
+			<Dest name="ES402"/>
+		</Destinations>
+	</AVBApplication>
+	
+	<AVBApplication name="AVB_7">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>60</PayloadSize>
+		<NoOfFrames>10</NoOfFrames>
+		<Source name="ES412"/>
+		<Destinations>
+			<Dest name="ES410"/>
+		</Destinations>
+	</AVBApplication>
+	
+	<AVBApplication name="AVB_8">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>100</PayloadSize>
+		<NoOfFrames>10</NoOfFrames>
+		<Source name="ES409"/>
+		<Destinations>
+			<Dest name="ES417"/>
+		</Destinations>
+	</AVBApplication>
+	
+	<AVBApplication name="AVB_9">
+		<Mode>A</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>60</PayloadSize>
+		<NoOfFrames>9</NoOfFrames>
+		<Source name="ES409"/>
+		<Destinations>
+			<Dest name="ES417"/>
+		</Destinations>
+	</AVBApplication>
+	
+</Applications>

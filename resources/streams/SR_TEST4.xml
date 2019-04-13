@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Applications>
+	<TTApplication name="TT_EngineControl">
+		<Source name="ES1"/>
+		<Destinations>
+			<GCL offset="0" duration="10.4" frequency="8"/>
+			<Dest name="ES5">
+				<Route>
+					<Bridge name="B1"/>
+					<Bridge name="B3"/>
+				</Route>
+			</Dest>
+		</Destinations>
+	</TTApplication>
+
+	<AVBApplication name="AVB_Parking">
+		<Mode>Parking</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>50</PayloadSize>
+		<NoOfFrames>10</NoOfFrames>
+		<Source name="ES2"/>
+		<Destinations>
+			<Dest name="ES4"/>
+		</Destinations>
+	</AVBApplication>
+
+	<AVBApplication name="AVB_Lane">
+		<Mode>Lane</Mode>
+		<AVBClass>CLASS_A</AVBClass>
+		<PayloadSize>60</PayloadSize>
+		<NoOfFrames>10</NoOfFrames>
+		<Source name="ES3"/>
+		<Destinations>
+			<Dest name="ES6"/>
+		</Destinations>
+	</AVBApplication>
+</Applications>

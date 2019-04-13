@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"  
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns 
+        http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  
+  <graph id="G" edgedefault="undirected">
+    <node id="ES1A"/>
+    <node id="ES1B"/>
+    <node id="ES1C"/>
+    <node id="ES1D"/>
+    <node id="ES1E"/>
+    
+    <node id="ES5A"/>
+    <node id="ES5B"/>
+    <node id="ES5C"/>
+    <node id="ES5D"/>
+    <node id="ES5E"/>
+    
+    <node id="B2"/>
+    <node id="B3A"/>
+    <node id="B3B"/>
+    <node id="B4"/>
+
+    <edge source="ES1A" target="B2"/>
+    <edge source="ES1B" target="B2"/>
+    <edge source="ES1C" target="B2"/>
+    <edge source="ES1D" target="B2"/>
+    <edge source="ES1E" target="B2"/>
+    
+   	<edge source="B2" target ="B4"/>
+   	
+    <edge source="B2" target ="B3A"/>
+    <edge source="B2" target ="B3B"/>
+    
+    <edge source="B3A" target ="B4"/>
+    <edge source="B3B" target ="B4"/>
+    
+    <edge source="ES5A" target="B4"/>
+    <edge source="ES5B" target="B4"/>
+    <edge source="ES5C" target="B4"/>
+    <edge source="ES5D" target="B4"/>
+    <edge source="ES5E" target="B4"/>
+  </graph>
+</graphml>

@@ -1,0 +1,59 @@
+start time: Mon Jul 17 19:26:47 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 93
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,392,-64321.0,2.6781821677186306,1,5634,Mon Jul 17 19:26:53 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,392,-64321.0,2.6781821677186306,1,5634,Mon Jul 17 19:26:53 CEST 2017
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,390,-64321.0,2.6697611150870513,2,39817,Mon Jul 17 19:27:27 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,390,-64321.0,2.6697611150870513,2,39817,Mon Jul 17 19:27:27 CEST 2017
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,384,-64321.0,2.6444979571923146,3,78971,Mon Jul 17 19:28:06 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,384,-64321.0,2.6444979571923146,3,78971,Mon Jul 17 19:28:06 CEST 2017
+---
+Time for finding the optimum: 120810
+Time for finding the optimum__: 78971
+Number of branches: 872778
+Number of failures: 429928
+start time: Mon Jul 17 19:28:58 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 93
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,382,-64277.0,2.6900994344112528,1,5917,Mon Jul 17 19:29:04 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,382,-64277.0,2.6900994344112528,1,5917,Mon Jul 17 19:29:04 CEST 2017
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,376,-64277.0,2.664836276516516,2,31358,Mon Jul 17 19:29:30 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,376,-64277.0,2.664836276516516,2,31358,Mon Jul 17 19:29:30 CEST 2017
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,370,-64277.0,2.6395731186217795,3,71851,Mon Jul 17 19:30:10 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,370,-64277.0,2.6395731186217795,3,71851,Mon Jul 17 19:30:10 CEST 2017
+---
+Time for finding the optimum: 120313
+Time for finding the optimum__: 71851
+Number of branches: 613464
+Number of failures: 300309
+start time: Mon Jul 17 19:31:11 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 93
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,362,-64293.0,2.586244351786185,1,6395,Mon Jul 17 19:31:17 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,362,-64293.0,2.586244351786185,1,6395,Mon Jul 17 19:31:17 CEST 2017
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,356,-64293.0,2.5609811938914477,2,30435,Mon Jul 17 19:31:41 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,356,-64293.0,2.5609811938914477,2,30435,Mon Jul 17 19:31:41 CEST 2017
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,350,-64293.0,2.5357180359967106,3,59043,Mon Jul 17 19:32:10 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,350,-64293.0,2.5357180359967106,3,59043,Mon Jul 17 19:32:10 CEST 2017
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,343,-64286.0,2.5148388451714943,4,99380,Mon Jul 17 19:32:50 CEST 2017*topology improvement*
+ES15_UC30_RL2-4-1-26,lns,CBU_AMIN,343,-64286.0,2.5148388451714943,4,99380,Mon Jul 17 19:32:50 CEST 2017
+---
+Time for finding the optimum: 120620
+Time for finding the optimum__: 99380
+Number of branches: 277107
+Number of failures: 132148
+start time: Mon Jul 17 19:33:21 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 93
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---

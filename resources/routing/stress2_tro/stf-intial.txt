@@ -1,0 +1,306 @@
+A:
+0: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 
+1: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
+2: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
+3: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+4: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
+5: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 
+6: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+7: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 
+8: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 
+9: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 
+10: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+11: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+12: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+13: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+14: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+15: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+16: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+17: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+18: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+19: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+20: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+21: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+22: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+23: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+24: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+25: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+26: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+27: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+28: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+29: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+30: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+31: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+32: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+33: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+34: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 0 0 0 2 0 2 
+35: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 2 2 2 0 0 
+36: 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 2 0 0 2 2 0 
+37: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 0 0 0 0 2 0 0 2 
+38: 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 2 2 0 2 
+39: 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 2 2 0 
+40: 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 2 2 0 0 0 2 2 
+41: 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 0 2 2 0 0 2 0 
+42: 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 2 2 2 0 2 
+43: 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 2 2 0 2 0 2 0 
+BA:
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 2 2 2 2 2 2 3 4 4 4 
+MTs:
+0: 0 44 44 44 36 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 44 41 44 44 44 44 34 44 44 44 
+1: 0 44 44 44 36 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 44 34 44 44 44 44 44 44 44 44 
+2: 0 44 44 44 36 37 43 44 44 39 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 44 34 34 44 41 44 34 44 34 44 
+3: 44 44 44 3 36 44 44 44 44 39 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 42 44 44 42 44 44 3 44 44 
+4: 0 44 44 44 44 44 44 44 38 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 44 44 44 41 44 44 34 44 44 44 
+5: 0 44 44 44 44 44 44 44 38 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 44 34 44 36 44 44 44 44 44 44 
+6: 44 1 44 44 44 44 44 44 44 39 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 44 44 44 35 44 1 44 44 44 
+7: 44 1 44 44 44 44 44 44 44 39 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 44 1 44 44 44 
+8: 0 44 35 42 44 44 43 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 41 44 44 44 44 44 34 41 34 44 
+9: 0 41 44 42 36 44 44 40 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 44 34 34 44 44 37 34 41 44 44 
+10: 44 44 44 44 44 5 43 40 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 5 44 44 37 44 44 37 44 
+11: 44 44 44 44 44 5 43 40 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 37 37 44 5 44 44 35 44 44 34 44 
+12: 34 44 44 42 36 44 44 7 38 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 37 44 42 40 40 44 7 44 40 44 44 
+13: 44 44 44 44 36 44 44 44 44 9 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 42 44 44 9 44 44 39 44 44 
+14: 44 44 44 44 36 44 44 44 44 9 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 44 44 9 44 39 44 44 44 
+15: 44 1 44 42 44 44 44 44 44 39 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 41 44 44 35 44 1 36 44 44 
+16: 44 1 44 42 44 44 44 44 44 39 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 44 1 41 44 44 
+17: 34 44 44 42 4 37 44 44 38 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 41 4 35 41 44 44 36 41 44 44 
+18: 34 44 44 42 4 37 44 44 38 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 36 44 4 34 36 44 44 44 36 44 44 
+19: 44 44 2 44 36 37 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 2 41 35 44 44 44 35 44 44 44 
+20: 44 44 44 42 44 5 43 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 37 44 44 5 44 44 37 44 40 34 44 
+21: 44 44 44 42 44 5 43 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 5 44 44 44 44 43 37 44 
+22: 34 44 44 44 44 5 43 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 37 44 5 44 44 37 35 44 40 44 
+23: 34 44 44 44 44 5 43 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 37 44 44 5 44 44 44 44 44 37 44 
+24: 0 44 44 44 36 44 43 44 38 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 37 41 34 43 44 44 35 44 37 44 
+25: 0 44 44 44 36 44 43 44 38 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 44 34 44 41 44 44 34 44 34 44 
+26: 34 44 44 44 44 44 44 44 44 9 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 44 44 44 44 9 44 39 44 44 44 
+27: 0 41 44 44 44 44 43 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 0 44 44 44 44 44 44 34 44 34 44 
+28: 34 44 44 42 4 37 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 41 41 4 35 44 44 44 36 41 44 44 
+29: 34 44 44 42 4 37 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 36 44 4 34 44 44 44 44 36 44 44 
+30: 44 41 2 44 36 44 43 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 44 2 41 35 44 44 44 35 44 37 44 
+MTw:
+0: 0 -1 -1 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 2 -1 -1 -1 -1 1 -1 -1 -1 
+1: 0 -1 -1 -1 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 1 -1 -1 -1 -1 -1 -1 -1 -1 
+2: 0 -1 -1 -1 2 2 2 -1 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 1 1 -1 2 -1 1 -1 1 -1 
+3: -1 -1 -1 0 2 -1 -1 -1 -1 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 1 -1 -1 0 -1 -1 
+4: 0 -1 -1 -1 -1 -1 -1 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 2 -1 -1 1 -1 -1 -1 
+5: 0 -1 -1 -1 -1 -1 -1 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 1 -1 2 -1 -1 -1 -1 -1 -1 
+6: -1 0 -1 -1 -1 -1 -1 -1 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 -1 2 -1 0 -1 -1 -1 
+7: -1 0 -1 -1 -1 -1 -1 -1 -1 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 0 -1 -1 -1 
+8: 0 -1 3 3 -1 -1 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 2 -1 -1 -1 -1 -1 1 2 1 -1 
+9: 0 2 -1 3 2 -1 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 1 1 -1 -1 2 1 2 -1 -1 
+10: -1 -1 -1 -1 -1 0 2 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 1 -1 -1 1 -1 
+11: -1 -1 -1 -1 -1 0 3 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 1 -1 0 -1 -1 2 -1 -1 2 -1 
+12: 3 -1 -1 2 3 -1 -1 0 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 2 -1 2 1 1 -1 0 -1 1 -1 -1 
+13: -1 -1 -1 -1 3 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 2 -1 -1 0 -1 -1 1 -1 -1 
+14: -1 -1 -1 -1 3 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 2 -1 -1 0 -1 1 -1 -1 -1 
+15: -1 0 -1 3 -1 -1 -1 -1 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 1 -1 -1 2 -1 0 2 -1 -1 
+16: -1 0 -1 2 -1 -1 -1 -1 -1 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 0 1 -1 -1 
+17: 3 -1 -1 3 0 4 -1 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 2 2 0 3 2 -1 -1 1 2 -1 -1 
+18: 2 -1 -1 2 0 3 -1 -1 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 0 2 1 -1 -1 -1 1 -1 -1 
+19: -1 -1 0 -1 3 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 2 1 -1 -1 -1 1 -1 -1 -1 
+20: -1 -1 -1 3 -1 0 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 0 -1 -1 1 -1 2 2 -1 
+21: -1 -1 -1 3 -1 0 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 2 1 -1 
+22: 4 -1 -1 -1 -1 0 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 3 1 -1 0 -1 -1 1 2 -1 2 -1 
+23: 2 -1 -1 -1 -1 0 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 0 -1 -1 -1 -1 -1 1 -1 
+24: 0 -1 -1 -1 4 -1 3 -1 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 2 4 1 3 -1 -1 3 -1 2 -1 
+25: 0 -1 -1 -1 2 -1 2 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 1 -1 2 -1 -1 1 -1 1 -1 
+26: 3 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 2 -1 -1 -1 -1 0 -1 1 -1 -1 -1 
+27: 0 2 -1 -1 -1 -1 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 1 -1 1 -1 
+28: 3 -1 -1 3 0 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 2 2 0 3 -1 -1 -1 1 2 -1 -1 
+29: 2 -1 -1 2 0 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 -1 0 2 -1 -1 -1 -1 1 -1 -1 
+30: -1 2 0 -1 3 -1 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 2 1 -1 -1 -1 1 -1 2 -1 
+ubs20-0
+multi-cast tree: ([ES3, ID: B2, type: BT3, ID: B4, type: BT3, ID: B8, type: BT5, ID: B10, type: BT5, ES2, ID: B3, type: BT3, ES7, ES5], [(ES3 : ID: B2, type: BT3)=(ES3,ID: B2, type: BT3), (ID: B2, type: BT3 : ID: B4, type: BT3)=(ID: B2, type: BT3,ID: B4, type: BT3), (ID: B2, type: BT3 : ID: B8, type: BT5)=(ID: B2, type: BT3,ID: B8, type: BT5), (ID: B4, type: BT3 : ID: B10, type: BT5)=(ID: B4, type: BT3,ID: B10, type: BT5), (ID: B8, type: BT5 : ES2)=(ID: B8, type: BT5,ES2), (ID: B8, type: BT5 : ID: B3, type: BT3)=(ID: B8, type: BT5,ID: B3, type: BT3), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5)])
+ubs19-1
+multi-cast tree: ([ES5, ID: B3, type: BT3, ID: B1, type: BT3, ID: B9, type: BT5, ES1, ID: B4, type: BT3, ES4, ES6], [(ES5 : ID: B3, type: BT3)=(ES5,ID: B3, type: BT3), (ID: B3, type: BT3 : ID: B1, type: BT3)=(ID: B3, type: BT3,ID: B1, type: BT3), (ID: B3, type: BT3 : ID: B9, type: BT5)=(ID: B3, type: BT3,ID: B9, type: BT5), (ID: B1, type: BT3 : ES1)=(ID: B1, type: BT3,ES1), (ID: B1, type: BT3 : ID: B4, type: BT3)=(ID: B1, type: BT3,ID: B4, type: BT3), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4), (ID: B4, type: BT3 : ES6)=(ID: B4, type: BT3,ES6)])
+ubs1-1
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B3, type: BT3, ES5], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B3, type: BT3)=(ID: B1, type: BT3,ID: B3, type: BT3), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5)])
+ubs2-0
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B3, type: BT3, ID: B4, type: BT3, ID: B8, type: BT5, ID: B10, type: BT5, ES5, ES6, ID: B6, type: BT3, ES7, ES10], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B3, type: BT3)=(ID: B1, type: BT3,ID: B3, type: BT3), (ID: B1, type: BT3 : ID: B4, type: BT3)=(ID: B1, type: BT3,ID: B4, type: BT3), (ID: B1, type: BT3 : ID: B8, type: BT5)=(ID: B1, type: BT3,ID: B8, type: BT5), (ID: B1, type: BT3 : ID: B10, type: BT5)=(ID: B1, type: BT3,ID: B10, type: BT5), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5), (ID: B4, type: BT3 : ES6)=(ID: B4, type: BT3,ES6), (ID: B8, type: BT5 : ID: B6, type: BT3)=(ID: B8, type: BT5,ID: B6, type: BT3), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B6, type: BT3 : ES10)=(ID: B6, type: BT3,ES10)])
+ubs19-0
+multi-cast tree: ([ES5, ID: B3, type: BT3, ID: B8, type: BT5, ID: B1, type: BT3, ID: B2, type: BT3, ID: B9, type: BT5, ES1, ID: B4, type: BT3, ES4, ES6], [(ES5 : ID: B3, type: BT3)=(ES5,ID: B3, type: BT3), (ID: B3, type: BT3 : ID: B8, type: BT5)=(ID: B3, type: BT3,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B1, type: BT3)=(ID: B8, type: BT5,ID: B1, type: BT3), (ID: B8, type: BT5 : ID: B2, type: BT3)=(ID: B8, type: BT5,ID: B2, type: BT3), (ID: B8, type: BT5 : ID: B9, type: BT5)=(ID: B8, type: BT5,ID: B9, type: BT5), (ID: B1, type: BT3 : ES1)=(ID: B1, type: BT3,ES1), (ID: B2, type: BT3 : ID: B4, type: BT3)=(ID: B2, type: BT3,ID: B4, type: BT3), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4), (ID: B4, type: BT3 : ES6)=(ID: B4, type: BT3,ES6)])
+ubs1-0
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B8, type: BT5, ID: B3, type: BT3, ES5], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B8, type: BT5)=(ID: B1, type: BT3,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B3, type: BT3)=(ID: B8, type: BT5,ID: B3, type: BT3), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5)])
+ubs18-0
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B8, type: BT5, ID: B10, type: BT5, ES2, ES7], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B8, type: BT5)=(ID: B1, type: BT3,ID: B8, type: BT5), (ID: B1, type: BT3 : ID: B10, type: BT5)=(ID: B1, type: BT3,ID: B10, type: BT5), (ID: B8, type: BT5 : ES2)=(ID: B8, type: BT5,ES2), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7)])
+ubs4-0
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B8, type: BT5, ID: B5, type: BT3, ES9], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B8, type: BT5)=(ID: B1, type: BT3,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B5, type: BT3)=(ID: B8, type: BT5,ID: B5, type: BT3), (ID: B5, type: BT3 : ES9)=(ID: B5, type: BT3,ES9)])
+ubs16-1
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B3, type: BT3, ID: B8, type: BT5, ID: B10, type: BT5, ES5, ID: B5, type: BT3, ES7, ES9], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B3, type: BT3)=(ID: B1, type: BT3,ID: B3, type: BT3), (ID: B1, type: BT3 : ID: B8, type: BT5)=(ID: B1, type: BT3,ID: B8, type: BT5), (ID: B1, type: BT3 : ID: B10, type: BT5)=(ID: B1, type: BT3,ID: B10, type: BT5), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5), (ID: B8, type: BT5 : ID: B5, type: BT3)=(ID: B8, type: BT5,ID: B5, type: BT3), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B5, type: BT3 : ES9)=(ID: B5, type: BT3,ES9)])
+ubs17-0
+multi-cast tree: ([ES10, ID: B6, type: BT3, ID: B8, type: BT5, ID: B1, type: BT3, ES1], [(ES10 : ID: B6, type: BT3)=(ES10,ID: B6, type: BT3), (ID: B6, type: BT3 : ID: B8, type: BT5)=(ID: B6, type: BT3,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B1, type: BT3)=(ID: B8, type: BT5,ID: B1, type: BT3), (ID: B1, type: BT3 : ES1)=(ID: B1, type: BT3,ES1)])
+ubs3-0
+multi-cast tree: ([ES4, ID: B9, type: BT5, ID: B3, type: BT3, ID: B6, type: BT3, ES5, ES10], [(ES4 : ID: B9, type: BT5)=(ES4,ID: B9, type: BT5), (ID: B9, type: BT5 : ID: B3, type: BT3)=(ID: B9, type: BT5,ID: B3, type: BT3), (ID: B9, type: BT5 : ID: B6, type: BT3)=(ID: B9, type: BT5,ID: B6, type: BT3), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5), (ID: B6, type: BT3 : ES10)=(ID: B6, type: BT3,ES10)])
+ubs15-1
+multi-cast tree: ([ES6, ID: B4, type: BT3, ID: B1, type: BT3, ID: B10, type: BT5, ES1, ES7], [(ES6 : ID: B4, type: BT3)=(ES6,ID: B4, type: BT3), (ID: B4, type: BT3 : ID: B1, type: BT3)=(ID: B4, type: BT3,ID: B1, type: BT3), (ID: B4, type: BT3 : ID: B10, type: BT5)=(ID: B4, type: BT3,ID: B10, type: BT5), (ID: B1, type: BT3 : ES1)=(ID: B1, type: BT3,ES1), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7)])
+ubs16-0
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B4, type: BT3, ID: B2, type: BT3, ID: B10, type: BT5, ID: B8, type: BT5, ES7, ID: B5, type: BT3, ID: B3, type: BT3, ES9, ES5], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B4, type: BT3)=(ID: B1, type: BT3,ID: B4, type: BT3), (ID: B4, type: BT3 : ID: B2, type: BT3)=(ID: B4, type: BT3,ID: B2, type: BT3), (ID: B4, type: BT3 : ID: B10, type: BT5)=(ID: B4, type: BT3,ID: B10, type: BT5), (ID: B2, type: BT3 : ID: B8, type: BT5)=(ID: B2, type: BT3,ID: B8, type: BT5), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B10, type: BT5 : ID: B5, type: BT3)=(ID: B10, type: BT5,ID: B5, type: BT3), (ID: B8, type: BT5 : ID: B3, type: BT3)=(ID: B8, type: BT5,ID: B3, type: BT3), (ID: B5, type: BT3 : ES9)=(ID: B5, type: BT3,ES9), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5)])
+ubs5-1
+multi-cast tree: ([ES2, ID: B8, type: BT5, ID: B6, type: BT3, ES10], [(ES2 : ID: B8, type: BT5)=(ES2,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B6, type: BT3)=(ID: B8, type: BT5,ID: B6, type: BT3), (ID: B6, type: BT3 : ES10)=(ID: B6, type: BT3,ES10)])
+ubs6-0
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B8, type: BT5, ID: B10, type: BT5, ID: B2, type: BT3, ID: B9, type: BT5, ES7, ES3, ES4], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B8, type: BT5)=(ID: B1, type: BT3,ID: B8, type: BT5), (ID: B1, type: BT3 : ID: B10, type: BT5)=(ID: B1, type: BT3,ID: B10, type: BT5), (ID: B8, type: BT5 : ID: B2, type: BT3)=(ID: B8, type: BT5,ID: B2, type: BT3), (ID: B8, type: BT5 : ID: B9, type: BT5)=(ID: B8, type: BT5,ID: B9, type: BT5), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B2, type: BT3 : ES3)=(ID: B2, type: BT3,ES3), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4)])
+ubs14-1
+multi-cast tree: ([ES6, ID: B4, type: BT3, ID: B10, type: BT5, ES7, ID: B9, type: BT5, ES4], [(ES6 : ID: B4, type: BT3)=(ES6,ID: B4, type: BT3), (ID: B4, type: BT3 : ID: B10, type: BT5)=(ID: B4, type: BT3,ID: B10, type: BT5), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B10, type: BT5 : ID: B9, type: BT5)=(ID: B10, type: BT5,ID: B9, type: BT5), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4)])
+ubs15-0
+multi-cast tree: ([ES6, ID: B4, type: BT3, ID: B2, type: BT3, ID: B7, type: BT4, ID: B8, type: BT5, ID: B10, type: BT5, ID: B1, type: BT3, ES7, ES1], [(ES6 : ID: B4, type: BT3)=(ES6,ID: B4, type: BT3), (ID: B4, type: BT3 : ID: B2, type: BT3)=(ID: B4, type: BT3,ID: B2, type: BT3), (ID: B4, type: BT3 : ID: B7, type: BT4)=(ID: B4, type: BT3,ID: B7, type: BT4), (ID: B2, type: BT3 : ID: B8, type: BT5)=(ID: B2, type: BT3,ID: B8, type: BT5), (ID: B7, type: BT4 : ID: B10, type: BT5)=(ID: B7, type: BT4,ID: B10, type: BT5), (ID: B8, type: BT5 : ID: B1, type: BT3)=(ID: B8, type: BT5,ID: B1, type: BT3), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B1, type: BT3 : ES1)=(ID: B1, type: BT3,ES1)])
+ubs4-1
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B3, type: BT3, ID: B5, type: BT3, ES9], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B3, type: BT3)=(ID: B1, type: BT3,ID: B3, type: BT3), (ID: B3, type: BT3 : ID: B5, type: BT3)=(ID: B3, type: BT3,ID: B5, type: BT3), (ID: B5, type: BT3 : ES9)=(ID: B5, type: BT3,ES9)])
+ubs5-0
+multi-cast tree: ([ES2, ID: B8, type: BT5, ID: B2, type: BT3, ID: B6, type: BT3, ES10], [(ES2 : ID: B8, type: BT5)=(ES2,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B2, type: BT3)=(ID: B8, type: BT5,ID: B2, type: BT3), (ID: B2, type: BT3 : ID: B6, type: BT3)=(ID: B2, type: BT3,ID: B6, type: BT3), (ID: B6, type: BT3 : ES10)=(ID: B6, type: BT3,ES10)])
+ubs14-0
+multi-cast tree: ([ES6, ID: B4, type: BT3, ID: B1, type: BT3, ID: B7, type: BT4, ID: B10, type: BT5, ID: B9, type: BT5, ES7, ES4], [(ES6 : ID: B4, type: BT3)=(ES6,ID: B4, type: BT3), (ID: B4, type: BT3 : ID: B1, type: BT3)=(ID: B4, type: BT3,ID: B1, type: BT3), (ID: B4, type: BT3 : ID: B7, type: BT4)=(ID: B4, type: BT3,ID: B7, type: BT4), (ID: B1, type: BT3 : ID: B10, type: BT5)=(ID: B1, type: BT3,ID: B10, type: BT5), (ID: B7, type: BT4 : ID: B9, type: BT5)=(ID: B7, type: BT4,ID: B9, type: BT5), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4)])
+ubs8-0
+multi-cast tree: ([ES6, ID: B4, type: BT3, ID: B7, type: BT4, ID: B10, type: BT5, ES8, ES7], [(ES6 : ID: B4, type: BT3)=(ES6,ID: B4, type: BT3), (ID: B4, type: BT3 : ID: B7, type: BT4)=(ID: B4, type: BT3,ID: B7, type: BT4), (ID: B4, type: BT3 : ID: B10, type: BT5)=(ID: B4, type: BT3,ID: B10, type: BT5), (ID: B7, type: BT4 : ES8)=(ID: B7, type: BT4,ES8), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7)])
+ubs12-1
+multi-cast tree: ([ES5, ID: B3, type: BT3, ID: B1, type: BT3, ID: B5, type: BT3, ID: B9, type: BT5, ES1, ID: B4, type: BT3, ES9, ES4, ES6], [(ES5 : ID: B3, type: BT3)=(ES5,ID: B3, type: BT3), (ID: B3, type: BT3 : ID: B1, type: BT3)=(ID: B3, type: BT3,ID: B1, type: BT3), (ID: B3, type: BT3 : ID: B5, type: BT3)=(ID: B3, type: BT3,ID: B5, type: BT3), (ID: B3, type: BT3 : ID: B9, type: BT5)=(ID: B3, type: BT3,ID: B9, type: BT5), (ID: B1, type: BT3 : ES1)=(ID: B1, type: BT3,ES1), (ID: B1, type: BT3 : ID: B4, type: BT3)=(ID: B1, type: BT3,ID: B4, type: BT3), (ID: B5, type: BT3 : ES9)=(ID: B5, type: BT3,ES9), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4), (ID: B4, type: BT3 : ES6)=(ID: B4, type: BT3,ES6)])
+ubs13-0
+multi-cast tree: ([ES3, ID: B2, type: BT3, ID: B4, type: BT3, ID: B8, type: BT5, ES6, ID: B3, type: BT3, ES5], [(ES3 : ID: B2, type: BT3)=(ES3,ID: B2, type: BT3), (ID: B2, type: BT3 : ID: B4, type: BT3)=(ID: B2, type: BT3,ID: B4, type: BT3), (ID: B2, type: BT3 : ID: B8, type: BT5)=(ID: B2, type: BT3,ID: B8, type: BT5), (ID: B4, type: BT3 : ES6)=(ID: B4, type: BT3,ES6), (ID: B8, type: BT5 : ID: B3, type: BT3)=(ID: B8, type: BT5,ID: B3, type: BT3), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5)])
+ubs7-0
+multi-cast tree: ([ES1, ID: B1, type: BT3, ID: B3, type: BT3, ID: B4, type: BT3, ID: B8, type: BT5, ES5, ID: B7, type: BT4, ES2, ID: B9, type: BT5, ES8, ES4], [(ES1 : ID: B1, type: BT3)=(ES1,ID: B1, type: BT3), (ID: B1, type: BT3 : ID: B3, type: BT3)=(ID: B1, type: BT3,ID: B3, type: BT3), (ID: B1, type: BT3 : ID: B4, type: BT3)=(ID: B1, type: BT3,ID: B4, type: BT3), (ID: B1, type: BT3 : ID: B8, type: BT5)=(ID: B1, type: BT3,ID: B8, type: BT5), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5), (ID: B4, type: BT3 : ID: B7, type: BT4)=(ID: B4, type: BT3,ID: B7, type: BT4), (ID: B8, type: BT5 : ES2)=(ID: B8, type: BT5,ES2), (ID: B8, type: BT5 : ID: B9, type: BT5)=(ID: B8, type: BT5,ID: B9, type: BT5), (ID: B7, type: BT4 : ES8)=(ID: B7, type: BT4,ES8), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4)])
+ubs11-1
+multi-cast tree: ([ES2, ID: B8, type: BT5, ID: B6, type: BT3, ID: B9, type: BT5, ES10, ES4], [(ES2 : ID: B8, type: BT5)=(ES2,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B6, type: BT3)=(ID: B8, type: BT5,ID: B6, type: BT3), (ID: B8, type: BT5 : ID: B9, type: BT5)=(ID: B8, type: BT5,ID: B9, type: BT5), (ID: B6, type: BT3 : ES10)=(ID: B6, type: BT3,ES10), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4)])
+ubs12-0
+multi-cast tree: ([ES5, ID: B3, type: BT3, ID: B8, type: BT5, ID: B1, type: BT3, ID: B2, type: BT3, ID: B5, type: BT3, ID: B9, type: BT5, ES1, ID: B4, type: BT3, ES9, ES4, ES6], [(ES5 : ID: B3, type: BT3)=(ES5,ID: B3, type: BT3), (ID: B3, type: BT3 : ID: B8, type: BT5)=(ID: B3, type: BT3,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B1, type: BT3)=(ID: B8, type: BT5,ID: B1, type: BT3), (ID: B8, type: BT5 : ID: B2, type: BT3)=(ID: B8, type: BT5,ID: B2, type: BT3), (ID: B8, type: BT5 : ID: B5, type: BT3)=(ID: B8, type: BT5,ID: B5, type: BT3), (ID: B8, type: BT5 : ID: B9, type: BT5)=(ID: B8, type: BT5,ID: B9, type: BT5), (ID: B1, type: BT3 : ES1)=(ID: B1, type: BT3,ES1), (ID: B2, type: BT3 : ID: B4, type: BT3)=(ID: B2, type: BT3,ID: B4, type: BT3), (ID: B5, type: BT3 : ES9)=(ID: B5, type: BT3,ES9), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4), (ID: B4, type: BT3 : ES6)=(ID: B4, type: BT3,ES6)])
+ubs10-1
+multi-cast tree: ([ES10, ID: B6, type: BT3, ID: B8, type: BT5, ID: B3, type: BT3, ES5], [(ES10 : ID: B6, type: BT3)=(ES10,ID: B6, type: BT3), (ID: B6, type: BT3 : ID: B8, type: BT5)=(ID: B6, type: BT3,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B3, type: BT3)=(ID: B8, type: BT5,ID: B3, type: BT3), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5)])
+ubs11-0
+multi-cast tree: ([ES2, ID: B8, type: BT5, ID: B2, type: BT3, ID: B3, type: BT3, ID: B6, type: BT3, ID: B9, type: BT5, ES10, ES4], [(ES2 : ID: B8, type: BT5)=(ES2,ID: B8, type: BT5), (ID: B8, type: BT5 : ID: B2, type: BT3)=(ID: B8, type: BT5,ID: B2, type: BT3), (ID: B8, type: BT5 : ID: B3, type: BT3)=(ID: B8, type: BT5,ID: B3, type: BT3), (ID: B2, type: BT3 : ID: B6, type: BT3)=(ID: B2, type: BT3,ID: B6, type: BT3), (ID: B3, type: BT3 : ID: B9, type: BT5)=(ID: B3, type: BT3,ID: B9, type: BT5), (ID: B6, type: BT3 : ES10)=(ID: B6, type: BT3,ES10), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4)])
+ubs8-1
+multi-cast tree: ([ES6, ID: B4, type: BT3, ID: B1, type: BT3, ID: B2, type: BT3, ID: B10, type: BT5, ID: B7, type: BT4, ES7, ES8], [(ES6 : ID: B4, type: BT3)=(ES6,ID: B4, type: BT3), (ID: B4, type: BT3 : ID: B1, type: BT3)=(ID: B4, type: BT3,ID: B1, type: BT3), (ID: B4, type: BT3 : ID: B2, type: BT3)=(ID: B4, type: BT3,ID: B2, type: BT3), (ID: B1, type: BT3 : ID: B10, type: BT5)=(ID: B1, type: BT3,ID: B10, type: BT5), (ID: B2, type: BT3 : ID: B7, type: BT4)=(ID: B2, type: BT3,ID: B7, type: BT4), (ID: B10, type: BT5 : ES7)=(ID: B10, type: BT5,ES7), (ID: B7, type: BT4 : ES8)=(ID: B7, type: BT4,ES8)])
+ubs9-0
+multi-cast tree: ([ES8, ID: B7, type: BT4, ID: B4, type: BT3, ID: B5, type: BT3, ID: B9, type: BT5, ID: B1, type: BT3, ES9, ES4, ID: B3, type: BT3, ES1, ES5], [(ES8 : ID: B7, type: BT4)=(ES8,ID: B7, type: BT4), (ID: B7, type: BT4 : ID: B4, type: BT3)=(ID: B7, type: BT4,ID: B4, type: BT3), (ID: B7, type: BT4 : ID: B5, type: BT3)=(ID: B7, type: BT4,ID: B5, type: BT3), (ID: B7, type: BT4 : ID: B9, type: BT5)=(ID: B7, type: BT4,ID: B9, type: BT5), (ID: B4, type: BT3 : ID: B1, type: BT3)=(ID: B4, type: BT3,ID: B1, type: BT3), (ID: B5, type: BT3 : ES9)=(ID: B5, type: BT3,ES9), (ID: B9, type: BT5 : ES4)=(ID: B9, type: BT5,ES4), (ID: B9, type: BT5 : ID: B3, type: BT3)=(ID: B9, type: BT5,ID: B3, type: BT3), (ID: B1, type: BT3 : ES1)=(ID: B1, type: BT3,ES1), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5)])
+ubs10-0
+multi-cast tree: ([ES10, ID: B6, type: BT3, ID: B9, type: BT5, ID: B3, type: BT3, ES5], [(ES10 : ID: B6, type: BT3)=(ES10,ID: B6, type: BT3), (ID: B6, type: BT3 : ID: B9, type: BT5)=(ID: B6, type: BT3,ID: B9, type: BT5), (ID: B9, type: BT5 : ID: B3, type: BT3)=(ID: B9, type: BT5,ID: B3, type: BT3), (ID: B3, type: BT3 : ES5)=(ID: B3, type: BT3,ES5)])
+total cost: 151.0
+ubs20-0: -816.0:
+ES3-B2: 16.0; B2-B8: 43.0; B8-ES2: 26.0; 
+ES3-B2: 16.0; B2-B8: 43.0; B8-B3: 35.0; B3-ES5: 73.0; 
+ES3-B2: 16.0; B2-B4: 38.0; B4-B10: 35.0; B10-ES7: 46.0; 
+
+ubs19-1: -1521.0:
+ES5-B3: 22.0; B3-B9: 28.0; B9-ES4: 65.0; 
+ES5-B3: 22.0; B3-B1: 22.0; B1-ES1: 60.0; 
+ES5-B3: 22.0; B3-B1: 22.0; B1-B4: 50.0; B4-ES6: 37.0; 
+
+ubs1-1: -508.0:
+ES1-B1: 52.0; B1-B3: 41.0; B3-ES5: 73.0; 
+
+ubs2-0: -741.0:
+ES1-B1: 52.0; B1-B4: 50.0; B4-ES6: 37.0; 
+ES1-B1: 52.0; B1-B3: 41.0; B3-ES5: 73.0; 
+ES1-B1: 52.0; B1-B10: 30.0; B10-ES7: 46.0; 
+ES1-B1: 52.0; B1-B8: 52.0; B8-B6: 22.0; B6-ES10: 36.0; 
+
+ubs19-0: -1488.0:
+ES5-B3: 22.0; B3-B8: 22.0; B8-B1: 45.0; B1-ES1: 60.0; 
+ES5-B3: 22.0; B3-B8: 22.0; B8-B9: 45.0; B9-ES4: 65.0; 
+ES5-B3: 22.0; B3-B8: 22.0; B8-B2: 45.0; B2-B4: 38.0; B4-ES6: 37.0; 
+
+ubs1-0: -462.0:
+ES1-B1: 52.0; B1-B8: 52.0; B8-B3: 35.0; B3-ES5: 73.0; 
+
+ubs18-0: -273.0:
+ES1-B1: 52.0; B1-B8: 52.0; B8-ES2: 26.0; 
+ES1-B1: 52.0; B1-B10: 30.0; B10-ES7: 46.0; 
+
+ubs4-0: -258.0:
+ES1-B1: 52.0; B1-B8: 52.0; B8-B5: 35.0; B5-ES9: 50.0; 
+
+ubs16-1: -3606.0:
+ES1-B1: 52.0; B1-B3: 41.0; B3-ES5: 73.0; 
+ES1-B1: 52.0; B1-B10: 30.0; B10-ES7: 46.0; 
+ES1-B1: 52.0; B1-B8: 52.0; B8-B5: 35.0; B5-ES9: 50.0; 
+
+ubs17-0: -184.0:
+ES10-B6: 9.0; B6-B8: 9.0; B8-B1: 45.0; B1-ES1: 60.0; 
+
+ubs3-0: -2049.0:
+ES4-B9: 14.0; B9-B6: 14.0; B6-ES10: 36.0; 
+ES4-B9: 14.0; B9-B3: 30.0; B3-ES5: 73.0; 
+
+ubs15-1: -2275.0:
+ES6-B4: 21.0; B4-B10: 35.0; B10-ES7: 46.0; 
+ES6-B4: 21.0; B4-B1: 36.0; B1-ES1: 60.0; 
+
+ubs16-0: -3514.0:
+ES1-B1: 52.0; B1-B4: 50.0; B4-B10: 35.0; B10-ES7: 46.0; 
+ES1-B1: 52.0; B1-B4: 50.0; B4-B10: 35.0; B10-B5: 12.0; B5-ES9: 50.0; 
+ES1-B1: 52.0; B1-B4: 50.0; B4-B2: 28.0; B2-B8: 43.0; B8-B3: 35.0; B3-ES5: 73.0; 
+
+ubs5-1: -953.0:
+ES2-B8: 21.0; B8-B6: 22.0; B6-ES10: 36.0; 
+
+ubs6-0: 101.0:
+ES1-B1: 52.0; B1-B10: 30.0; B10-ES7: 46.0; 
+ES1-B1: 52.0; B1-B8: 52.0; B8-B9: 45.0; B9-ES4: 65.0; 
+ES1-B1: 52.0; B1-B8: 52.0; B8-B2: 45.0; B2-ES3: 2.0; 
+
+ubs14-1: -230.0:
+ES6-B4: 21.0; B4-B10: 35.0; B10-ES7: 46.0; 
+ES6-B4: 21.0; B4-B10: 35.0; B10-B9: 5.0; B9-ES4: 65.0; 
+
+ubs15-0: -2195.0:
+ES6-B4: 21.0; B4-B7: 36.0; B7-B10: 15.0; B10-ES7: 46.0; 
+ES6-B4: 21.0; B4-B2: 28.0; B2-B8: 43.0; B8-B1: 45.0; B1-ES1: 60.0; 
+
+ubs4-1: -281.0:
+ES1-B1: 52.0; B1-B3: 41.0; B3-B5: 23.0; B5-ES9: 50.0; 
+
+ubs5-0: -909.0:
+ES2-B8: 21.0; B8-B2: 45.0; B2-B6: 21.0; B6-ES10: 36.0; 
+
+ubs14-0: -214.0:
+ES6-B4: 21.0; B4-B7: 36.0; B7-B9: 20.0; B9-ES4: 65.0; 
+ES6-B4: 21.0; B4-B1: 36.0; B1-B10: 30.0; B10-ES7: 46.0; 
+
+ubs8-0: -272.0:
+ES6-B4: 21.0; B4-B10: 35.0; B10-ES7: 46.0; 
+ES6-B4: 21.0; B4-B7: 36.0; B7-ES8: 16.0; 
+
+ubs12-1: -1201.0:
+ES5-B3: 22.0; B3-B1: 22.0; B1-ES1: 60.0; 
+ES5-B3: 22.0; B3-B9: 28.0; B9-ES4: 65.0; 
+ES5-B3: 22.0; B3-B5: 23.0; B5-ES9: 50.0; 
+ES5-B3: 22.0; B3-B1: 22.0; B1-B4: 50.0; B4-ES6: 37.0; 
+
+ubs13-0: -766.0:
+ES3-B2: 16.0; B2-B4: 38.0; B4-ES6: 37.0; 
+ES3-B2: 16.0; B2-B8: 43.0; B8-B3: 35.0; B3-ES5: 73.0; 
+
+ubs7-0: -879.0:
+ES1-B1: 52.0; B1-B3: 41.0; B3-ES5: 73.0; 
+ES1-B1: 52.0; B1-B8: 52.0; B8-ES2: 26.0; 
+ES1-B1: 52.0; B1-B8: 52.0; B8-B9: 45.0; B9-ES4: 65.0; 
+ES1-B1: 52.0; B1-B4: 50.0; B4-B7: 36.0; B7-ES8: 16.0; 
+
+ubs11-1: 16.0:
+ES2-B8: 21.0; B8-B9: 45.0; B9-ES4: 65.0; 
+ES2-B8: 21.0; B8-B6: 22.0; B6-ES10: 36.0; 
+
+ubs12-0: -1168.0:
+ES5-B3: 22.0; B3-B8: 22.0; B8-B9: 45.0; B9-ES4: 65.0; 
+ES5-B3: 22.0; B3-B8: 22.0; B8-B5: 35.0; B5-ES9: 50.0; 
+ES5-B3: 22.0; B3-B8: 22.0; B8-B1: 45.0; B1-ES1: 60.0; 
+ES5-B3: 22.0; B3-B8: 22.0; B8-B2: 45.0; B2-B4: 38.0; B4-ES6: 37.0; 
+
+ubs10-1: -2770.0:
+ES10-B6: 9.0; B6-B8: 9.0; B8-B3: 35.0; B3-ES5: 73.0; 
+
+ubs11-0: 34.0:
+ES2-B8: 21.0; B8-B3: 35.0; B3-B9: 28.0; B9-ES4: 65.0; 
+ES2-B8: 21.0; B8-B2: 45.0; B2-B6: 21.0; B6-ES10: 36.0; 
+
+ubs8-1: -241.0:
+ES6-B4: 21.0; B4-B1: 36.0; B1-B10: 30.0; B10-ES7: 46.0; 
+ES6-B4: 21.0; B4-B2: 28.0; B2-B7: 1.0; B7-ES8: 16.0; 
+
+ubs9-0: -864.0:
+ES8-B7: 15.0; B7-B9: 20.0; B9-ES4: 65.0; 
+ES8-B7: 15.0; B7-B5: 15.0; B5-ES9: 50.0; 
+ES8-B7: 15.0; B7-B4: 15.0; B4-B1: 36.0; B1-ES1: 60.0; 
+ES8-B7: 15.0; B7-B9: 20.0; B9-B3: 30.0; B3-ES5: 73.0; 
+
+ubs10-0: -2783.0:
+ES10-B6: 9.0; B6-B9: 1.0; B9-B3: 30.0; B3-ES5: 73.0; 
+
+

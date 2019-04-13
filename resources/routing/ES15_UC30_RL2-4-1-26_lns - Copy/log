@@ -1,0 +1,55 @@
+start time: Mon Jul 17 19:26:47 CEST 2017
+Minimum topology cost: 0.0
+Maximum topology cost: 4750.0
+Minimum schedulability cost: -65158.0
+Maximum schedulability cost: 0.0
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 93
+time|avgTopo|maxTopo|avgSched|maxSched|noFeasible
+---
+Mon Jul 17 19:27:47 CEST 2017,391.0,392.0,-64321.0,-64321.0,2
+Mon Jul 17 19:28:47 CEST 2017,388.6666666666667,392.0,-64321.0,-64321.0,3
+start time: Mon Jul 17 19:28:58 CEST 2017
+Minimum topology cost: 0.0
+Maximum topology cost: 4750.0
+Minimum schedulability cost: -65158.0
+Maximum schedulability cost: 0.0
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 93
+time|avgTopo|maxTopo|avgSched|maxSched|noFeasible
+---
+Mon Jul 17 19:29:58 CEST 2017,379.0,382.0,-64277.0,-64277.0,2
+Mon Jul 17 19:30:58 CEST 2017,376.0,382.0,-64277.0,-64277.0,3
+start time: Mon Jul 17 19:31:11 CEST 2017
+Minimum topology cost: 0.0
+Maximum topology cost: 4750.0
+Minimum schedulability cost: -65158.0
+Maximum schedulability cost: 0.0
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 93
+time|avgTopo|maxTopo|avgSched|maxSched|noFeasible
+---
+Mon Jul 17 19:32:11 CEST 2017,356.0,362.0,-64293.0,-64293.0,3
+Mon Jul 17 19:33:11 CEST 2017,352.75,362.0,-64291.25,-64286.0,4
+start time: Mon Jul 17 19:33:21 CEST 2017
+Minimum topology cost: 0.0
+Maximum topology cost: 4750.0
+Minimum schedulability cost: -65158.0
+Maximum schedulability cost: 0.0
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 93
+time|avgTopo|maxTopo|avgSched|maxSched|noFeasible
+---
+Mon Jul 17 19:34:21 CEST 2017,NaN,0.0,NaN,-65158.0,0
+Mon Jul 17 19:35:21 CEST 2017,NaN,0.0,NaN,-65158.0,0
+Mon Jul 17 19:36:21 CEST 2017,NaN,0.0,NaN,-65158.0,0
+Mon Jul 17 19:37:21 CEST 2017,NaN,0.0,NaN,-65158.0,0
+Mon Jul 17 19:38:21 CEST 2017,NaN,0.0,NaN,-65158.0,0
+Mon Jul 17 19:39:21 CEST 2017,NaN,0.0,NaN,-65158.0,0
+Mon Jul 17 19:40:21 CEST 2017,NaN,0.0,NaN,-65158.0,0
+Mon Jul 17 19:41:21 CEST 2017,NaN,0.0,NaN,-65158.0,0
+Mon Jul 17 19:42:21 CEST 2017,NaN,0.0,NaN,-65158.0,0

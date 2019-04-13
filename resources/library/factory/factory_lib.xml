@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The components library -->
+<Library>
+
+<MinimumCostTopology>58</MinimumCostTopology>
+
+ <EndSystem id="ES1" type="wired" posX="1" posY="1" cellId = "1"/>
+ <EndSystem id="ES2" type="wired" posX="200" posY="1" cellId = "1" />
+ <EndSystem id="ES3" type="wired" posX="1" posY="100" cellId = "1"/>
+ <EndSystem id="ES4" type="wired" posX="200" posY="100" cellId = "1"/>
+ <EndSystem id="WES1" type="wireless" posX="1" posY="1" cellId = "2"/>
+ <EndSystem id="WES2" type="wireless" posX="100" posY="1" cellId = "2"/>
+
+<BridgeType id="BT1">
+<NOPorts>4</NOPorts>
+<Cost>4</Cost>
+</BridgeType>
+
+<BridgeType id="BT2">
+<NOPorts>3</NOPorts>
+<Cost>8</Cost>
+</BridgeType>
+
+<BridgeType id="BT3">
+<NOPorts>5</NOPorts>
+<Cost>10</Cost>
+</BridgeType>
+
+
+<AceessPointType id="AP1">
+<NOPorts>2</NOPorts>
+<Cost>22</Cost>
+<noFreq>24</noFreq>
+<range>50</range>
+</AceessPointType>
+
+<AceessPointType id="AP1">
+<NOPorts>2</NOPorts>
+<Cost>30</Cost>
+<noFreq>24</noFreq>
+<range>100</range>
+</AceessPointType>
+
+
+</Library>

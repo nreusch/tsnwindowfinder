@@ -1,0 +1,10 @@
+start time: Mon Mar 27 17:33:23 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 6
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+---
+Time for finding the optimum: 25
+Number of branches: 0
+Number of failures: 1

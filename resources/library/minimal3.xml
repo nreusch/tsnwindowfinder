@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The components library -->
+<Library>
+	<EndSystem id="ES1"/>
+
+	<EndSystem id="ES2"/>
+	
+	<EndSystem id="ES3"/>
+
+	<BridgeType id="BT1">
+<NOPorts>2</NOPorts>
+<Cost>12.3</Cost>
+</BridgeType>
+
+<BridgeType id="BT2">
+<NOPorts>6</NOPorts>
+<Cost>24.6</Cost>
+</BridgeType>
+
+<EndSystem_To_BridgeTypes>
+<EndSystem>ES1</EndSystem>
+<EndSystem>ES2</EndSystem>
+<EndSystem>ES3</EndSystem> 
+<BridgeType>BT1</BridgeType>
+<BridgeType>BT2</BridgeType>
+</EndSystem_To_BridgeTypes>
+
+</Library>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CurrentBest = 985.29 @ K = 100, hops = 20 -->
+<Applications>
+	<UBSApplication name="UBS_1">
+		<Size>12</Size>
+<Deadline>30</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>12</Burstiness>
+<LeakRate>3</LeakRate>
+<RedundancyLevel>1</RedundancyLevel>
+		<Source name="ES4" />
+		<Destinations>
+			<Dest name="ES3" />
+			<Dest name="ES6" />
+			<Dest name="ES2" />
+		</Destinations>
+	</UBSApplication>
+
+</Applications>

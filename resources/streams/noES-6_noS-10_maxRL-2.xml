@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Applications>
+
+<UBSApplication name="ubs1">
+<Size>600</Size>
+<Deadline>6</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>600</Burstiness>
+<LeakRate>12</LeakRate>
+<RedundancyLevel>1</RedundancyLevel>
+<Source name="ES1"/>
+<Destinations>
+<Dest name="ES5"/>
+<Dest name="ES3"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs2">
+<Size>1500</Size>
+<Deadline>10</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>1500</Burstiness>
+<LeakRate>21</LeakRate>
+<RedundancyLevel>1</RedundancyLevel>
+<Source name="ES5"/>
+<Destinations>
+<Dest name="ES2"/>
+<Dest name="ES3"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs3">
+<Size>1000</Size>
+<Deadline>4</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>1000</Burstiness>
+<LeakRate>14</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+<Source name="ES1"/>
+<Destinations>
+<Dest name="ES5"/>
+<Dest name="ES6"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs4">
+<Size>600</Size>
+<Deadline>2</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>600</Burstiness>
+<LeakRate>15</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+<Source name="ES1"/>
+<Destinations>
+<Dest name="ES5"/>
+<Dest name="ES4"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs5">
+<Size>200</Size>
+<Deadline>6</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>200</Burstiness>
+<LeakRate>2</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+<Source name="ES5"/>
+<Destinations>
+<Dest name="ES2"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs6">
+<Size>1400</Size>
+<Deadline>8</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>1400</Burstiness>
+<LeakRate>17</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+<Source name="ES4"/>
+<Destinations>
+<Dest name="ES3"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs7">
+<Size>1200</Size>
+<Deadline>9</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>1200</Burstiness>
+<LeakRate>30</LeakRate>
+<RedundancyLevel>1</RedundancyLevel>
+<Source name="ES2"/>
+<Destinations>
+<Dest name="ES6"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs8">
+<Size>1200</Size>
+<Deadline>10</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>1200</Burstiness>
+<LeakRate>13</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+<Source name="ES4"/>
+<Destinations>
+<Dest name="ES1"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs9">
+<Size>700</Size>
+<Deadline>10</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>700</Burstiness>
+<LeakRate>23</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+<Source name="ES2"/>
+<Destinations>
+<Dest name="ES4"/>
+</Destinations>
+</UBSApplication>
+
+<UBSApplication name="ubs10">
+<Size>600</Size>
+<Deadline>2</Deadline>
+<UBSPattern>A</UBSPattern>
+<Burstiness>600</Burstiness>
+<LeakRate>20</LeakRate>
+<RedundancyLevel>2</RedundancyLevel>
+<Source name="ES6"/>
+<Destinations>
+<Dest name="ES3"/>
+<Dest name="ES1"/>
+</Destinations>
+</UBSApplication>
+
+</Applications>

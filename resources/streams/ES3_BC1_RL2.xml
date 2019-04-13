@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Applications><UBSApplication name="ubs1"><Size>800</Size><Deadline>1.702</Deadline><UBSPattern>A</UBSPattern><Burstiness>800</Burstiness><LeakRate>20</LeakRate><RedundancyLevel>2</RedundancyLevel><Source name="ES2"/><Destinations><Dest name="ES3"/><Dest name="ES1"/></Destinations></UBSApplication></Applications>

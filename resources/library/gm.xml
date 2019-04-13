@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The components library -->
+<Library>
+
+<MinimumCostTopology>58</MinimumCostTopology>
+
+ <EndSystem id="FRONT_CAM"/>
+ <EndSystem id="FRONT_RAD"/>
+ <EndSystem id="FRONT_SVCAM"/>
+ <EndSystem id="LEFT_FRONT_RAD"/>
+ <EndSystem id="RIGHT_FRONT_RAD"/>
+ <EndSystem id="LEFT_SVCAM"/>
+ <EndSystem id="RIGHT_SVCAM"/>
+ <EndSystem id="LEFT_REAR_RAD"/>
+ <EndSystem id="RIGHT_REAR_RAD"/>
+ <EndSystem id="REAR_CAM"/>
+ <EndSystem id="REAR_RAD"/>
+ <EndSystem id="REAR_SVCAM"/>
+ <EndSystem id="CTRL1"/>
+ <EndSystem id="CTRL2"/>
+ <EndSystem id="ECM"/>
+ <EndSystem id="EBCM"/>
+ <EndSystem id="EPS"/>
+ <EndSystem id="IMU1"/>
+ <EndSystem id="IMU2"/>
+ <EndSystem id="MAPLOC"/>
+
+<BridgeType id="BT1">
+<NOIntPorts>1</NOIntPorts>
+<NOPorts>2</NOPorts>
+<Cost>4</Cost>
+</BridgeType>
+
+<BridgeType id="BT2">
+<NOIntPorts>2</NOIntPorts>
+<NOPorts>3</NOPorts>
+<Cost>8</Cost>
+</BridgeType>
+
+<BridgeType id="BT3">
+<NOIntPorts>1</NOIntPorts>
+<NOPorts>4</NOPorts>
+<Cost>10</Cost>
+</BridgeType>
+
+<BridgeType id="BT4">
+<NOIntPorts>2</NOIntPorts>
+<NOPorts>5</NOPorts>
+<Cost>16</Cost>
+</BridgeType>
+
+<BridgeType id="BT5">
+<NOIntPorts>2</NOIntPorts>
+<NOPorts>6</NOPorts>
+<Cost>18</Cost>
+</BridgeType>
+
+<BridgeType id="BT6">
+<NOIntPorts>2</NOIntPorts>
+<NOPorts>8</NOPorts>
+<Cost>22</Cost>
+</BridgeType>
+
+<EndSystem_To_BridgeTypes>
+<EndSystem>FRONT_RAD</EndSystem>
+<EndSystem>LEFT_FRONT_RAD</EndSystem>
+<EndSystem>RIGHT_FRONT_RAD</EndSystem>
+<EndSystem>LEFT_REAR_RAD</EndSystem>
+<EndSystem>RIGHT_REAR_RAD</EndSystem>
+<EndSystem>REAR_RAD</EndSystem>
+<BridgeType>BT1</BridgeType>
+<BridgeType>BT2</BridgeType>
+</EndSystem_To_BridgeTypes>
+
+<EndSystem_To_BridgeTypes>
+<EndSystem>FRONT_CAM</EndSystem>
+<EndSystem>FRONT_SVCAM</EndSystem>
+<EndSystem>LEFT_SVCAM</EndSystem>
+<EndSystem>RIGHT_SVCAM</EndSystem>
+<EndSystem>REAR_CAM</EndSystem>
+<EndSystem>REAR_SVCAM</EndSystem>
+<EndSystem>IMU1</EndSystem>
+<EndSystem>IMU2</EndSystem>
+<BridgeType>BT1</BridgeType>
+</EndSystem_To_BridgeTypes>
+
+</Library>

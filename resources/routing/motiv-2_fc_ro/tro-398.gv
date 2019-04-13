@@ -1,0 +1,63 @@
+digraph network {
+  ES1 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES1 </TD> <TD>[BT2, BT4, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="red">2_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="blue">6_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="purple">7_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="green">7_1</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES2 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES2 </TD> <TD>[BT2, BT4, BT1]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="hotpink">3_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="indianred">3_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="indigo">5_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="purple">7_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="green">7_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="khaki3">0_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="magenta1">0_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="maroon1">1_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="mediumblue">4_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES3 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES3 </TD> <TD>[BT3, BT2]</TD> </TR><TR><TD>R</TD><TD BGCOLOR="red">2_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  ES4 [ label=<<TABLE  BORDER="0"><TR> <TD ALIGN="CENTER" BORDER="0"> ES4 </TD> <TD>[BT3, BT2]</TD> </TR><TR><TD>S</TD><TD BGCOLOR="khaki3">0_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="magenta1">0_1</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="maroon1">1_0</TD></TR>
+<TR><TD>S</TD><TD BGCOLOR="mediumblue">4_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="hotpink">3_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indianred">3_1</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="indigo">5_0</TD></TR>
+<TR><TD>R</TD><TD BGCOLOR="blue">6_0</TD></TR>
+</TABLE>> shape="box" style="rounded" ];
+  B1 [ label="B1: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B2 [ label="B2: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B3 [ label="B3: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  B4 [ label="B4: BT2 [Int:2, Ext:3]" shape="box" style="rounded" ];
+  ES1 -> B1 [ style="dashed" arrowhead="none" ];
+  ES2 -> B2 [ style="dashed" arrowhead="none" ];
+  ES3 -> B3 [ style="dashed" arrowhead="none" ];
+  ES4 -> B4 [ style="dashed" arrowhead="none" ];
+  B1 -> B2 [ arrowhead="none" ];
+  B1 -> B3 [ arrowhead="none" ];
+  B1 -> B4 [ arrowhead="none" ];
+  B2 -> B3 [ arrowhead="none" ];
+  B2 -> B4 [ arrowhead="none" ];
+  B3 -> B4 [ arrowhead="none" ];
+  B4 -> B3 [ label="0_0" color="khaki3" style="bold" ];
+  B3 -> B2 [ label="0_0" color="khaki3" style="bold" ];
+  B4 -> B1 [ label="0_1" color="magenta1" style="bold" ];
+  B1 -> B2 [ label="0_1" color="magenta1" style="bold" ];
+  B4 -> B3 [ label="1_0" color="maroon1" style="bold" ];
+  B3 -> B1 [ label="1_0" color="maroon1" style="bold" ];
+  B1 -> B2 [ label="1_0" color="maroon1" style="bold" ];
+  B1 -> B2 [ label="2_0" color="red" style="bold" ];
+  B2 -> B3 [ label="2_0" color="red" style="bold" ];
+  B2 -> B4 [ label="3_0" color="hotpink" style="bold" ];
+  B2 -> B3 [ label="3_1" color="indianred" style="bold" ];
+  B3 -> B1 [ label="3_1" color="indianred" style="bold" ];
+  B1 -> B4 [ label="3_1" color="indianred" style="bold" ];
+  B4 -> B3 [ label="4_0" color="mediumblue" style="bold" ];
+  B3 -> B2 [ label="4_0" color="mediumblue" style="bold" ];
+  B2 -> B4 [ label="5_0" color="indigo" style="bold" ];
+  B1 -> B3 [ label="6_0" color="blue" style="bold" ];
+  B3 -> B4 [ label="6_0" color="blue" style="bold" ];
+  B2 -> B4 [ label="7_0" color="purple" style="bold" ];
+  B4 -> B1 [ label="7_0" color="purple" style="bold" ];
+  B2 -> B1 [ label="7_1" color="green" style="bold" ];
+}

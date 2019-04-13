@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Applications>
+
+<Application name="S1"><Size>800</Size><Deadline>2</Deadline><RedundancyLevel>1</RedundancyLevel><Source name="ES4" />
+<Destinations> 
+<Dest name="WES1"/>
+</Destinations>
+</Application>
+
+
+<Application name="S2"><Size>800</Size><Deadline>2</Deadline><RedundancyLevel>2</RedundancyLevel><Source name="ES1" />
+<Destinations> 
+<Dest name="ES2"/>
+<Dest name="ES4" />
+</Destinations>
+</Application>
+
+<Application name="S3"><Size>800</Size><Deadline>2</Deadline><RedundancyLevel>2</RedundancyLevel><Source name="WES2" />
+<Destinations> 
+<Dest name="ES1"/>
+<Dest name="ES3" />
+</Destinations>
+</Application>
+
+
+
+
+</Applications>

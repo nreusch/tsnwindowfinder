@@ -1,0 +1,12 @@
+start time: Mon Jul 03 11:11:21 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 4
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+motiv-2,tro,CBU_AMIN,78,-75403.0,9.971369342629918,1,160,Mon Jul 03 11:11:21 CEST 2017
+---
+Time for finding the optimum: 231
+Time for finding the optimum__: 160
+Number of branches: 584
+Number of failures: 316

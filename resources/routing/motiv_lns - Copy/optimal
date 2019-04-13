@@ -1,0 +1,12 @@
+start time: Mon Jul 17 16:34:15 CEST 2017
+WP_topo: 20.0
+WP_sched: 80.0
+maxNoB: 4
+tc name|Srch. strategy|Opt. strategy|Cost topo|Cost sched|Cost total|No. feasible|Duration|Time
+---
+motiv,lns,CBU_AMIN,63,-33985.0,6.965627006952783,1,59,Mon Jul 17 16:34:15 CEST 2017*topology improvement*
+motiv,lns,CBU_AMIN,63,-33985.0,6.965627006952783,1,59,Mon Jul 17 16:34:15 CEST 2017
+motiv,lns,CBU_AMIN,57,-33985.0,5.94867785441041,2,212,Mon Jul 17 16:34:15 CEST 2017*topology improvement*
+motiv,lns,CBU_AMIN,57,-33985.0,5.94867785441041,2,212,Mon Jul 17 16:34:15 CEST 2017
+motiv,lns,CBU_AMIN,43,-33985.0,3.5757964984782062,3,48596,Mon Jul 17 16:35:03 CEST 2017*topology improvement*
+motiv,lns,CBU_AMIN,43,-33985.0,3.5757964984782062,3,48596,Mon Jul 17 16:35:03 CEST 2017

@@ -1,0 +1,77 @@
+A:
+0: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+1: 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 
+2: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 
+3: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+4: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 
+5: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
+6: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+7: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+8: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+9: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+10: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+11: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+12: 0 0 0 0 1 0 0 0 0 0 0 0 0 2 0 2 2 0 
+13: 0 1 0 0 0 0 0 0 0 0 0 0 2 0 2 0 2 2 
+14: 0 0 1 0 0 0 0 0 0 0 0 0 0 2 0 2 2 2 
+15: 0 0 0 0 0 1 0 0 0 0 0 0 2 0 2 0 2 2 
+16: 1 0 0 0 0 0 0 0 0 0 0 0 2 2 2 2 0 2 
+17: 0 0 0 1 0 0 0 0 0 0 0 0 0 2 2 2 2 0 
+BA:
+-1 -1 -1 -1 -1 -1 1 2 2 2 3 3 
+MTs:
+0: 18 13 14 3 18 18 18 18 18 18 18 18 18 17 17 18 18 3 18 
+1: 18 13 14 3 18 18 18 18 18 18 18 18 18 16 16 18 17 3 18 
+2: 0 18 14 17 12 18 18 18 18 18 18 18 13 16 13 18 0 13 18 
+3: 0 18 14 17 12 18 18 18 18 18 18 18 15 18 15 16 0 15 18 
+4: 0 18 14 17 12 18 18 18 18 18 18 18 16 18 16 18 0 16 18 
+5: 18 13 18 17 4 15 18 18 18 18 18 18 4 12 18 12 12 16 18 
+MTw:
+0: -1 2 2 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 1 1 -1 -1 0 -1 
+1: -1 3 3 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 2 2 -1 1 0 -1 
+2: 0 -1 3 3 3 -1 -1 -1 -1 -1 -1 -1 2 1 2 -1 0 2 -1 
+3: 0 -1 3 3 3 -1 -1 -1 -1 -1 -1 -1 2 -1 2 1 0 2 -1 
+4: 0 -1 2 2 2 -1 -1 -1 -1 -1 -1 -1 1 -1 1 -1 0 1 -1 
+5: -1 2 -1 3 0 2 -1 -1 -1 -1 -1 -1 0 1 -1 1 1 2 -1 
+UBS2-1
+multi-cast tree: ([ES1, ID: B5, type: BT4, ID: B4, type: BT3, ID: B1, type: BT2, ID: B3, type: BT3, ID: B6, type: BT4, ES5, ES3, ES4], [(ES1 : ID: B5, type: BT4)=(ES1,ID: B5, type: BT4), (ID: B5, type: BT4 : ID: B4, type: BT3)=(ID: B5, type: BT4,ID: B4, type: BT3), (ID: B4, type: BT3 : ID: B1, type: BT2)=(ID: B4, type: BT3,ID: B1, type: BT2), (ID: B4, type: BT3 : ID: B3, type: BT3)=(ID: B4, type: BT3,ID: B3, type: BT3), (ID: B4, type: BT3 : ID: B6, type: BT4)=(ID: B4, type: BT3,ID: B6, type: BT4), (ID: B1, type: BT2 : ES5)=(ID: B1, type: BT2,ES5), (ID: B3, type: BT3 : ES3)=(ID: B3, type: BT3,ES3), (ID: B6, type: BT4 : ES4)=(ID: B6, type: BT4,ES4)])
+UBS3-0
+multi-cast tree: ([ES5, ID: B1, type: BT2, ID: B2, type: BT3, ID: B4, type: BT3, ID: B5, type: BT4, ES2, ES6, ID: B6, type: BT4, ES4], [(ES5 : ID: B1, type: BT2)=(ES5,ID: B1, type: BT2), (ID: B1, type: BT2 : ID: B2, type: BT3)=(ID: B1, type: BT2,ID: B2, type: BT3), (ID: B1, type: BT2 : ID: B4, type: BT3)=(ID: B1, type: BT2,ID: B4, type: BT3), (ID: B1, type: BT2 : ID: B5, type: BT4)=(ID: B1, type: BT2,ID: B5, type: BT4), (ID: B2, type: BT3 : ES2)=(ID: B2, type: BT3,ES2), (ID: B4, type: BT3 : ES6)=(ID: B4, type: BT3,ES6), (ID: B5, type: BT4 : ID: B6, type: BT4)=(ID: B5, type: BT4,ID: B6, type: BT4), (ID: B6, type: BT4 : ES4)=(ID: B6, type: BT4,ES4)])
+UBS2-2
+multi-cast tree: ([ES1, ID: B5, type: BT4, ID: B1, type: BT2, ID: B3, type: BT3, ID: B6, type: BT4, ES5, ES3, ES4], [(ES1 : ID: B5, type: BT4)=(ES1,ID: B5, type: BT4), (ID: B5, type: BT4 : ID: B1, type: BT2)=(ID: B5, type: BT4,ID: B1, type: BT2), (ID: B5, type: BT4 : ID: B3, type: BT3)=(ID: B5, type: BT4,ID: B3, type: BT3), (ID: B5, type: BT4 : ID: B6, type: BT4)=(ID: B5, type: BT4,ID: B6, type: BT4), (ID: B1, type: BT2 : ES5)=(ID: B1, type: BT2,ES5), (ID: B3, type: BT3 : ES3)=(ID: B3, type: BT3,ES3), (ID: B6, type: BT4 : ES4)=(ID: B6, type: BT4,ES4)])
+UBS1-0
+multi-cast tree: ([ES4, ID: B6, type: BT4, ID: B2, type: BT3, ID: B3, type: BT3, ES2, ES3], [(ES4 : ID: B6, type: BT4)=(ES4,ID: B6, type: BT4), (ID: B6, type: BT4 : ID: B2, type: BT3)=(ID: B6, type: BT4,ID: B2, type: BT3), (ID: B6, type: BT4 : ID: B3, type: BT3)=(ID: B6, type: BT4,ID: B3, type: BT3), (ID: B2, type: BT3 : ES2)=(ID: B2, type: BT3,ES2), (ID: B3, type: BT3 : ES3)=(ID: B3, type: BT3,ES3)])
+UBS1-1
+multi-cast tree: ([ES4, ID: B6, type: BT4, ID: B5, type: BT4, ID: B2, type: BT3, ID: B3, type: BT3, ES2, ES3], [(ES4 : ID: B6, type: BT4)=(ES4,ID: B6, type: BT4), (ID: B6, type: BT4 : ID: B5, type: BT4)=(ID: B6, type: BT4,ID: B5, type: BT4), (ID: B5, type: BT4 : ID: B2, type: BT3)=(ID: B5, type: BT4,ID: B2, type: BT3), (ID: B5, type: BT4 : ID: B3, type: BT3)=(ID: B5, type: BT4,ID: B3, type: BT3), (ID: B2, type: BT3 : ES2)=(ID: B2, type: BT3,ES2), (ID: B3, type: BT3 : ES3)=(ID: B3, type: BT3,ES3)])
+UBS2-0
+multi-cast tree: ([ES1, ID: B5, type: BT4, ID: B2, type: BT3, ID: B1, type: BT2, ID: B3, type: BT3, ID: B6, type: BT4, ES5, ES3, ES4], [(ES1 : ID: B5, type: BT4)=(ES1,ID: B5, type: BT4), (ID: B5, type: BT4 : ID: B2, type: BT3)=(ID: B5, type: BT4,ID: B2, type: BT3), (ID: B2, type: BT3 : ID: B1, type: BT2)=(ID: B2, type: BT3,ID: B1, type: BT2), (ID: B2, type: BT3 : ID: B3, type: BT3)=(ID: B2, type: BT3,ID: B3, type: BT3), (ID: B2, type: BT3 : ID: B6, type: BT4)=(ID: B2, type: BT3,ID: B6, type: BT4), (ID: B1, type: BT2 : ES5)=(ID: B1, type: BT2,ES5), (ID: B3, type: BT3 : ES3)=(ID: B3, type: BT3,ES3), (ID: B6, type: BT4 : ES4)=(ID: B6, type: BT4,ES4)])
+total cost: -329536.31999999995
+UBS2-1: -49942.12:
+ES1-B5: 3.22; B5-B4: 3.22; B4-B1: 3.22; B1-ES5: 3.22; 
+ES1-B5: 3.22; B5-B4: 3.22; B4-B3: 3.22; B3-ES3: 4.42; 
+ES1-B5: 3.22; B5-B4: 3.22; B4-B6: 3.22; B6-ES4: 48.22; 
+
+UBS3-0: -119854.56:
+ES5-B1: 45.0; B1-B2: 4.0; B2-ES2: 46.2; 
+ES5-B1: 45.0; B1-B4: 4.0; B4-ES6: 4.0; 
+ES5-B1: 45.0; B1-B5: 4.0; B5-B6: 48.22; B6-ES4: 48.22; 
+
+UBS2-2: -49900.34:
+ES1-B5: 3.22; B5-B1: 3.22; B1-ES5: 3.22; 
+ES1-B5: 3.22; B5-B3: 4.42; B3-ES3: 4.42; 
+ES1-B5: 3.22; B5-B6: 48.22; B6-ES4: 48.22; 
+
+UBS1-0: -29951.4:
+ES4-B6: 1.2; B6-B2: 1.2; B2-ES2: 46.2; 
+ES4-B6: 1.2; B6-B3: 1.2; B3-ES3: 4.42; 
+
+UBS1-1: -29946.98:
+ES4-B6: 1.2; B6-B5: 1.2; B5-B3: 4.42; B3-ES3: 4.42; 
+ES4-B6: 1.2; B6-B5: 1.2; B5-B2: 4.42; B2-ES2: 46.2; 
+
+UBS2-0: -49940.92:
+ES1-B5: 3.22; B5-B2: 4.42; B2-B1: 3.22; B1-ES5: 3.22; 
+ES1-B5: 3.22; B5-B2: 4.42; B2-B3: 3.22; B3-ES3: 4.42; 
+ES1-B5: 3.22; B5-B2: 4.42; B2-B6: 3.22; B6-ES4: 48.22; 
+
+
