@@ -1,6 +1,6 @@
 from collections import deque, OrderedDict
 
-from data_structures import TestCase
+from data_structures.TestCase import TestCase
 from data_structures.Stream import Stream
 from data_structures.Node import Node, Switch
 import os
@@ -109,13 +109,9 @@ def parse_testcase(testcases_path, tc_name, WCDTOOL_PATH, WCDTOOL_OUTPUTPATH):
                         # add second node
                         r.append(_nodes[n2_name])
 
-                    # Add dest node to output ports of src node
-                    if n2_name not in _nodes[n1_name].output_ports.keys():
-                        _nodes[n1_name].add_outputport_to(n2_name)
-
-                        # Also add to switch if n1 is one
-                        if n1_name in switches.keys():
-                            switches[n1_name].add_outputport_to(n2_name)
+                    # Add output port to first node if it is a switch
+                    if n1_name in switches.keys():
+                        switches[n1_name].add_outputport_to(n2_name)
 
     # Parsing Streams
     for line in stream_file:

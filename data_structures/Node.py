@@ -66,3 +66,6 @@ class Port(object):
             self.queues_with_sending_time[queuenr] += stream_length
             self.queues_with_streams[queuenr].append(stream_uid)
             return False
+
+    def get_sorted_queuenrs(self):
+        return  sorted(self.queues_with_sending_time)

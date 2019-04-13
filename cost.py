@@ -29,28 +29,33 @@ def serialize_solution(s):
     historySCHED1 = open(
         "{}\\in\\{}".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name, 'historySCHED1.txt'),
         'w+')
-    lines = ['#open time, close time, period, priority']
+    lines = ['#open time, close time, period, priority\n']
 
     for switch in switches.values():
         # Extract switch matrix
         M_switch = M[switch.M_row_offset:switch.M_row_offset + switch.total_number_of_queues, :3]
 
         for dest_name in switch.output_ports.keys():
+            port = switch.output_ports[dest_name]
             lines.append('{},{}\n'.format(switch.uid, dest_name))
+
             i = 0
-            for row in M_switch:
+            for priority in port.get_sorted_queuenrs():
+                row = M_switch[i]
                 offset = row[0]
-                length = row[1]
+                end = offset + row[1]
                 period = row[2]
                 lines.append(
-                    '{}\t{}\t{}\t{}\n'.format(offset, length, period,
-                                              i))
+                    '{}\t{}\t{}\t{}\n'.format(offset, end, period,
+                                              priority))
+                i += 1
+
             lines.append('\n')
 
     historySCHED1.write(''.join(lines))
     historySCHED1.write('#')  # comment out last line, since no empty last line is allowed
     historySCHED1.close()
-
+    return lines
 
 def read_wcd_output(tc_name):
     wce2edelay_list = []
@@ -153,31 +158,40 @@ def matrix_gcd(M_switch):
 def check_solution(s):
     streams = s[0].streams
     tc_name = s[0].tc_name
+    M = s[1]
 
     # Serialize Solution & Run Tool
-    serialize_solution(s)
+    written_lines = serialize_solution(s)
     wce2elist, wcportdelay_list = read_wcd_output(tc_name)
 
-    # DEBUG
-    # print('### E2E Delays ###\n{}\n### Port Delays ###\n{}'.format(''.join(wce2elist), ''.join(wcportdelay_list)))
+    error = False
 
     # Check that a valid result was returned
     if len(wce2elist) is 0 or len(wcportdelay_list) is 0:
-        return False
+        error = True
     else:
         # Check that wcd's are below deadlines
         for line in wce2elist:
             match = re.search('(.*),.*:(.*)', line)
             if match is not None:
                 if match.group(2).endswith('INF'):
-                    return False
+                    error = True
                 else:
                     stream_uid = match.group(1)
                     wcd = float(match.group(2))
                     if streams[stream_uid].deadline < wcd:
-                        return False
-
-    return True
+                        error = True
+    if error:
+        # DEBUG
+        print('### Matrix ###')
+        print(M)
+        print('### Written Window File ###')
+        for l in written_lines:
+            print(l, end='')
+        print('### E2E Delays ###\n{}\n### Port Delays ###\n{}'.format(''.join(wce2elist), ''.join(wcportdelay_list)))
+        return False
+    else:
+        return True
 
 
 def cost(s):

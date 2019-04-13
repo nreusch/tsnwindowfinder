@@ -1,6 +1,8 @@
 from unittest import TestCase
 
+import data_structures
 from data_structures.Node import Node, Switch
+from data_structures.TestCase import TestCase as TC
 
 import cost
 import numpy as np
@@ -34,7 +36,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.matrix_lcm(M), 588744000)
         self.assertEqual(cost.cost(s), 20)
@@ -56,7 +58,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 130 + 100 - 20)
         self.assertEqual(cost.matrix_lcm(M), 650)
@@ -87,7 +89,7 @@ class TestCost(TestCase):
         switches['SW1'] = s1
         switches['SW2'] = s2
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 80)
         self.assertEqual(cost.matrix_lcm(M), 100)
@@ -108,7 +110,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 130 + 100 - 20)
         self.assertEqual(cost.matrix_lcm(M), 650)
@@ -129,7 +131,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 30)
         self.assertEqual(cost.matrix_lcm(M), 200)
@@ -150,7 +152,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches,None,None,M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 20)
         self.assertEqual(cost.matrix_lcm(M), 100)
@@ -171,7 +173,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 20)
         self.assertEqual(cost.matrix_lcm(M), 100)
@@ -192,7 +194,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 100)
         self.assertEqual(cost.matrix_lcm(M), 100)
@@ -213,7 +215,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 0)
         self.assertEqual(cost.matrix_lcm(M), 100)
@@ -234,7 +236,7 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         with self.assertRaises(ValueError) as e:
             cost.cost(s)
@@ -251,6 +253,6 @@ class TestCost(TestCase):
 
         switches['SW1'] = s1
 
-        s = [switches, None, None, M]
+        s = [TC(switches, None, None), M]
 
         self.assertEqual(cost.cost(s), 0)

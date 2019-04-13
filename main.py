@@ -21,7 +21,9 @@ def create_initial_solution(testCase):
 
             total_stream_sending_time_in_port = port.total_stream_sending_time
             current_offset = 0
-            for queuenr, queue_sending_time in port.queues_with_sending_time.items():
+
+            for queuenr in port.get_sorted_queuenrs():
+                queue_sending_time = port.queues_with_sending_time[queuenr]
                 # Find the percentage of sending time in window of overall sending time in port
 
                 percentage = queue_sending_time / total_stream_sending_time_in_port
@@ -78,6 +80,9 @@ def neighbour(s, maxiterations):
 
 
 def simulated_annealing(s, T, k, maxiterations):
+    if not cost.check_solution(s):
+        raise ValueError('Initial Solution invalid')
+
     # Algorithm
     iter = 0
     old_cost = cost.cost(s)
