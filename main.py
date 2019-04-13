@@ -3,11 +3,10 @@ import math
 import random
 
 import cost
-import input_parser
-import time
+from utility import input_parser
 import numpy as np
 
-from util import Plotter
+from utility.util import Plotter
 
 WCDTOOL_PATH = cost.WCDTOOL_PATH
 WCDTOOL_OUTPUTPATH = cost.WCDTOOL_OUTPUTPATH
@@ -50,7 +49,6 @@ def neighbour(s, maxiterations):
     switches = s[0].switches
     M = s[1]
 
-    max_length_interval_factor = 0.1
     iter = 0
     first_iteration = True
 
@@ -59,21 +57,11 @@ def neighbour(s, maxiterations):
         iter += 1
         first_iteration = False
 
+        # TODO: Manipulate M
         r = random.randint(0, 1)
         if r < 1:
-            # Change Length Pick random length in interval around current length (interval size =
-            # 2*max_length_interval_factor*window.period)
-            min = window.length - max_length_interval_factor * window.period
-            if min < window.total_sending_time:
-                min = window.total_sending_time
-
-            max = window.length + max_length_interval_factor * window.period
-            if max + window.offset > window.period:
-                max = window.period - window.offset
-
-            r = random.randint(min, max)
-
-            window.length = r
+            # Change Length
+            pass
         elif r < 0.66:
             pass
             # Change Period
@@ -85,6 +73,7 @@ def neighbour(s, maxiterations):
         return None
     else:
         s[0].switches = switches
+        s[1] = M
         return s
 
 
@@ -111,11 +100,8 @@ def simulated_annealing(s, T, k, maxiterations):
             print("No feasible neighbour found. Abort")
             break
 
-        # What does cost function need: Switches and their ports and their windows
         new_cost = cost.cost(s_new)
         print("Cost of new solution: " + str(new_cost))
-
-        # TODO: move check to neighbour function?
 
         if new_cost < old_cost:
             s = s_new
@@ -137,7 +123,6 @@ def simulated_annealing(s, T, k, maxiterations):
 
 
 def main():
-    # TODO: Differentiate Solution Matrix and Topology necessary for initial solution, solution checking
     testcases_path = sys.argv[1]
     test_cases = input_parser.find_testcases(testcases_path)
 
@@ -146,7 +131,7 @@ def main():
         # read testcase
         tc_name, output_folder = input_parser.determine_and_create_output_directory(test_case)
         testCase = input_parser.parse_testcase(testcases_path, tc_name, WCDTOOL_PATH,
-                                                                       WCDTOOL_OUTPUTPATH)
+                                               WCDTOOL_OUTPUTPATH)
 
         # Initial parameters
         s = create_initial_solution(testCase)  # s = [TestCase, M_Windows]
