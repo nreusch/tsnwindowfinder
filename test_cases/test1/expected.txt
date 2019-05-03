@@ -1,3 +1,0 @@
-SW1 SW2
-Prio 1: 120us
-Prio 2: 150us

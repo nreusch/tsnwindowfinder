@@ -3,11 +3,19 @@ import os
 import re
 import subprocess
 import time
-import numpy as np
-import math
 
-WCDTOOL_PATH = 'TSNNetCal_NoESWindows\\'
+import numpy as np
+
+# TODO: !!Relative Path!!
+WCDTOOL_PATH = 'E:\\Thesis_WCDTool\\'
 WCDTOOL_OUTPUTPATH = 'usecases\\generated\\'
+
+DEBUG = False
+
+
+def debug_print(s):
+    if DEBUG:
+        print(s)
 
 
 def serialize_solution(s):
@@ -23,9 +31,6 @@ def serialize_solution(s):
         rate.close()
 
     # Write historySCHED1.txt if available
-    while not os.path.exists("{}\\in\\{}".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name, 'historySCHED1.txt')):
-        time.sleep(0.01)
-
     historySCHED1 = open(
         "{}\\in\\{}".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name, 'historySCHED1.txt'),
         'w+')
@@ -43,7 +48,7 @@ def serialize_solution(s):
             for priority in port.get_sorted_queuenrs():
                 row = M_switch[i]
                 offset = row[0]
-                end = offset + row[1]
+                end = row[1]
                 period = row[2]
                 lines.append(
                     '{}\t{}\t{}\t{}\n'.format(offset, end, period,
@@ -56,6 +61,7 @@ def serialize_solution(s):
     historySCHED1.write('#')  # comment out last line, since no empty last line is allowed
     historySCHED1.close()
     return lines
+
 
 def read_wcd_output(tc_name):
     wce2edelay_list = []
@@ -98,13 +104,13 @@ def read_wcd_output(tc_name):
 def create_binary_matrix(M_switch, gcd, lcm):
     if int(gcd) != 0 and int(lcm) != 0:
         # DEBUG
-        print("GCD: {}; LCM: {}; Total number of columns (lcm/gcd): {}".format(gcd, lcm, int(lcm / gcd)))
+        debug_print("GCD: {}; LCM: {}; Total number of columns (lcm/gcd): {}".format(gcd, lcm, int(lcm / gcd)))
 
         M_binary = np.empty([0, int(lcm / gcd)], dtype=int)
 
         for row in M_switch:
             offset = row[0]
-            length = row[1]
+            length = row[1] - offset
             period = row[2]
 
             a = np.zeros((int(offset / gcd)), dtype=bool)
@@ -114,18 +120,18 @@ def create_binary_matrix(M_switch, gcd, lcm):
                 a = np.ones((int(length / gcd)), dtype=bool)
             a = np.concatenate((a, np.zeros((int((period - offset - length) / gcd)), dtype=bool)), axis=0)
             a = np.tile(a, int(lcm / period))
-            print('Resulting binary with length {}: '.format(len(a)))
-            print(a)
+            debug_print('Resulting binary with length {}: '.format(len(a)))
+            debug_print(a)
             M_binary = np.append(M_binary, [a], 0)
 
             # DEBUG
-            print('Window with offset {}, length {}, period {}'.format(offset, length, period))
-            print('Resulting binary with length {}: '.format(len(a)))
-            print(a)
+            debug_print('Window with offset {}, length {}, period {}'.format(offset, length, period))
+            debug_print('Resulting binary with length {}: '.format(len(a)))
+            debug_print(a)
 
         # DEBUG
-        print('Final Binary Matrix: ')
-        print(M_binary)
+        debug_print('Final Binary Matrix: ')
+        debug_print(M_binary)
         return M_binary
     else:
         raise ValueError('Error. GCD or LCM equals zero. GCD: {} LCM {}'.format(gcd, lcm))
@@ -133,12 +139,12 @@ def create_binary_matrix(M_switch, gcd, lcm):
 
 def matrix_lcm(M_switch):
     # DEBUG
-    print('Calculating LCM of: ')
-    print(M_switch[:, 2:])
+    debug_print('Calculating LCM of: ')
+    debug_print(M_switch[:, 2:])
 
     lc = np.lcm.reduce(M_switch[:, 2:])
-    print('Result: ')
-    print(lc)
+    debug_print('Result: ')
+    debug_print(lc)
     return lc[0]
 
 
@@ -162,6 +168,8 @@ def check_solution(s):
 
     # Serialize Solution & Run Tool
     written_lines = serialize_solution(s)
+    # DEBUG
+    debug_print('Solution serialized')
     wce2elist, wcportdelay_list = read_wcd_output(tc_name)
 
     error = False
@@ -209,10 +217,10 @@ def cost(s):
             M_switch = M[switch.M_row_offset:switch.M_row_offset + switch.total_number_of_queues, :3]
 
             # DEBUG
-            print('Extracting matrix for switch {} at offset {} with {} rows'.format(switch.uid, switch.M_row_offset,
+            debug_print('Extracting matrix for switch {} at offset {} with {} rows'.format(switch.uid, switch.M_row_offset,
                                                                                      switch.total_number_of_queues))
-            print('Result: ')
-            print(M_switch)
+            debug_print('Result: ')
+            debug_print(M_switch)
 
             # Create binary matrix
             g = matrix_gcd(M_switch)  # length in us of one digit in binary
@@ -224,5 +232,4 @@ def cost(s):
             used_time = np.count_nonzero(result_binary) * g
             total_used_time += used_time
 
-    print('Cost: {}'.format(total_used_time))
     return total_used_time

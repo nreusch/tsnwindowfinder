@@ -1,3 +1,0 @@
-#!R id, size(byte), deadline, <virtual link id>, type [TT, RC], priority, [period | rate] (us), [offset | ] [packed | fragmented]
-tt1, 1500, 58972.0, vl1, TT, 0, 400, 0.0
-tt2, 1500, 114419.0, vl2, TT, 1, 400, 0.0

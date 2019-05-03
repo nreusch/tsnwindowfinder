@@ -1,3 +1,0 @@
-#generated
-vl1 : ES1,SW1 ; SW1,ES3 ;
-vl2 : ES2,SW1 ; SW1,ES3 ;

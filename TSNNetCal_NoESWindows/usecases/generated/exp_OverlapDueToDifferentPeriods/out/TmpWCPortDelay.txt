@@ -1,5 +1,0 @@
-ES1 -> SW1: 24, priority 0
-SW1 -> ES3: 224.72, priority 0
-ES2 -> SW1: 24, priority 1
-SW1 -> ES3: 224.72, priority 1
-

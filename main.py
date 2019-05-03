@@ -8,6 +8,8 @@ import numpy as np
 
 from utility.util import Plotter
 
+import cProfile
+
 WCDTOOL_PATH = cost.WCDTOOL_PATH
 WCDTOOL_OUTPUTPATH = cost.WCDTOOL_OUTPUTPATH
 
@@ -18,28 +20,27 @@ def create_initial_solution(testCase):
         # Set switch offset to current height of M
         switch.M_row_offset = M_Windows.shape[0]
         for port in switch.output_ports.values():
-
-            total_stream_sending_time_in_port = port.total_stream_sending_time
             current_offset = 0
+            minimum_window_percentage = port.get_minimum_window_percentage()
+            max_period = math.ceil(12 * (1 / minimum_window_percentage))
+            first = False
 
             for queuenr in port.get_sorted_queuenrs():
-                queue_sending_time = port.queues_with_sending_time[queuenr]
-                # Find the percentage of sending time in window of overall sending time in port
+                window_percentage = port.queues_with_window_percentage[queuenr]
+                period = math.ceil(12 * (1 / window_percentage))
 
-                percentage = queue_sending_time / total_stream_sending_time_in_port
+                scale_factor = max_period / period
 
-                # Find lowest stream period
-                lowest_period = sys.maxsize
-                for uid in port.queues_with_streams[queuenr]:
-                    if testCase.streams[uid].period < lowest_period:
-                        lowest_period = testCase.streams[uid].period
+                # Every window except the highest priority one has to be extended by 12us due to timely block
+                if first:
+                    length = math.ceil(12 * scale_factor)
+                    first = False
+                else:
+                    length = math.ceil(12 * scale_factor) + 12
 
-                # Set parameters
-                offset = current_offset
-                period = lowest_period
-                length = int(percentage * period)  # Length = percentage of sending time * period
-                M_Windows = np.append(M_Windows, [[offset, length, period]], axis=0)
-                # TODO: Deal with different periods in different windows
+                period = max_period
+
+                M_Windows = np.append(M_Windows, [[current_offset, current_offset+length, period]], axis=0)
 
                 # Increase Offset for next window
                 current_offset += length
@@ -60,16 +61,12 @@ def neighbour(s, maxiterations):
         first_iteration = False
 
         # TODO: Manipulate M
-        r = random.randint(0, 1)
-        if r < 1:
-            # Change Length
-            pass
-        elif r < 0.66:
-            pass
-            # Change Period
-        else:
-            pass
-            # Change Offset:
+        M_mul = np.array([
+            [1, 0, 0],
+            [0, 1, 0],
+            [0, 0, 1]
+        ])
+        M = np.matmul(M, M_mul)
 
     if iter > maxiterations:
         return None
@@ -83,10 +80,13 @@ def simulated_annealing(s, T, k, maxiterations):
     if not cost.check_solution(s):
         raise ValueError('Initial Solution invalid')
 
+    print('Initial Solution:')
+    print(s[1])
+
     # Algorithm
     iter = 0
     old_cost = cost.cost(s)
-    print("Cost of initial solution: " + str(old_cost))
+    print("\nCost of initial solution: " + str(old_cost) + "\n")
 
     # Plotting
     plot_x = np.array([0])
@@ -94,6 +94,7 @@ def simulated_annealing(s, T, k, maxiterations):
     plotter = Plotter(2, old_cost, plot_x, plot_y)
 
     while iter < maxiterations:
+        print('\n Iteration ' + str(iter))
         plot_x = np.append(plot_x, iter)
         plot_y = np.append(plot_y, old_cost)
         plotter.plot(plot_x, plot_y)
@@ -122,8 +123,9 @@ def simulated_annealing(s, T, k, maxiterations):
         iter += 1
         T = T * k
 
-    print(s)
-    print("Found final solutian at cost of: " + str(old_cost))
+    print('\nFinal Solution:')
+    print(s[1])
+    print("\nCost of final solution: " + str(old_cost) + "\n")
     return s
 
 
@@ -142,10 +144,12 @@ def main():
         s = create_initial_solution(testCase)  # s = [TestCase, M_Windows]
         T = 1000
         k = 0.95
-        maxiterations = 50
+        maxiterations = 25
+
+        print('\n#########################\nTest Case: {}\nT: {}\nk: {}\nMax Iterations: {}\n#########################\n'.format(tc_name,T,k,maxiterations))
 
         # Algorithm
-        final_solution = simulated_annealing(s, T, k, maxiterations)
+        simulated_annealing(s, T, k, maxiterations)
 
 
 main()

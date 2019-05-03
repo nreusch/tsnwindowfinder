@@ -29,43 +29,44 @@ class Switch(Node):
         if node_name not in self.output_ports.keys():
             self.output_ports[node_name] = Port(node_name)
 
-    def associate_stream_to_queue(self, stream_uid, stream_length, queuenr,
+    def associate_stream_to_queue(self, stream_uid, stream_length, stream_period, queuenr,
                                   nextnode_uid: 'The node the stream will go to after this one'):
         # gives the order to the ports function
 
         if nextnode_uid in self.output_ports.keys():
             # if the output port exists already
 
-            if self.output_ports[nextnode_uid].associate_stream_to_queue(stream_uid, stream_length, queuenr):
+            if self.output_ports[nextnode_uid].associate_stream_to_queue(stream_uid, stream_length, stream_period, queuenr):
                 # If the port didn't have this queue yet
                 self.total_number_of_queues += 1
         else:
             self.add_outputport_to(nextnode_uid)
-            self.output_ports[nextnode_uid].associate_stream_to_queue(stream_uid, stream_length, queuenr)
+            self.output_ports[nextnode_uid].associate_stream_to_queue(stream_uid, stream_length, stream_period, queuenr)
             self.total_number_of_queues += 1
 
 
-# A port of a switch containing metainformation like amount of streams and their sending time
+# A port of a switch containing metainformation like amount of streams and their percentages
 class Port(object):
     def __init__(self, name):
         self.name = name
         self.stream_amount = 0
-        self.total_stream_sending_time = 0
-        self.queues_with_sending_time = {}
+        self.queues_with_window_percentage = {}
         self.queues_with_streams = {}
 
-    def associate_stream_to_queue(self, stream_uid, stream_length, queuenr):
+    def associate_stream_to_queue(self, stream_uid, stream_length, stream_period, queuenr):
         self.stream_amount += 1
-        self.total_stream_sending_time += stream_length
 
-        if queuenr not in self.queues_with_sending_time.keys():
-            self.queues_with_sending_time[queuenr] = stream_length
+        if queuenr not in self.queues_with_window_percentage.keys():
+            self.queues_with_window_percentage[queuenr] = stream_length / stream_period
             self.queues_with_streams[queuenr] = [stream_uid]
             return True
         else:
-            self.queues_with_sending_time[queuenr] += stream_length
+            self.queues_with_window_percentage[queuenr] += stream_length / stream_period
             self.queues_with_streams[queuenr].append(stream_uid)
             return False
 
     def get_sorted_queuenrs(self):
-        return  sorted(self.queues_with_sending_time)
+        return  sorted(self.queues_with_window_percentage)
+
+    def get_minimum_window_percentage(self):
+        return min(self.queues_with_window_percentage.values())

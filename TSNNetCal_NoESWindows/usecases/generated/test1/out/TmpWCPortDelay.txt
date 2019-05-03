@@ -1,10 +1,10 @@
 ES1 -> SW1: 3.2, priority 1
 ES3 -> SW1: 3.6, priority 1
-SW1 -> SW2: 99.6806, priority 1
-SW2 -> ES4: 7.61933, priority 1
+SW1 -> SW2: 890.681, priority 1
+SW2 -> ES4: 1222.08, priority 1
 ES2 -> SW1: 3.2, priority 2
-SW1 -> SW2: 186.438, priority 2
-SW2 -> ES5: 8.64756, priority 2
-SW2 -> ES6: 7.62407, priority 1
+SW1 -> SW2: 899.438, priority 2
+SW2 -> ES5: 1230.84, priority 2
+SW2 -> ES6: 1222.48, priority 1
 ES3 -> SW1: 6.47676, priority 3
-SW1 -> ES4: 96.4768, priority 3
+SW1 -> ES4: 887.477, priority 3

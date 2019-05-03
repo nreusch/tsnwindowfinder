@@ -9,11 +9,7 @@ from shutil import copyfile
 
 
 def find_testcases(inputpath, recursive=False, output=True):
-    """Returns a collection of testcase paths for every "*.network_description" file in the given input folder.
-        :param str inputpath: path to testcase or testcase folder
-        :param bool recursive: subfolders will be checked as well
-        :param bool output: prints information about test cases
-        """
+
     test_cases = []
 
     if os.path.isdir(inputpath):
@@ -116,16 +112,16 @@ def parse_testcase(testcases_path, tc_name, WCDTOOL_PATH, WCDTOOL_OUTPUTPATH):
     # Parsing Streams
     for line in stream_file:
         if not line.startswith('#'):
-            m = re.search(r'([^\s,]+),\s?(\d+),\s?(\d+),\s?([^\s,]+),\s?(\w+),\s?(\d+),\s?(\d+)', line)
+            m = re.search(r'([^\s,]+),\s?(\d+),\s?(\d+),\s?([^\s,]+),\s?(\d+),\s?(\d+)', line)
             if m is not None:
-                s = Stream(m.group(1), int(m.group(2)), int(m.group(3)), int(m.group(7)), int(m.group(6)),
+                s = Stream(m.group(1), int(m.group(2)), int(m.group(3)), int(m.group(6)), int(m.group(5)),
                            _routes[m.group(4)])
                 streams[m.group(1)] = s  # Add to list
 
                 # Associate Stream with each switch on route (skip end systems)
                 i = 1
                 for node in s.route[1:-1]:
-                    switches[node.uid].associate_stream_to_queue(s.uid, s.sending_time, s.priority, s.route[i + 1].uid)
+                    switches[node.uid].associate_stream_to_queue(s.uid, s.sending_time, s.period, s.priority, s.route[i + 1].uid)
                     i += 1
 
     return TestCase(switches, streams, tc_name)
