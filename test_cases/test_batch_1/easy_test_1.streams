@@ -1,5 +1,0 @@
-#id, size(byte), deadline(us), route(virtual link id), TT,  priority(0-7, 0 highest), period(us)
-tt1, 1500, 300, vl1, TT, 1, 120
-tt2, 3000, 260, vl1, TT, 2, 120
-tt3, 1500, 450, vl1, TT, 3, 120
-#idea: with initial solution tt2 will be above deadline. Find optimal solution
