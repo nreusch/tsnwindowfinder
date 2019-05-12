@@ -1,2 +1,2 @@
 vl1 : ES1,SW1 ; SW1,SW2 ; SW2,SW3 ; SW3,ES3 ;
-vl1 : ES2,SW2 ; SW2,SW4 ; SW4,ES4 ;
+vl2 : ES2,SW2 ; SW2,SW4 ; SW4,ES4 ;

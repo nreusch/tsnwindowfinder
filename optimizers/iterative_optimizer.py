@@ -57,7 +57,7 @@ def get_worst_stream(s : TestCase, exceeding_percentages: dict):
         Percentage(float), stream uid(str))
 
     Returns:
-        The stream with the highest exceeding percentage ("worst stream") as Stream object
+        The stream with the highest exceeding percentage ("worst stream") as Stream object or None
     """
 
     # Sort the dict so highes exceeding percentage is first
@@ -86,6 +86,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
     is_feasible, exceeding_percentages = solution_checker.check_solution(solution, 20)
 
     while not is_feasible:
+
         # 1. Get Worst Stream
         worst_stream = get_worst_stream(solution, exceeding_percentages)
 
@@ -94,6 +95,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
         # Iterate through ports on route (ES sliced out), decrease period
         i = 1
         for node in worst_stream.route[1:-1]:
+            print('.',end='',flush=True)
             # Get switch object
             assert (node.type == 'SW')
             switch = solution.switches[node.uid]
@@ -114,7 +116,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
 
             i += 1
 
-    print('----------------- Solved with cost: {} -----------------'.format(cost_checker.cost_port(solution)))
+    print('\n----------------- Solved with cost: {} -----------------'.format(cost_checker.cost_port(solution)))
     return solution
 
 

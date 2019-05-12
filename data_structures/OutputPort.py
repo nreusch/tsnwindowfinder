@@ -97,7 +97,7 @@ class OutputPort(object):
             [0, 0, factor]
         ])
 
-        self._M_Windows = np.floor(np.matmul(self._M_Windows, factor_matrix))
+        self._M_Windows = np.matmul(self._M_Windows, factor_matrix).astype(int)
 
     def get_occupation_percentage(self):
         """

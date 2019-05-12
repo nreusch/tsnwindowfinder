@@ -6,7 +6,7 @@ from collections import defaultdict
 
 from data_structures import TestCase
 
-DEBUG = True
+DEBUG = False
 
 
 def debug_print(s, end='\n'):
@@ -163,7 +163,7 @@ class SolutionChecker(object):
                 if match is not None:
                     if match.group(2).endswith('INF'):
                         error = True
-                        print('!! Solution is invalid (Infinite WCD found) !!')
+                        debug_print('!! Solution is invalid (Infinite WCD found) !!')
                         break
                     else:
                         stream_uid = match.group(1)
@@ -173,7 +173,7 @@ class SolutionChecker(object):
                             percentage = (wcd - ddl) / ddl
                             infeasible_streams_percentages[percentage].append(stream_uid)
                             if error is False:
-                                print('!! Solution is infeasible (WCD > deadline found) !!')
+                                debug_print('!! Solution is infeasible (WCD > deadline found) !!')
                                 error = True
 
         if error:
@@ -185,5 +185,5 @@ class SolutionChecker(object):
                 '### E2E Delays ###\n{}\n### Port Delays ###\n{}'.format(''.join(wce2elist), ''.join(wcportdelay_list)))
             return False, infeasible_streams_percentages
         else:
-            print('!! Solution is valid !!')
+            debug_print('!! Solution is valid !!')
             return True, infeasible_streams_percentages
