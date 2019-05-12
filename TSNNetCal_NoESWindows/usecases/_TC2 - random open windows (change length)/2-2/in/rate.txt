@@ -1,2 +1,0 @@
-# link rate, integrationMode, bandwidthFractionA, bandwidthFractionB
-1000

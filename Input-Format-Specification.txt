@@ -1,0 +1,1 @@
+ES/SW name should start with 'ES' or 'SW' respectively

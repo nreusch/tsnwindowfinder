@@ -4,10 +4,10 @@ import data_structures
 from data_structures.Node import Node, Switch
 from data_structures.TestCase import TestCase as TC
 
-import cost
+import cost_check
 import numpy as np
 
-
+""" OBSOLETE (Used when periods could be different in ports)
 class TestCost(TestCase):
     '''
     def test_complex(self):
@@ -60,8 +60,8 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 130 + 100 - 20)
-        self.assertEqual(cost.matrix_lcm(M), 650)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 130 + 100 - 20)
+        self.assertEqual(cost_check.matrix_lcm(M), 650)
 
     def test_multi_hop(self):
         switches = {}
@@ -91,8 +91,8 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 80)
-        self.assertEqual(cost.matrix_lcm(M), 100)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 80)
+        self.assertEqual(cost_check.matrix_lcm(M), 100)
 
     def test_different_period_overlap(self):
         switches = {}
@@ -112,8 +112,8 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 130 + 100 - 20)
-        self.assertEqual(cost.matrix_lcm(M), 650)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 130 + 100 - 20)
+        self.assertEqual(cost_check.matrix_lcm(M), 650)
 
     def test_different_period_no_overlap(self):
         switches = {}
@@ -133,8 +133,8 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 30)
-        self.assertEqual(cost.matrix_lcm(M), 200)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 30)
+        self.assertEqual(cost_check.matrix_lcm(M), 200)
 
     def test_same_period(self):
         switches = {}
@@ -154,8 +154,8 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 20)
-        self.assertEqual(cost.matrix_lcm(M), 100)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 20)
+        self.assertEqual(cost_check.matrix_lcm(M), 100)
 
     def test_same_period_overlap(self):
         switches = {}
@@ -175,8 +175,8 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 20)
-        self.assertEqual(cost.matrix_lcm(M), 100)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 20)
+        self.assertEqual(cost_check.matrix_lcm(M), 100)
 
     def test_same_period_full(self):
         switches = {}
@@ -196,8 +196,8 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 100)
-        self.assertEqual(cost.matrix_lcm(M), 100)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 100)
+        self.assertEqual(cost_check.matrix_lcm(M), 100)
 
     def test_same_period_empty_but_period(self):
         switches = {}
@@ -217,8 +217,8 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 0)
-        self.assertEqual(cost.matrix_lcm(M), 100)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 0)
+        self.assertEqual(cost_check.matrix_lcm(M), 100)
 
     def test_empty_windows(self):
         switches = {}
@@ -239,7 +239,7 @@ class TestCost(TestCase):
         s = [TC(switches, None, None), M]
 
         with self.assertRaises(ValueError) as e:
-            cost.cost(s)
+            cost_check.cost_switch_different_periods_in_port(s)
 
 
     def test_no_windows(self):
@@ -255,4 +255,5 @@ class TestCost(TestCase):
 
         s = [TC(switches, None, None), M]
 
-        self.assertEqual(cost.cost(s), 0)
+        self.assertEqual(cost_check.cost_switch_different_periods_in_port(s), 0)
+"""

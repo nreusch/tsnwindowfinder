@@ -1,2 +1,0 @@
-The WCD for TT11 in "1-4" is same as the WCD for TT11 in "1-2".
-Even though the overlapping priority 2 is different from the one in "1-2", there is at most one frame from lower priority that have effect on the time slot of priority 2.

@@ -1,3 +1,0 @@
-ES1 -> SW1: 12, priority 1
-SW1 -> SW2: 1.#INF, priority 1
-SW2 -> ES4: 0, priority 1

@@ -1,0 +1,10 @@
+#id, size(byte), deadline(us), route(virtual link id), TT,  priority(0-7, 0 highest), period(us)
+tt1, 1500, 300, vl1, TT, 1, 200
+tt2, 2500, 300, vl2, TT, 1, 200
+tt3, 1500, 300, vl3, TT, 2, 200
+tt4, 4200, 300, vl4, TT, 2, 200
+tt5, 3000, 300, vl5, TT, 1, 200
+tt6, 1500, 300, vl6, TT, 3, 200
+tt7, 1000, 300, vl7, TT, 1, 200
+tt8, 1500, 300, vl8, TT, 3, 200
+tt9, 2763, 300, vl9, TT, 2, 200

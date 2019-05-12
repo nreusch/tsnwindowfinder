@@ -1,19 +1,28 @@
-from collections import deque, OrderedDict
-
-from data_structures.TestCase import TestCase
-from data_structures.Stream import Stream
-from data_structures.Node import Node, Switch
 import os
 import re
+from collections import deque
 from shutil import copyfile
 
+from data_structures.Node import Node, Switch
+from data_structures.Stream import Stream
+from data_structures.TestCase import TestCase
 
-def find_testcases(inputpath, recursive=False, output=True):
 
-    test_cases = []
+def find_testcase_filenames(inputpath: str, recursive=False, output=True):
+    """
 
+    Args:
+        inputpath (str): .streams file or folder with them
+        recursive (bool): If subfolders should be searched
+        output (bool): If debug output should be printed
+
+    Returns:
+        List of paths to all testcases found
+    """
+    test_case_filenames = []
+
+    # If folder of testcases
     if os.path.isdir(inputpath):
-        # Folder of testcases
         directories = deque([inputpath])
         while len(directories) > 0:
             directory = directories.popleft()
@@ -21,56 +30,65 @@ def find_testcases(inputpath, recursive=False, output=True):
                 directory += '/'
             for filename in os.listdir(directory):
                 if filename.endswith('.streams'):
-                    test_cases.append(directory + filename)
-                elif recursive and os.path.isdir(directory + filename) and filename[:5] != 'batch':
+                    test_case_filenames.append(directory + filename)
+                elif recursive and os.path.isdir(directory + filename):
                     directories.append(directory + filename)
     else:
-        test_cases.append(inputpath)
+        test_case_filenames.append(inputpath)
 
     if output:
         print('TEST CASES:')
-        if len(test_cases) > 0:
-            for test_case in test_cases:
+        if len(test_case_filenames) > 0:
+            for test_case in test_case_filenames:
                 print('\t', test_case)
         else:
             print('\tNo test cases for "{}"'.format(inputpath))
-        print('Total number of test cases: {}'.format(len(test_cases)))
+        print('Total number of test cases: {}'.format(len(test_case_filenames)))
         print()
-    return test_cases
+    return test_case_filenames
 
 
-def determine_and_create_output_directory(test_case):
-    name = os.path.basename(test_case)  # gets filename from path
-    name = os.path.splitext(name)[0]  # removes file ending and dot
+def parse_testcase(test_case_path: str, wcdtool_path: str, wcdtool_testcase_path: str):
+    """
 
-    output_folder = '{}/{}'.format(os.path.dirname(test_case), 'output')
-    if output_folder != '' and not os.path.exists(output_folder):
-        print('making dir')
-        os.makedirs(output_folder)
-    return name, output_folder
+    Args:
+        test_case_path (str): Path to .streams file
+        wcdtool_path (str):  Path to wcdtool executable
+        wcdtool_testcase_path (str): Path to wcdtool testcase folder
 
+    Returns:
+        TestCase object
+    """
 
-def parse_testcase(testcases_path, tc_name, WCDTOOL_PATH, WCDTOOL_OUTPUTPATH):
+    ##### 1. Setup #####
+    # Data Structures
     streams = {}  # Map: Stream Name -> Stream
+    switches = {}  # Map: Switch Name -> Switch
+
     _nodes = {}  # Map: Node Name -> Node
-    switches = OrderedDict()  # OrderedMap: Switch Name -> Switch
     _routes = {}  # Map: VLS Name -> Route (Ordered List of Nodes)
 
-    stream_file = open(testcases_path + tc_name + '.streams', 'r')
-    vls_file = open(testcases_path + tc_name + '.vls', 'r')
+    # Files
+    stream_file = open(test_case_path, 'r')
+    vls_file = open(test_case_path[:-7] + 'vls', 'r') # remove ".streams" ending and add ".vls" instead
 
+    # Determine test case name from path
+    tc_name = os.path.splitext(os.path.basename(test_case_path))[0]  # removes file ending and dot
+
+    ##### 2. Copying #####
     # Copy over stream and vls file for later use with wcd tool
-    if not os.path.exists("{}\\in\\".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name)):
-        os.makedirs("{}\\in\\".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name),
+    if not os.path.exists("{}\\in\\".format(wcdtool_path + wcdtool_testcase_path + tc_name)):
+        os.makedirs("{}\\in\\".format(wcdtool_path + wcdtool_testcase_path + tc_name),
                     exist_ok=True)
 
-    if not os.path.exists("{}\\out\\".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name)):
-        os.makedirs("{}\\out\\".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name),
+    if not os.path.exists("{}\\out\\".format(wcdtool_path + wcdtool_testcase_path + tc_name)):
+        os.makedirs("{}\\out\\".format(wcdtool_path + wcdtool_testcase_path + tc_name),
                     exist_ok=True)
-    copyfile(stream_file.name, "{}\\in\\{}".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name, 'msg.txt'))
-    copyfile(vls_file.name, "{}\\in\\{}".format(WCDTOOL_PATH + WCDTOOL_OUTPUTPATH + tc_name, 'vls.txt'))
+    copyfile(stream_file.name, "{}\\in\\{}".format(wcdtool_path + wcdtool_testcase_path + tc_name, 'msg.txt'))
+    copyfile(vls_file.name, "{}\\in\\{}".format(wcdtool_path + wcdtool_testcase_path + tc_name, 'vls.txt'))
 
-    # Parsing VLS
+    ##### 3. Parsing #####
+    # Parsing .vls file
     for line in vls_file:
         if not line.startswith('#'):
             # TODO: allow more chars
@@ -109,10 +127,10 @@ def parse_testcase(testcases_path, tc_name, WCDTOOL_PATH, WCDTOOL_OUTPUTPATH):
                     if n1_name in switches.keys():
                         switches[n1_name].add_outputport_to(n2_name)
 
-    # Parsing Streams
+    # Parsing .streams file
     for line in stream_file:
         if not line.startswith('#'):
-            m = re.search(r'([^\s,]+),\s?(\d+),\s?(\d+),\s?([^\s,]+),\s?(\d+),\s?(\d+)', line)
+            m = re.search(r'([^\s,]+),\s?(\d+),\s?(\d+),\s?([^\s,]+),\s?TT,\s?(\d+),\s?(\d+)', line)
             if m is not None:
                 s = Stream(m.group(1), int(m.group(2)), int(m.group(3)), int(m.group(6)), int(m.group(5)),
                            _routes[m.group(4)])
@@ -124,4 +142,5 @@ def parse_testcase(testcases_path, tc_name, WCDTOOL_PATH, WCDTOOL_OUTPUTPATH):
                     switches[node.uid].associate_stream_to_queue(s.uid, s.sending_time, s.period, s.priority, s.route[i + 1].uid)
                     i += 1
 
+    ##### 4. Return TestCase #####
     return TestCase(switches, streams, tc_name)

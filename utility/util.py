@@ -1,13 +1,6 @@
 import matplotlib.pyplot as plt
 import time
 
-DEBUG = True
-
-
-def debug_print(s):
-    if DEBUG:
-        print(s)
-
 
 class Plotter(object):
     def __init__(self, graph_update_interval, start_cost, x_init, y_init):
