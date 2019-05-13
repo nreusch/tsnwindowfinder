@@ -2,14 +2,15 @@ import copy
 import math
 import os
 import time
-import matplotlib
-import numpy as np
-import matplotlib.pyplot as plt
 from typing import NamedTuple
 
+import matplotlib.pyplot as plt
+import numpy as np
+from graphviz import render
+
 from cost_check import CostChecker
-from solution_check import SolutionChecker
 from data_structures.TestCase import TestCase
+from solution_check import SolutionChecker
 
 
 def create_initial_solution(testCase: TestCase):
@@ -94,6 +95,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
     ##### 1. Algorithm #####
     t_start = time.process_time()
     is_feasible, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
+    initial_cost = cost_checker.cost_port(solution)
 
     while not is_feasible:
 
@@ -131,7 +133,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
     print('\n----------------- Solved with cost: {} -----------------'.format(cost))
 
     ##### 2. Prepare Output Data & Return #####
-    output_data = OutputData(initial_solution, solution, initial_wcds, final_wcds, runtime, cost)
+    output_data = OutputData(initial_solution, solution, initial_wcds, final_wcds, runtime, initial_cost, cost)
     return output_data
 
 
@@ -142,7 +144,8 @@ class OutputData(NamedTuple):
     initial_wcds: dict  # Dict(Stream Name, wcd)
     final_wcds: dict  # Dict(Stream Name, wcd)
     runtime: float
-    cost: float
+    initial_cost: float
+    final_cost: float
 
 
 def write_windows(filename: str, switches: dict):
@@ -179,13 +182,14 @@ def write_windows(filename: str, switches: dict):
     windows_file.close()
 
 
-def render_bar_graph(filename: str, streams: dict, wcds: dict):
+def render_bar_graph(filename: str, streams: dict, wcds: dict, final: bool):
     """
 
     Args:
         filename (str): File to write to
         streams (dict): Dict(Stream Name, Stream)
         wcds (dict): Dict(Stream Name, wcd)
+        final (boolean): wcds of final(True) or initial solution?
 
     """
     n_groups = len(wcds.keys())
@@ -223,13 +227,127 @@ def render_bar_graph(filename: str, streams: dict, wcds: dict):
 
     ax.set_xlabel('Streams')
     ax.set_ylabel('Deadlines & Worst Case Delays')
-    ax.set_title('Deadlines & Worst Case Delays for all streams')
+    if final:
+        ax.set_title('Deadlines & Worst Case Delays for all streams - Final Solution')
+    else:
+        ax.set_title('Deadlines & Worst Case Delays for all streams - Initial Solution')
     ax.set_xticks(index + bar_width / 2)
     ax.set_xticklabels(('A', 'B', 'C', 'D', 'E'))
     ax.legend()
 
     fig.tight_layout()
     plt.savefig(filename)
+
+
+def render_network_topology(filename_without_ending: str, streams: dict):
+    """
+    Renders the network topology defined by the streams routes to a .dot and a .svg file.
+
+    Args:
+        filename_without_ending (str): File to write to, without file ending
+        streams (dict): Dict(Stream Name, Stream)
+
+    """
+    nodes = {}
+
+    # Add all nodes
+    for stream in streams.values():
+        color_counter = 0
+        for node in stream.route:
+            if node.uid not in nodes:
+                # Create node if not existant
+                nodes[node.uid] = []
+
+            if color_counter > 0:
+                # Except for first node add all nodes on routes as neighbours of previous node, if not there yet
+                if node.uid not in nodes[stream.route[color_counter - 1].uid]:
+                    nodes[stream.route[color_counter - 1].uid].append(node.uid)
+            color_counter += 1
+
+    colors = [
+        '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe',
+        '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080',
+        '#000000'
+    ]
+
+    lines = []
+    lines.append('digraph G {')
+    lines.append('    forcelabels=true;')
+    lines.append('    overlap=false;')
+    lines.append('    layout="neato";')
+    lines.append('    node [style="filled,bold"];')
+    lines.append('    node [shape=circle];')
+
+    # Nodes:
+    lines.append('    ')
+    lines.append('    /* NODES */')
+
+    # Switch: color="#c53039"; fillcolor="#faced0"; shape="box"
+    # ES: color="#143065"; fillcolor="#d2e6ff"
+
+    for node in nodes.keys():
+        if node.startswith("SW"):
+            lines.append('    "{}" [label=<{}>; color="#c53039"; fillcolor="#faced0"; shape="box"];'.format(node, node))
+        else:
+            lines.append('    "{}" [label=<{}>; color="#143065"; fillcolor="#d2e6ff"];'.format(node, node))
+
+    # Edges:
+    lines.append('    ')
+    lines.append('    /* EDGES */')
+
+    # Physical Links - Edges
+    # lines.append('    subgraph Rel1 {')
+    # lines.append('        edge [dir=none, color=black]')
+    # for node in nodes.keys():
+    #    for neighbour in nodes[node]:
+    #        lines.append('    "{}" -> "{}";'.format(node, neighbour))
+    # lines.append('    }')
+
+    # Streams - Edges
+    color_counter = 0
+
+    for stream in streams.values():
+        j = 0
+        for node in stream.route[:-1]:
+            lines.append('    "{}" -> "{}" [color="{}"];'.format(node.uid,
+                                                                 stream.route[j + 1].uid, colors[color_counter]))
+            j += 1
+        color_counter = color_counter + 1
+        if color_counter >= 11:
+            color_counter = 0
+
+    # Footer:
+    lines.append('}')
+
+    graphviz_file = open(filename_without_ending + '.dot', 'w+')
+    graphviz_file.write('\n'.join(lines))
+    graphviz_file.close()
+
+    render('neato', 'svg', filename_without_ending + '.dot')
+
+
+def write_statistics(filename: str, final_solution: TestCase, initial_cost: float, final_cost: float, runtime: float, ):
+    """
+
+    Args:
+        filename (str): File to write to
+        final_solution (TestCase): Final Solution as TestCase object
+        initial_cost (float): Cost of initial solution
+        final_cost (float): Cost of final solution
+        runtime (float): Runtime of optimization
+
+    """
+    statistics_file = open(filename, 'w+')
+    lines = []
+
+    lines.append('Statistic for TestCase: ' + final_solution.name)
+    lines.append('')
+    lines.append('Initial Cost: ' + str(initial_cost))
+    lines.append('Final Cost: ' + str(final_cost))
+    lines.append('Optimization Runtime (s): ' + str(runtime))
+
+    statistics_file.write('\n'.join(lines))
+    statistics_file.close()
 
 
 class IterativeOptimizer(object):
@@ -274,8 +392,17 @@ class IterativeOptimizer(object):
         if not os.path.exists(output_folder + subfolder):
             os.makedirs(output_folder + subfolder, exist_ok=True)
 
-        # Write windows
-        write_windows(output_folder + subfolder + "{}_{}.txt".format(tc_name, 'windows'), output_data.final_solution.switches)
-        render_bar_graph(output_folder + subfolder + "{}_{}.png".format(tc_name, 'INITIAL_deadline_and_wcd_graph'), output_data.initial_solution.streams, output_data.initial_wcds)
-        render_bar_graph(output_folder + subfolder + "{}_{}.png".format(tc_name, 'FINAL_deadline_and_wcd_graph'),
-                         output_data.initial_solution.streams, output_data.final_wcds)
+        # Generate output
+        write_windows(output_folder + subfolder + "{}.txt".format('windows'),
+                      output_data.final_solution.switches)
+        render_bar_graph(output_folder + subfolder + "{}.png".format('INITIAL_deadline_and_wcd_graph'),
+                         output_data.initial_solution.streams, output_data.initial_wcd, False)
+        render_bar_graph(output_folder + subfolder + "{}.png".format('FINAL_deadline_and_wcd_graph'),
+                         output_data.initial_solution.streams, output_data.final_wcds, True)
+        render_network_topology(output_folder + subfolder + "{}".format('FINAL_deadline_and_wcd_graph'),
+                                output_data.final_solution.streams)
+        write_statistics(output_folder + subfolder + "{}.txt".format('statistics'),
+                         output_data.final_solution, output_data.initial_cost, output_data.final_cost, output_data.runtime)
+
+        #
+        print('Output Files written to: ' + output_folder + subfolder)

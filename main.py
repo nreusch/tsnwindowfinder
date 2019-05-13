@@ -1,11 +1,14 @@
 import os
 import sys
 
+from optimizers import iterative_optimizer
 from optimizers.iterative_optimizer import IterativeOptimizer
 from utility import input_parser, config_parser
 
 
 def main():
+
+
     # Parse Config
     wcdtool_path, wcdtool_testcase_subpath = config_parser.parse_config("config.ini")
 
