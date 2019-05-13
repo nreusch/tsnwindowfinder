@@ -1,0 +1,3 @@
+ES1 -> SW1: 12, priority 1
+SW1 -> SW2: 400, priority 1
+SW2 -> ES2: 800, priority 1

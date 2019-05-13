@@ -1,0 +1,11 @@
+#open time, close time, period, priority
+SW1,SW2
+0	24	130	1
+
+SW2,SW3
+0	36	93	1
+
+SW3,ES3
+0	36	104	1
+
+#

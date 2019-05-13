@@ -1,0 +1,6 @@
+ES1 -> SW1: 12, priority 1
+SW1 -> SW2: 92.72, priority 1
+SW2 -> ES2: 492.72, priority 1
+ES3 -> SW3: 12, priority 1
+SW3 -> SW4: 92.72, priority 1
+SW4 -> ES4: 492.72, priority 1

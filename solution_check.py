@@ -2,7 +2,7 @@ import os
 import re
 import subprocess
 import time
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 
 from data_structures import TestCase
 
@@ -138,12 +138,13 @@ class SolutionChecker(object):
             timeout (int): timeout for waiting for result of wcd-analysis, in seconds
 
         Returns: True if feasible, Exceeding percentages of all streams that missed their deadline stored in Dict(
-        Percentage(float), stream uid(str))
+        Percentage(float), stream uid(str)), OrderedDict(stream uid, wcd (e2e))
         """
         streams = s.streams
         tc_name = s.name
 
         infeasible_streams_percentages = defaultdict(list)
+        wcd_dict = OrderedDict()
 
         # Serialize Solution & Run Tool
         written_lines = self.serialize_solution(s)
@@ -161,6 +162,7 @@ class SolutionChecker(object):
             for line in wce2elist:
                 match = re.search('(.*),.*:(.*)', line)
                 if match is not None:
+                    wcd_dict[match.group(1)] = match.group(2)
                     if match.group(2).endswith('INF'):
                         error = True
                         debug_print('!! Solution is invalid (Infinite WCD found) !!')
@@ -183,7 +185,8 @@ class SolutionChecker(object):
                 debug_print(l, end='')
             debug_print(
                 '### E2E Delays ###\n{}\n### Port Delays ###\n{}'.format(''.join(wce2elist), ''.join(wcportdelay_list)))
-            return False, infeasible_streams_percentages
+
+            return False, infeasible_streams_percentages, wcd_dict
         else:
             debug_print('!! Solution is valid !!')
-            return True, infeasible_streams_percentages
+            return True, infeasible_streams_percentages, wcd_dict

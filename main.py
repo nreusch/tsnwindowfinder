@@ -1,3 +1,4 @@
+import os
 import sys
 
 from optimizers.iterative_optimizer import IterativeOptimizer
@@ -22,7 +23,7 @@ def main():
 
         # Optimize
         p = 0.95  # period adjustment percentage
-        optimizer.run(initial_testCase, wcdtool_path, wcdtool_testcase_subpath, p)
+        optimizer.run(initial_testCase, wcdtool_path, wcdtool_testcase_subpath, os.path.dirname(test_case_path)+'/output/',  p)
 
 
 main()
