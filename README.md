@@ -1,4 +1,5 @@
 # tsnwindowfinder
+Install GraphViz (https://www.graphviz.org/download/)
 
 pip install -r requirements.txt
 
