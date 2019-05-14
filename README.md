@@ -1,4 +1,7 @@
 # tsnwindowfinder
+Install GraphViz (https://www.graphviz.org/download/)
+
+Set path to WCDTool in config.ini
 
 pip install -r requirements.txt
 
