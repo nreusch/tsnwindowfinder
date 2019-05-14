@@ -7,7 +7,7 @@ from utility import input_parser, config_parser
 
 
 def main():
-
+    succesful_runs = 0
 
     # Parse Config
     wcdtool_path, wcdtool_testcase_subpath = config_parser.parse_config("config.ini")
@@ -26,7 +26,10 @@ def main():
 
         # Optimize
         p = 0.95  # period adjustment percentage
-        optimizer.run(initial_testCase, wcdtool_path, wcdtool_testcase_subpath, os.path.dirname(test_case_path)+'/output/',  p)
+        if optimizer.run(initial_testCase, wcdtool_path, wcdtool_testcase_subpath, os.path.dirname(test_case_path)+'/output/',  p) is not None:
+            succesful_runs += 1
+
+    print('\nSUCCESFUL RUNS: {}/{}'.format(succesful_runs, len(test_case_paths)))
 
 
 main()

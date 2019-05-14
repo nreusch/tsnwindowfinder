@@ -23,7 +23,7 @@ class Stream(object):
         self.priority = priority
 
         # 1 Byte takes 0.008us at 1000Mbits, 42bit header for ethernet packet. Round down.
-        self.sending_time = math.floor((self.size + 42) * 0.008)
+        self.sending_time = math.ceil((self.size + 42) * 0.008)
         # TODO: Check with Luxi why sending time is rounded down in her tool
 
     def __repr__(self):

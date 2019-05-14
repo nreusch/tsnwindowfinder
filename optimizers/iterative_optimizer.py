@@ -87,22 +87,24 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
         solution_checker (SolutionChecker): SolutionChecker object
 
     Returns:
-        Final Solution as TestCase object
+        Final Solution as TestCase object or None, if solution not solvable
     """
     initial_solution = copy.deepcopy(solution)
     print('\n#########################\nTest Case: {}\n#########################\n'.format(solution.name))
 
     ##### 1. Algorithm #####
     t_start = time.process_time()
-    is_feasible, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
+    is_solvable, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
+    if not is_solvable:
+        print('\n----------------- ERROR: Infinite WCD after initial soltuion -----------------')
+        return None
+
     initial_cost = cost_checker.cost_port(solution)
+    final_wcds = initial_wcds
 
-    while not is_feasible:
-
-        # 1. Get Worst Stream
-        worst_stream = get_worst_stream(solution, exceeding_percentages)
-
-        # 2. Optimize Worst Stream
+    worst_stream = get_worst_stream(solution, exceeding_percentages)
+    while worst_stream is not None:
+        # Optimize Worst Stream
 
         # Iterate through ports on route (ES sliced out), decrease period
         i = 1
@@ -119,14 +121,17 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
             # Decrease Period
             port.multipy_period(p)
 
-            # Check if solution/stream is feasible now. If yes break.
-            is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 20)
-            if is_feasible:
-                break
-            elif not get_worst_stream(solution, exceeding_percentages) == worst_stream:
+            # Check if stream is feasible now. If yes break.
+            is_solvable, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 20)
+            new_worst_stream = get_worst_stream(solution, exceeding_percentages)
+            if not worst_stream == new_worst_stream:
+                worst_stream = new_worst_stream
                 break
 
             i += 1
+
+
+
 
     cost = cost_checker.cost_port(solution)
     runtime = time.process_time() - t_start
@@ -365,13 +370,16 @@ class IterativeOptimizer(object):
             p (float): period adjustment percentage
 
         Returns:
-            TestCase object for final solution
+            TestCase object for final solution or None, if no solution found
         """
         initial_solution = create_initial_solution(testcase)
         output_data = iterative_optimization(initial_solution, p, CostChecker(),
                                              SolutionChecker(wcdtool_path, wcdtool_testcase_subpath))
-        self.generate_output(output_data, output_folder)
-        return output_data.final_solution
+        if output_data != None:
+            self.generate_output(output_data, output_folder)
+            return output_data.final_solution
+        else:
+            return None
 
     def generate_output(self, output_data: OutputData, output_folder: str):
         """
@@ -396,7 +404,7 @@ class IterativeOptimizer(object):
         write_windows(output_folder + subfolder + "{}.txt".format('windows'),
                       output_data.final_solution.switches)
         render_bar_graph(output_folder + subfolder + "{}.png".format('INITIAL_deadline_and_wcd_graph'),
-                         output_data.initial_solution.streams, output_data.initial_wcd, False)
+                         output_data.initial_solution.streams, output_data.initial_wcds, False)
         render_bar_graph(output_folder + subfolder + "{}.png".format('FINAL_deadline_and_wcd_graph'),
                          output_data.initial_solution.streams, output_data.final_wcds, True)
         render_network_topology(output_folder + subfolder + "{}".format('FINAL_deadline_and_wcd_graph'),

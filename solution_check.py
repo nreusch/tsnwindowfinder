@@ -137,7 +137,7 @@ class SolutionChecker(object):
             s (TestCase): Solution to be checked
             timeout (int): timeout for waiting for result of wcd-analysis, in seconds
 
-        Returns: True if feasible, Exceeding percentages of all streams that missed their deadline stored in Dict(
+        Returns: True if non infinite worst case, Exceeding percentages of all streams that missed their deadline stored in Dict(
         Percentage(float), stream uid(str)), OrderedDict(stream uid, wcd (e2e))
         """
         streams = s.streams
@@ -174,9 +174,8 @@ class SolutionChecker(object):
                         if ddl < wcd:
                             percentage = (wcd - ddl) / ddl
                             infeasible_streams_percentages[percentage].append(stream_uid)
-                            if error is False:
-                                debug_print('!! Solution is infeasible (WCD > deadline found) !!')
-                                error = True
+                            debug_print('!! Solution is infeasible (WCD > deadline found) !!')
+
 
         if error:
             # DEBUG
