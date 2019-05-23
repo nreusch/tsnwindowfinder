@@ -24,7 +24,8 @@ class Stream(object):
 
         # 1 Byte takes 0.008us at 1000Mbits, 42bit header for ethernet packet. Round down.
         self.sending_time = math.ceil((self.size + 42) * 0.008)
-        # TODO: Check with Luxi why sending time is rounded down in her tool
+        # TODO: If following Ethernet Specifications, each 1500 Byte block needs a 42 byte header
+        # TODO: Check with Luxi how sending time is calculated
 
     def __repr__(self):
         rtstring = ''

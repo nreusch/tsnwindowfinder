@@ -130,9 +130,11 @@ def parse_testcase(test_case_path: str, wcdtool_path: str, wcdtool_testcase_path
     # Parsing .streams file
     for line in stream_file:
         if not line.startswith('#'):
-            m = re.search(r'([^\s,]+),\s?(\d+),\s?(\d+),\s?([^\s,]+),\s?TT,\s?(\d+),\s?(\d+)', line)
+            m = re.search(r'([^\s,]+),\s?(\d+),\s?(\d+),\s?([^\s,]+),\s?([^\s,]+),\s?(\d+),\s?(\d+)', line)
             if m is not None:
-                s = Stream(m.group(1), int(m.group(2)), int(m.group(3)), int(m.group(6)), int(m.group(5)),
+                if m.group(5) != 'TT':
+                    print('Warning. Unknow traffic class {} found. Will assume TT'.format(m.group(5)))
+                s = Stream(m.group(1), int(m.group(2)), int(m.group(3)), int(m.group(7)), int(m.group(6)),
                            _routes[m.group(4)])
                 streams[m.group(1)] = s  # Add to list
 

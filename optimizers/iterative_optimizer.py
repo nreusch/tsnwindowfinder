@@ -93,7 +93,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
     print('\n#########################\nTest Case: {}\n#########################\n'.format(solution.name))
 
     ##### 1. Algorithm #####
-    t_start = time.process_time()
+    t_start = time.clock()
     is_solvable, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
     if not is_solvable:
         print('\n----------------- ERROR: Infinite WCD after initial soltuion -----------------')
@@ -102,9 +102,14 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
     initial_cost = cost_checker.cost_port(solution)
     final_wcds = initial_wcds
 
+    t_old = t_start
     worst_stream = get_worst_stream(solution, exceeding_percentages)
     while worst_stream is not None:
         # Optimize Worst Stream
+        t_now = time.clock()
+        if t_now - t_old > 10.0:
+            print('\nStreams left to solve: ' + str(len(exceeding_percentages)), flush=True)
+            t_old = t_now
 
         # Iterate through ports on route (ES sliced out), decrease period
         i = 1
@@ -134,7 +139,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
 
 
     cost = cost_checker.cost_port(solution)
-    runtime = time.process_time() - t_start
+    runtime = time.clock() - t_start
     print('\n----------------- Solved with cost: {} -----------------'.format(cost))
 
     ##### 2. Prepare Output Data & Return #####
@@ -237,7 +242,7 @@ def render_bar_graph(filename: str, streams: dict, wcds: dict, final: bool):
     else:
         ax.set_title('Deadlines & Worst Case Delays for all streams - Initial Solution')
     ax.set_xticks(index + bar_width / 2)
-    ax.set_xticklabels(('A', 'B', 'C', 'D', 'E'))
+    ax.set_xticklabels(wcds.keys())
     ax.legend()
 
     fig.tight_layout()
@@ -328,7 +333,7 @@ def render_network_topology(filename_without_ending: str, streams: dict):
     graphviz_file.write('\n'.join(lines))
     graphviz_file.close()
 
-    render('neato', 'svg', filename_without_ending + '.dot')
+    render('neato', 'pdf', filename_without_ending + '.dot')
 
 
 def write_statistics(filename: str, final_solution: TestCase, initial_cost: float, final_cost: float, runtime: float, ):
@@ -407,7 +412,7 @@ class IterativeOptimizer(object):
                          output_data.initial_solution.streams, output_data.initial_wcds, False)
         render_bar_graph(output_folder + subfolder + "{}.png".format('FINAL_deadline_and_wcd_graph'),
                          output_data.initial_solution.streams, output_data.final_wcds, True)
-        render_network_topology(output_folder + subfolder + "{}".format('FINAL_deadline_and_wcd_graph'),
+        render_network_topology(output_folder + subfolder + "{}".format('network_graph'),
                                 output_data.final_solution.streams)
         write_statistics(output_folder + subfolder + "{}.txt".format('statistics'),
                          output_data.final_solution, output_data.initial_cost, output_data.final_cost, output_data.runtime)
