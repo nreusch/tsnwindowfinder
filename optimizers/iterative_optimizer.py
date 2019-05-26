@@ -12,6 +12,7 @@ from graphviz import render
 from cost_check import CostChecker
 from data_structures.TestCase import TestCase
 from solution_check import SolutionChecker
+from utility.window_visualizer import WindowVisualizer
 
 
 def create_initial_solution(testCase: TestCase):
@@ -415,6 +416,8 @@ class IterativeOptimizer(object):
         write_statistics(output_folder + subfolder + "{}.txt".format('statistics'),
                          output_data.final_solution, output_data.initial_cost, output_data.final_cost,
                          output_data.runtime)
+        w = WindowVisualizer(output_data.final_solution)
+        w.export(output_folder + subfolder + "{}.svg".format('windows'))
 
         #
         print('Output Files written to: ' + output_folder + subfolder)
