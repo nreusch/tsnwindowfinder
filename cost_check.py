@@ -8,6 +8,8 @@ from collections import defaultdict
 import numpy as np
 
 # TODO: !!Relative Path!!
+from data_structures import TestCase
+
 WCDTOOL_PATH = 'E:\\Thesis_WCDTool\\'
 WCDTOOL_TESTCASE_PATH = 'usecases\\generated\\'
 
@@ -18,8 +20,15 @@ class CostChecker(object):
     def __init__(self):
         pass
 
-    def cost_port(self, s):
-        """"""
+    def cost(self, s: TestCase):
+        '''
+
+        Args:
+            s (TestCase): TestCase object
+
+        Returns:
+            Sum of occupation percentages of all ports of all switches in testcase
+        '''
         switches = s.switches
 
         sum_of_occupation_percentages = 0
@@ -34,5 +43,3 @@ class CostChecker(object):
 def debug_print(s, end='\n'):
     if DEBUG:
         print(s, end=end)
-
-# TODO: Outsource Solution checking

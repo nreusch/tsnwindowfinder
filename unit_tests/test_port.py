@@ -1,5 +1,6 @@
 from unittest import TestCase
 
+import data_structures
 from data_structures.OutputPort import OutputPort
 
 import numpy as np
@@ -151,3 +152,146 @@ class TestPort(TestCase):
         p.multipy_period(3)
 
         self.assertEqual(np.array_equal(p._M_Windows, M_expected), True)
+
+    def test_occupation_percentage_same_period(self):
+        p = OutputPort('port1')
+
+        s1_uid = 'tt1'
+        s1_length = 10
+        s1_period = 100
+
+        s2_uid = 'tt2'
+        s2_length = 50
+        s2_period = 100
+
+        s3_uid = 'tt3'
+        s3_length = 10
+        s3_period = 100
+
+        # Test Queue Association
+        self.assertEqual(p.associate_stream_to_queue(s1_uid, s1_length, s1_period, 0), True)
+        self.assertEqual(p.associate_stream_to_queue(s2_uid, s2_length, s2_period, 1), True)
+        self.assertEqual(p.associate_stream_to_queue(s3_uid, s3_length, s3_period, 2), True)
+
+        # Test initial window creation
+        self.assertEqual(p._M_Windows.shape[0], 3)
+
+        # Test window assignment
+        p.set_window(0, 0 , 10, 100)
+        p.set_window(1, 10, 50, 100)
+        p.set_window(2, 60, 10, 100)
+
+        M = np.array([
+            [0, 10, 100],
+            [10, 60, 100],
+            [60, 70, 100]
+        ])
+
+        self.assertEqual(np.array_equal(p._M_Windows, M), True)
+
+        # Test occupation percentage
+        self.assertEqual(p.get_occupation_percentage(), 7/10)
+
+    def test_different_period_overlap_later(self):
+        switches = {}
+
+        p = OutputPort('port1')
+        p.associate_stream_to_queue('tt1', 0, 50, 0)
+        p.associate_stream_to_queue('tt2', 0, 65, 1)
+
+        M = np.array([
+            [0, 10, 50],
+            [10, 10, 65]
+        ])
+
+        p.set_window(0, 0, 10, 50)
+        p.set_window(1, 10, 10, 65)
+
+        self.assertEqual(p.get_occupation_percentage(), 210/650)
+
+    def test_different_period_overlap(self):
+        p = OutputPort('SW1')
+
+        M = np.array([
+            [0, 10, 50],
+            [0, 10, 65]
+        ])
+
+        p._M_Windows = M
+
+        self.assertEqual(p.get_occupation_percentage(), 210/650)
+
+    def test_different_period_no_overlap(self):
+        p = OutputPort('SW1')
+
+        M = np.array([
+            [0, 10, 100],
+            [10, 20, 200]
+        ])
+
+        p._M_Windows = M
+
+        self.assertEqual(p.get_occupation_percentage(), 30 / 200)
+
+
+    def test_same_period(self):
+        p = OutputPort('SW1')
+
+        M = np.array([
+            [0, 10, 100],
+            [10, 20, 100]
+        ])
+
+        p._M_Windows = M
+
+        self.assertEqual(p.get_occupation_percentage(), 20 / 100)
+
+
+    def test_same_period_overlap(self):
+        p = OutputPort('SW1')
+
+        M = np.array([
+            [0, 20, 100],
+            [10, 20, 100]
+        ])
+
+        p._M_Windows = M
+
+        self.assertEqual(p.get_occupation_percentage(), 20 / 100)
+
+    def test_same_period_full(self):
+        p = OutputPort('SW1')
+
+        M = np.array([
+            [0, 100, 100],
+            [0, 100, 100]
+        ])
+
+        p._M_Windows = M
+
+        self.assertEqual(p.get_occupation_percentage(), 100 / 100)
+
+    def test_same_period_empty_but_period(self):
+        p = OutputPort('SW1')
+
+        M = np.array([
+            [0, 0, 100],
+            [0, 0, 100]
+        ])
+
+        p._M_Windows = M
+
+        self.assertEqual(p.get_occupation_percentage(), 0 / 100)
+
+    def test_empty_windows(self):
+        p = OutputPort('SW1')
+
+        M = np.array([
+            [0, 0, 0],
+            [0, 0, 0]
+        ])
+
+        p._M_Windows = M
+
+        with self.assertRaises(ValueError) as e:
+            p.get_occupation_percentage()

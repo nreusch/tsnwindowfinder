@@ -1,4 +1,5 @@
 import copy
+import datetime
 import math
 import os
 import time
@@ -99,7 +100,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
         print('\n----------------- ERROR: Infinite WCD after initial soltuion -----------------')
         return None
 
-    initial_cost = cost_checker.cost_port(solution)
+    initial_cost = cost_checker.cost(solution)
     final_wcds = initial_wcds
 
     t_old = t_start
@@ -127,7 +128,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
             port.multipy_period(p)
 
             # Check if stream is feasible now. If yes break.
-            is_solvable, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 20)
+            is_solvable, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 30)
             new_worst_stream = get_worst_stream(solution, exceeding_percentages)
             if not worst_stream == new_worst_stream:
                 worst_stream = new_worst_stream
@@ -135,10 +136,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
 
             i += 1
 
-
-
-
-    cost = cost_checker.cost_port(solution)
+    cost = cost_checker.cost(solution)
     runtime = time.clock() - t_start
     print('\n----------------- Solved with cost: {} -----------------'.format(cost))
 
@@ -395,7 +393,7 @@ class IterativeOptimizer(object):
 
         """
         tc_name = output_data.initial_solution.name
-        subfolder = tc_name + '/'
+        subfolder = tc_name + '_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M') + '/'
 
         # Create output_folder if it doesn't exist yet
         if not os.path.exists(output_folder):
@@ -415,7 +413,8 @@ class IterativeOptimizer(object):
         render_network_topology(output_folder + subfolder + "{}".format('network_graph'),
                                 output_data.final_solution.streams)
         write_statistics(output_folder + subfolder + "{}.txt".format('statistics'),
-                         output_data.final_solution, output_data.initial_cost, output_data.final_cost, output_data.runtime)
+                         output_data.final_solution, output_data.initial_cost, output_data.final_cost,
+                         output_data.runtime)
 
         #
         print('Output Files written to: ' + output_folder + subfolder)
