@@ -10,6 +10,7 @@ import numpy as np
 from graphviz import render
 
 from cost_check import CostChecker
+from data_structures import Stream
 from data_structures.TestCase import TestCase
 from solution_check import SolutionChecker
 from utility.window_visualizer import WindowVisualizer
@@ -92,11 +93,12 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
         Final Solution as TestCase object or None, if solution not solvable
     """
     initial_solution = copy.deepcopy(solution)
-    print('\n#########################\nTest Case: {}\n#########################\n'.format(solution.name))
+    print('\n#########################\nTest Case: {} |Iterative Optimization\n#########################\n'.format(
+        solution.name))
 
     ##### 1. Algorithm #####
     t_start = time.clock()
-    is_solvable, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
+    is_solvable, is_feasible, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
     if not is_solvable:
         print('\n----------------- ERROR: Infinite WCD after initial soltuion -----------------')
         return None
@@ -129,7 +131,7 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
             port.multipy_period(p)
 
             # Check if stream is feasible now. If yes break.
-            is_solvable, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 30)
+            is_solvable, is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 30)
             new_worst_stream = get_worst_stream(solution, exceeding_percentages)
             if not worst_stream == new_worst_stream:
                 worst_stream = new_worst_stream
@@ -142,6 +144,104 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
     print('\n----------------- Solved with cost: {} -----------------'.format(cost))
 
     ##### 2. Prepare Output Data & Return #####
+    output_data = OutputData(initial_solution, solution, initial_wcds, final_wcds, runtime, initial_cost, cost)
+    return output_data
+
+
+def dq_optimize_ports_for_stream(solution: TestCase, stream: Stream, solution_checker: SolutionChecker):
+    lower = True
+
+    while True:
+        print('.', end='', flush=True)
+        # Iterate through ports on route (ES sliced out), decrease period
+        i = 1
+        end = True
+        for node in stream.route[1:-1]:
+            # Get switch object
+            assert (node.type == 'SW')
+            switch = solution.switches[node.uid]
+
+            # Determine Port
+            port_uid = stream.route[i + 1].uid
+            port = switch.output_ports[port_uid]
+
+            if port.dq_modify_period(lower):
+                # If at least one port can still be modifed -> do not end
+                end = False
+
+            i = i + 1
+
+        is_valid, _, exceeding_percentages, _ = solution_checker.check_solution(solution, 20)
+        assert is_valid
+
+        lower = False
+        for stream_uid_list in exceeding_percentages.values():
+            if stream.uid in stream_uid_list:
+                lower = True
+
+        if end:
+            if stream.uid in exceeding_percentages:
+                raise ValueError('Stream ' + stream.uid + 'cannot be made feasible')
+            break
+
+    return solution
+
+
+def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostChecker,
+                               solution_checker: SolutionChecker):
+    """
+
+    Args:
+        solution (TestCase): Initial Solution as TestCase object
+        p (float):  period adjustment percentage
+        cost_checker (CostChecker): CostChecker object
+        solution_checker (SolutionChecker): SolutionChecker object
+
+    Returns:
+        Final Solution as TestCase object or None, if solution not solvable
+    """
+    initial_solution = copy.deepcopy(solution)
+    print(
+        '\n#########################\nTest Case: {} | Divide & Conquer Optimization\n#########################\n'.format(
+            solution.name))
+
+    ##### 1. Algorithm #####
+    t_start = time.clock()
+    is_valid, is_feasible, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
+    if not is_valid:
+        print('\n----------------- ERROR: Infinite WCD after initial soltuion -----------------')
+        return None
+
+    initial_cost = cost_checker.cost(solution)
+    final_wcds = initial_wcds
+
+    if not is_feasible:
+        # Sort exceedingd streams. worst first
+        sorted_keys = sorted(exceeding_percentages.keys(), reverse=True)
+        for i in range(len(sorted_keys)):
+            # STATISTICS
+            print('Remaining exceeding streams: ', end='')
+            print(exceeding_percentages)
+            sum_ep = 0
+            for k in exceeding_percentages.keys():
+                sum_ep = sum_ep + k
+            print('Exceeding percentage sum: ' + str(sum_ep))
+            # Check if stream still exceeding (Might have been fixed by fixing other stream)
+            if sorted_keys[i] in exceeding_percentages:
+                # Optimize Stream
+                stream_uid = exceeding_percentages[sorted_keys[i]][0]
+                stream = solution.streams[stream_uid]
+                solution = dq_optimize_ports_for_stream(solution, stream, solution_checker)
+
+                # Check new solution
+                is_valid, is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 20)
+            if is_feasible:
+                break
+
+    cost = cost_checker.cost(solution)
+    runtime = time.clock() - t_start
+    print('\n----------------- Solved with cost: {} -----------------'.format(cost))
+
     output_data = OutputData(initial_solution, solution, initial_wcds, final_wcds, runtime, initial_cost, cost)
     return output_data
 
@@ -377,24 +477,26 @@ class IterativeOptimizer(object):
             TestCase object for final solution or None, if no solution found
         """
         initial_solution = create_initial_solution(testcase)
-        output_data = iterative_optimization(initial_solution, p, CostChecker(),
-                                             SolutionChecker(wcdtool_path, wcdtool_testcase_subpath))
+        output_data = divideconquer_optimization(initial_solution, p, CostChecker(),
+                                                 SolutionChecker(wcdtool_path, wcdtool_testcase_subpath))
         if output_data != None:
-            self.generate_output(output_data, output_folder)
+            self.generate_output(output_data, output_folder, 'DivideConquerOptimization')
             return output_data.final_solution
         else:
             return None
 
-    def generate_output(self, output_data: OutputData, output_folder: str):
+    def generate_output(self, output_data: OutputData, output_folder: str, optimization_type_string: str):
         """
 
         Args:
             output_data (OutputData): all the information needed to generate the output files
             output_folder (str): Path to output folder
+            optimization_type_string (str): A string representing the optimization type
 
         """
         tc_name = output_data.initial_solution.name
-        subfolder = tc_name + '_' + datetime.datetime.now().strftime('%Y-%m-%d_%H-%M') + '/'
+        subfolder = tc_name + '_' + datetime.datetime.now().strftime(
+            '%Y-%m-%d_%H-%M') + '_' + optimization_type_string + '/'
 
         # Create output_folder if it doesn't exist yet
         if not os.path.exists(output_folder):

@@ -26,6 +26,9 @@ class OutputPort(object):
         self.queues = {}  # Map(Priority(int), Queue)
         self._M_Windows = np.empty(shape=[0, 3],
                                    dtype=int)  # Window Matrix (<=8 Rows, 3 Columns), [[start0, end0, period0], ...]
+        self._upper_bound = 0
+        self._lower_bound = 0
+        self._free_period = -1
 
     def associate_stream_to_queue(self, stream_uid: str, stream_length: int, stream_period: int,
                                   stream_priority: int):
@@ -109,6 +112,39 @@ class OutputPort(object):
         ])
 
         self._M_Windows = np.matmul(self._M_Windows, factor_matrix).astype(int)
+
+    def dq_modify_period(self, lower: bool):
+        '''
+
+        Args:
+            lower (bool): Lower or upper half?
+
+        Returns:
+            True, if period could still be modified
+        '''
+
+        # Free Period not set yet?
+        if self._free_period is -1:
+            # free_period = period - length of all windows (=end time of last window if they are ordered)
+            self._free_period = self._M_Windows[0][2] - self._M_Windows[len(self.queues) - 1][1]
+            self._upper_bound = self._free_period
+
+        if lower:
+            self._upper_bound = self._free_period
+            self._free_period = math.floor(self._free_period - (self._upper_bound - self._lower_bound)/2)
+            if self._free_period == self._upper_bound:
+                # If free period doesnt change anymore
+                return False
+        else:
+            self._lower_bound = self._free_period
+            self._free_period = math.floor(self._free_period + (self._upper_bound - self._lower_bound) / 2)
+            if self._free_period == self._lower_bound:
+                # If free period doesnt change anymore
+                return False
+
+        period_array = np.full(self._M_Windows.shape[0], self._M_Windows[len(self.queues) - 1][1] + self._free_period)
+        self._M_Windows[:,2] = period_array
+        return True
 
     def get_occupation_percentage(self):
         """

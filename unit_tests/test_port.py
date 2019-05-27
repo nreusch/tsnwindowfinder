@@ -295,3 +295,95 @@ class TestPort(TestCase):
 
         with self.assertRaises(ValueError) as e:
             p.get_occupation_percentage()
+
+    def test_dq_period_lower(self):
+        p = OutputPort('SW1')
+
+        p._free_period = 100
+
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 50)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 25)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 12)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 6)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 3)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 1)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 0)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 0)
+        self.assertEqual(p.dq_modify_period(True), False)
+
+    def test_dq_period_normal(self):
+        p = OutputPort('SW1')
+
+        p._free_period = 100
+
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 50)
+        p.dq_modify_period(False)
+        self.assertEqual(p._free_period, 75)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 62)
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 56)
+        p.dq_modify_period(False)
+        self.assertEqual(p._free_period, 59)
+        self.assertEqual(p.dq_modify_period(True), True)
+
+    def test_dq_period_unevenstart(self):
+        p = OutputPort('SW1')
+
+        p._free_period = 1337
+
+        p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 668)
+
+    def test_dq_period_zero(self):
+        p = OutputPort('SW1')
+
+        p._free_period = 0
+
+        ret = p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 0)
+        self.assertEqual(ret, False)
+
+        ret = p.dq_modify_period(False)
+        self.assertEqual(p._free_period, 0)
+        self.assertEqual(ret, False)
+
+    def test_dq_period_higheratstart(self):
+        p = OutputPort('SW1')
+        s1_uid = 'tt1'
+        s1_length = 10
+        s1_period = 100
+
+        s2_uid = 'tt2'
+        s2_length = 50
+        s2_period = 100
+
+        s3_uid = 'tt3'
+        s3_length = 10
+        s3_period = 100
+
+        # Test Queue Association
+        self.assertEqual(p.associate_stream_to_queue(s1_uid, s1_length, s1_period, 0), True)
+        self.assertEqual(p.associate_stream_to_queue(s2_uid, s2_length, s2_period, 1), True)
+        self.assertEqual(p.associate_stream_to_queue(s3_uid, s3_length, s3_period, 2), True)
+
+        # Test initial window creation
+        self.assertEqual(p._M_Windows.shape[0], 3)
+
+        # Test window assignment
+        p.set_window(0, 0, 10, 100)
+        p.set_window(1, 10, 50, 100)
+        p.set_window(2, 60, 10, 100)
+
+        ret = p.dq_modify_period(False)
+        self.assertEqual(p._free_period, 30)
+        self.assertEqual(ret, False)

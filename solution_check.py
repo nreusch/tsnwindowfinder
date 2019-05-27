@@ -6,7 +6,7 @@ from collections import defaultdict, OrderedDict
 
 from data_structures import TestCase
 
-DEBUG = False
+DEBUG = True
 
 
 def debug_print(s, end='\n'):
@@ -17,6 +17,7 @@ def debug_print(s, end='\n'):
 class SolutionChecker(object):
     """Checks solutions represented by TestCase objects and returns their feasibility and if infeasible the exceeding
     percentages of streams """
+
     def __init__(self, wcdtool_path: str, wcdtool_testcase_subpath: str):
         """
 
@@ -138,7 +139,7 @@ class SolutionChecker(object):
             timeout (int): timeout for waiting for result of wcd-analysis, in seconds
 
         Returns: True if non infinite worst case, Exceeding percentages of all streams that missed their deadline stored in Dict(
-        Percentage(float), stream uid(str)), OrderedDict(stream uid, wcd (e2e))
+        Percentage(float), stream uid(str)), OrderedDict(stream uid, wcd (e2e) as string)
         """
         streams = s.streams
         tc_name = s.name
@@ -152,11 +153,13 @@ class SolutionChecker(object):
         debug_print('Solution serialized')
         wce2elist, wcportdelay_list = self.read_wcd_output(tc_name, timeout)
 
-        error = False
+        valid = True
+        feasible = True
 
         # Check that a valid result was returned
         if len(wce2elist) is 0 or len(wcportdelay_list) is 0:
-            error = True
+            valid = False
+            feasible = False
         else:
             # Check that wcd's are below deadlines
             for line in wce2elist:
@@ -164,7 +167,8 @@ class SolutionChecker(object):
                 if match is not None:
                     wcd_dict[match.group(1)] = match.group(2)
                     if match.group(2).endswith('INF'):
-                        error = True
+                        valid = False
+                        feasible = False
                         debug_print('!! Solution is invalid (Infinite WCD found) !!')
                         break
                     else:
@@ -172,20 +176,19 @@ class SolutionChecker(object):
                         wcd = float(match.group(2))
                         ddl = streams[stream_uid].deadline
                         if ddl < wcd:
+                            feasible = False
                             percentage = (wcd - ddl) / ddl
                             infeasible_streams_percentages[percentage].append(stream_uid)
                             debug_print('!! Solution is infeasible (WCD > deadline found) !!')
 
-
-        if error:
+        if not valid:
             # DEBUG
             debug_print('### Written Window File ###')
             for l in written_lines:
                 debug_print(l, end='')
             debug_print(
                 '### E2E Delays ###\n{}\n### Port Delays ###\n{}'.format(''.join(wce2elist), ''.join(wcportdelay_list)))
-
-            return False, infeasible_streams_percentages, wcd_dict
         else:
             debug_print('!! Solution is valid !!')
-            return True, infeasible_streams_percentages, wcd_dict
+
+        return valid, feasible, infeasible_streams_percentages, wcd_dict

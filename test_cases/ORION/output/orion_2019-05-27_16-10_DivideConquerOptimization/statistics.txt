@@ -1,0 +1,5 @@
+Statistic for TestCase: orion
+
+Initial Cost: 0.18831731618865635
+Final Cost: 4.93938938392277
+Optimization Runtime (s): 950.1027046331673
