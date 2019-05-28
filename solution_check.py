@@ -3,10 +3,11 @@ import re
 import subprocess
 import time
 from collections import defaultdict, OrderedDict
+from operator import itemgetter
 
 from data_structures import TestCase
 
-DEBUG = True
+DEBUG = False
 
 
 def debug_print(s, end='\n'):
@@ -138,13 +139,13 @@ class SolutionChecker(object):
             s (TestCase): Solution to be checked
             timeout (int): timeout for waiting for result of wcd-analysis, in seconds
 
-        Returns: True if non infinite worst case, Exceeding percentages of all streams that missed their deadline stored in Dict(
-        Percentage(float), stream uid(str)), OrderedDict(stream uid, wcd (e2e) as string)
+        Returns: True if non infinite worst case, decreasingly sorted exceeding percentages of all streams that missed their deadline stored in List of tuples
+        (Percentage(float), stream uid(str)), OrderedDict(stream uid, wcd (e2e) as string)
         """
         streams = s.streams
         tc_name = s.name
 
-        infeasible_streams_percentages = defaultdict(list)
+        infeasible_streams_percentages = []
         wcd_dict = OrderedDict()
 
         # Serialize Solution & Run Tool
@@ -178,7 +179,7 @@ class SolutionChecker(object):
                         if ddl < wcd:
                             feasible = False
                             percentage = (wcd - ddl) / ddl
-                            infeasible_streams_percentages[percentage].append(stream_uid)
+                            infeasible_streams_percentages.append((percentage, stream_uid))
                             debug_print('!! Solution is infeasible (WCD > deadline found) !!')
 
         if not valid:
@@ -191,4 +192,5 @@ class SolutionChecker(object):
         else:
             debug_print('!! Solution is valid !!')
 
+        infeasible_streams_percentages.sort(key=itemgetter(0), reverse=True)
         return valid, feasible, infeasible_streams_percentages, wcd_dict

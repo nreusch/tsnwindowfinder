@@ -80,6 +80,7 @@ def get_worst_stream(s: TestCase, exceeding_percentages: dict):
     return s.streams[worst_stream_uid]
 
 
+# TODO: Fix
 def iterative_optimization(solution: TestCase, p: float, cost_checker: CostChecker, solution_checker: SolutionChecker):
     """
 
@@ -175,13 +176,14 @@ def dq_optimize_ports_for_stream(solution: TestCase, stream: Stream, solution_ch
         assert is_valid
 
         lower = False
-        for stream_uid_list in exceeding_percentages.values():
-            if stream.uid in stream_uid_list:
+        for tuple in exceeding_percentages:
+            if stream.uid == tuple[1]:
                 lower = True
 
         if end:
-            if stream.uid in exceeding_percentages:
-                raise ValueError('Stream ' + stream.uid + 'cannot be made feasible')
+            for tuple in exceeding_percentages:
+                if stream.uid == tuple[1]:
+                    raise ValueError('Stream ' + stream.uid + 'cannot be made feasible')
             break
 
     return solution
@@ -205,7 +207,7 @@ def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostC
         '\n#########################\nTest Case: {} | Divide & Conquer Optimization\n#########################\n'.format(
             solution.name))
 
-    ##### 1. Algorithm #####
+
     t_start = time.clock()
     is_valid, is_feasible, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
     if not is_valid:
@@ -215,27 +217,45 @@ def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostC
     initial_cost = cost_checker.cost(solution)
     final_wcds = initial_wcds
 
+    ##### 1. Algorithm #####
     if not is_feasible:
-        # Sort exceedingd streams. worst first
-        sorted_keys = sorted(exceeding_percentages.keys(), reverse=True)
-        for i in range(len(sorted_keys)):
-            # STATISTICS
-            print('Remaining exceeding streams: ', end='')
-            print(exceeding_percentages)
-            sum_ep = 0
-            for k in exceeding_percentages.keys():
-                sum_ep = sum_ep + k
-            print('Exceeding percentage sum: ' + str(sum_ep))
-            # Check if stream still exceeding (Might have been fixed by fixing other stream)
-            if sorted_keys[i] in exceeding_percentages:
-                # Optimize Stream
-                stream_uid = exceeding_percentages[sorted_keys[i]][0]
-                stream = solution.streams[stream_uid]
-                solution = dq_optimize_ports_for_stream(solution, stream, solution_checker)
+        # OUTPUT
+        print('\n' + str(len(exceeding_percentages)) + ' remaining exceeding streams')
+        sum_ep = 0
+        for t in exceeding_percentages:
+            sum_ep = sum_ep + t[0]
+        print('Exceeding percentage sum: ' + str(sum_ep))
 
-                # Check new solution
-                is_valid, is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 20)
+        i = 0
+        # ALGORITHM
+        for tuple in exceeding_percentages:
+            print('Checking tuple ' + str(i))
+            i = i + 1
+            # STATISTICS
+            # Check if stream still exceeding (Might have been fixed by fixing other stream)
+            for t in exceeding_percentages:
+                if t[1] == tuple[1]:
+                    stream_uid = tuple[1]
+                    print('Fixing ' + stream_uid + ': ', end='')
+
+                    # Optimize Stream
+                    stream = solution.streams[stream_uid]
+                    solution = dq_optimize_ports_for_stream(solution, stream, solution_checker)
+
+                    # Check new solution
+                    is_valid, is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 20)
+
+                    # OUTPUT
+                    print('\n' + str(len(exceeding_percentages)) + ' remaining exceeding streams')
+                    sum_ep = 0
+                    for t in exceeding_percentages:
+                        sum_ep = sum_ep + t[0]
+                    print('Exceeding percentage sum: ' + str(sum_ep))
+
+                    break
+
             if is_feasible:
+                print('IS_FEASIBLE')
                 break
 
     cost = cost_checker.cost(solution)
