@@ -39,6 +39,24 @@ class CostChecker(object):
 
         return sum_of_occupation_percentages
 
+    def port_costs(self, s: TestCase):
+        '''
+
+        Args:
+            s (TestCase): TestCase object
+
+        Returns:
+            Dict(port string, port occupation percentage)
+        '''
+        switches = s.switches
+        port_costs = {}
+
+        for switch in switches.values():
+            for port in switch.output_ports.values():
+                port_costs[switch.uid+','+port.name] = port.get_occupation_percentage()
+
+        return port_costs
+
 
 def debug_print(s, end='\n'):
     if DEBUG:

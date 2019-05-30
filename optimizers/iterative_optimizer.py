@@ -2,6 +2,7 @@ import copy
 import datetime
 import math
 import os
+import pickle
 import time
 from typing import NamedTuple
 
@@ -149,8 +150,26 @@ def iterative_optimization(solution: TestCase, p: float, cost_checker: CostCheck
     return output_data
 
 
+def dq_reset_ports_bounds_on_stream_route(solution: TestCase, stream: Stream):
+    i = 1
+    for node in stream.route[1:-1]:
+        # Get switch object
+        assert (node.type == 'SW')
+        switch = solution.switches[node.uid]
+
+        # Determine Port
+        port_uid = stream.route[i + 1].uid
+        port = switch.output_ports[port_uid]
+
+        # RESET
+        port.dq_reset()
+
+        i = i + 1
+
+
 def dq_optimize_ports_for_stream(solution: TestCase, stream: Stream, solution_checker: SolutionChecker):
     lower = True
+    dq_reset_ports_bounds_on_stream_route(solution, stream)
 
     while True:
         print('.', end='', flush=True)
@@ -189,6 +208,24 @@ def dq_optimize_ports_for_stream(solution: TestCase, stream: Stream, solution_ch
     return solution
 
 
+def generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, cost_checker, solution):
+    sum_ep = 0
+    for t in exceeding_percentages:
+        sum_ep = sum_ep + t[0]
+    sum_wcd = 0
+    for x in final_wcds.values():
+        sum_wcd = sum_wcd + float(x)
+    cost = cost_checker.cost(solution)
+    solved_stream_number = len(solution.streams) - len(exceeding_percentages)
+    print('\n' + str(len(exceeding_percentages)) + ' stream to be solved')
+    print(str(solved_stream_number) + ' solved streams')
+    print('Exceeding percentage sum: ' + str(sum_ep))
+    print('Worst-case delay sum: ' + str(sum_wcd))
+    print('Cost: ' + str(cost))
+
+    return (cost, sum_wcd, sum_ep, solved_stream_number)
+
+
 def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostChecker,
                                solution_checker: SolutionChecker):
     """
@@ -207,7 +244,6 @@ def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostC
         '\n#########################\nTest Case: {} | Divide & Conquer Optimization\n#########################\n'.format(
             solution.name))
 
-
     t_start = time.clock()
     is_valid, is_feasible, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
     if not is_valid:
@@ -215,17 +251,16 @@ def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostC
         return None
 
     initial_cost = cost_checker.cost(solution)
+    initial_port_costs = cost_checker.port_costs(solution)
     final_wcds = initial_wcds
+    iteration_data = []
 
     ##### 1. Algorithm #####
     if not is_feasible:
         # OUTPUT
-        print('\n' + str(len(exceeding_percentages)) + ' remaining exceeding streams')
-        sum_ep = 0
-        for t in exceeding_percentages:
-            sum_ep = sum_ep + t[0]
-        print('Exceeding percentage sum: ' + str(sum_ep))
 
+        iteration_data.append(
+            generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, cost_checker, solution))
         i = 0
         # ALGORITHM
         for tuple in exceeding_percentages:
@@ -243,26 +278,25 @@ def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostC
                     solution = dq_optimize_ports_for_stream(solution, stream, solution_checker)
 
                     # Check new solution
-                    is_valid, is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 20)
+                    is_valid, is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution,
+                                                                                                               20)
 
                     # OUTPUT
-                    print('\n' + str(len(exceeding_percentages)) + ' remaining exceeding streams')
-                    sum_ep = 0
-                    for t in exceeding_percentages:
-                        sum_ep = sum_ep + t[0]
-                    print('Exceeding percentage sum: ' + str(sum_ep))
-
+                    iteration_data.append(
+                        generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, cost_checker,
+                                                                 solution))
                     break
 
             if is_feasible:
-                print('IS_FEASIBLE')
                 break
 
     cost = cost_checker.cost(solution)
+    final_port_costs = cost_checker.port_costs(solution)
     runtime = time.clock() - t_start
     print('\n----------------- Solved with cost: {} -----------------'.format(cost))
 
-    output_data = OutputData(initial_solution, solution, initial_wcds, final_wcds, runtime, initial_cost, cost)
+    output_data = OutputData(initial_solution, solution, initial_wcds, final_wcds, runtime, initial_cost, cost,
+                             initial_port_costs, final_port_costs, iteration_data)
     return output_data
 
 
@@ -275,6 +309,9 @@ class OutputData(NamedTuple):
     runtime: float
     initial_cost: float
     final_cost: float
+    initial_port_costs: dict # Dict('SW1,SW2', 0.01)
+    final_port_costs: dict # Dict('SW1,SW2', 0.1)
+    iteration_data: list # (cost, sum_wcd, sum_ep, solved_stream_number)
 
 
 def write_windows(filename: str, switches: dict):
@@ -455,7 +492,8 @@ def render_network_topology(filename_without_ending: str, streams: dict):
     render('neato', 'pdf', filename_without_ending + '.dot')
 
 
-def write_statistics(filename: str, final_solution: TestCase, initial_cost: float, final_cost: float, runtime: float, ):
+def write_statistics(filename: str, final_solution: TestCase, initial_cost: float, final_cost: float,
+                     initial_port_costs: dict, final_port_costs: dict, runtime: float):
     """
 
     Args:
@@ -464,6 +502,8 @@ def write_statistics(filename: str, final_solution: TestCase, initial_cost: floa
         initial_cost (float): Cost of initial solution
         final_cost (float): Cost of final solution
         runtime (float): Runtime of optimization
+        initial_port_costs (dict):
+        final_port_costs (dict):
 
     """
     statistics_file = open(filename, 'w+')
@@ -475,8 +515,24 @@ def write_statistics(filename: str, final_solution: TestCase, initial_cost: floa
     lines.append('Final Cost: ' + str(final_cost))
     lines.append('Optimization Runtime (s): ' + str(runtime))
 
+    lines.append('')
+    lines.append('Initial Port Costs (Port Occupation Percentages): ')
+    for k, v in initial_port_costs.items():
+        lines.append('{}: {}%'.format(k, str(round(v * 100, 2))))
+
+    lines.append('')
+    lines.append('Final Port Costs (Port Occupation Percentages): ')
+    for k, v in final_port_costs.items():
+        lines.append('{}: {}%'.format(k, str(round(v * 100, 2))))
+
     statistics_file.write('\n'.join(lines))
     statistics_file.close()
+
+
+def pickle_data(filename: str, output_data: OutputData):
+    pickle_out = open(filename, "wb")
+    pickle.dump(output_data, pickle_out)
+    pickle_out.close()
 
 
 class IterativeOptimizer(object):
@@ -537,7 +593,9 @@ class IterativeOptimizer(object):
                                 output_data.final_solution.streams)
         write_statistics(output_folder + subfolder + "{}.txt".format('statistics'),
                          output_data.final_solution, output_data.initial_cost, output_data.final_cost,
+                         output_data.initial_port_costs, output_data.final_port_costs,
                          output_data.runtime)
+        pickle_data(output_folder + subfolder + "{}.pickle".format('output_data'), output_data)
         w = WindowVisualizer(output_data.final_solution)
         w.export(output_folder + subfolder + "{}.svg".format('windows'))
 

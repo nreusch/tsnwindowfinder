@@ -66,4 +66,41 @@ class TestIterativeOptimizer(TestCase):
         self.assertEqual(True, stream1.deadline > float(wcds[stream1.uid]))
         self.assertEqual(True, stream1.deadline < float(wcds[stream1.uid]) + 2)
 
+    def test_dq_optimizer_simple_multi_streams_same_port(self):
+        wcdtool_path, wcdtool_testcase_subpath = config_parser.parse_config("config.ini")
+        solution_checker = SolutionChecker(wcdtool_path, wcdtool_testcase_subpath)
+
+        n1 = Node('ES1')
+        n2 = Node('SW1')
+        n3 = Node('SW2')
+        n4 = Node('ES2')
+        stream1 = Stream('tt1', 1500, 300, 100, 0, [n1,n2,n3, n4])
+        stream2 = Stream('tt2', 1500, 100, 100, 3, [n1, n3, n4])
+        streams = {'tt1' : stream1, 'tt2' : stream2}
+
+        sw1 = Switch('SW1')
+        sw1.associate_stream_to_queue(stream1.uid, stream1.sending_time, stream1.period, stream1.priority, 'SW2')
+        p = sw1.output_ports['SW2']
+        p.set_window(stream1.priority, 0, 24, 100)
+
+        sw2 = Switch('SW2')
+        sw2.associate_stream_to_queue(stream1.uid, stream1.sending_time, stream1.period, stream1.priority, 'ES2')
+        sw2.associate_stream_to_queue(stream2.uid, stream2.sending_time, stream2.period, stream2.priority, 'ES2')
+        p = sw2.output_ports['ES2']
+        p.set_window(stream1.priority, 0, 24, 100)
+        p.set_window(stream2.priority, 24, 24, 100)
+        switches = {'SW1' : sw1, 'SW2' : sw2}
+
+        solution = TC(switches, streams, 'TC3')
+
+        is_valid, is_feasible, exceeding_percentages, wcds = solution_checker.check_solution(solution, 20)
+        optimized_solution = dq_optimize_ports_for_stream(solution, stream1, solution_checker)
+        optimized_solution = dq_optimize_ports_for_stream(solution, stream2, solution_checker)
+
+        is_valid, is_feasible, exceeding_percentages, wcds = solution_checker.check_solution(optimized_solution, 20)
+        self.assertEqual(True, is_feasible)
+
+        self.assertEqual(True, optimized_solution.switches['SW2'].output_ports['ES2'].get_hyperperiod() == 49)
+
+
 

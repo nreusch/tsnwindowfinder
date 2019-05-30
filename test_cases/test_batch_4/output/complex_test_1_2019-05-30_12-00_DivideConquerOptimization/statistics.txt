@@ -1,0 +1,41 @@
+Statistic for TestCase: complex_test_1
+
+Initial Cost: 4.002989949748744
+Final Cost: 4.316180363941538
+Optimization Runtime (s): 3.083398781944717
+
+Initial Port Costs (Port Occupation Percentages): 
+SW1,SW4: 13.07%
+SW1,SW2: 44.0%
+SW1,ES10: 13.07%
+SW4,SW6: 31.5%
+SW4,SW2: 47.24%
+SW4,SW5: 13.07%
+SW4,ES8: 9.0%
+SW6,ES9: 31.5%
+SW6,SW4: 13.07%
+SW2,ES4: 21.0%
+SW2,SW1: 13.07%
+SW2,SW3: 58.5%
+SW3,ES3: 34.17%
+SW3,ES2: 36.0%
+SW5,ES6: 13.07%
+SW5,SW4: 9.0%
+
+Final Port Costs (Port Occupation Percentages): 
+SW1,SW4: 13.07%
+SW1,SW2: 44.0%
+SW1,ES10: 13.07%
+SW4,SW6: 31.5%
+SW4,SW2: 56.63%
+SW4,SW5: 13.07%
+SW4,ES8: 9.0%
+SW6,ES9: 31.5%
+SW6,SW4: 17.81%
+SW2,ES4: 21.0%
+SW2,SW1: 13.07%
+SW2,SW3: 67.24%
+SW3,ES3: 34.17%
+SW3,ES2: 44.44%
+SW5,ES6: 13.07%
+SW5,SW4: 9.0%

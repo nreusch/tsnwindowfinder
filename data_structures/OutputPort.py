@@ -113,6 +113,11 @@ class OutputPort(object):
 
         self._M_Windows = np.matmul(self._M_Windows, factor_matrix).astype(int)
 
+    def dq_reset(self):
+        self._free_period = -1
+        self._upper_bound = 0
+        self._lower_bound = 0
+
     def dq_modify_period(self, lower: bool):
         '''
 

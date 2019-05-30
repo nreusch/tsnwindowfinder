@@ -1,0 +1,59 @@
+digraph G {
+    forcelabels=true;
+    overlap=false;
+    layout="neato";
+    node [style="filled,bold"];
+    node [shape=circle];
+    
+    /* NODES */
+    "ES1" [label=<ES1>; color="#143065"; fillcolor="#d2e6ff"];
+    "SW1" [label=<SW1>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "SW4" [label=<SW4>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "SW6" [label=<SW6>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "ES9" [label=<ES9>; color="#143065"; fillcolor="#d2e6ff"];
+    "SW2" [label=<SW2>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "ES4" [label=<ES4>; color="#143065"; fillcolor="#d2e6ff"];
+    "ES10" [label=<ES10>; color="#143065"; fillcolor="#d2e6ff"];
+    "ES5" [label=<ES5>; color="#143065"; fillcolor="#d2e6ff"];
+    "SW3" [label=<SW3>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "ES3" [label=<ES3>; color="#143065"; fillcolor="#d2e6ff"];
+    "SW5" [label=<SW5>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "ES6" [label=<ES6>; color="#143065"; fillcolor="#d2e6ff"];
+    "ES7" [label=<ES7>; color="#143065"; fillcolor="#d2e6ff"];
+    "ES8" [label=<ES8>; color="#143065"; fillcolor="#d2e6ff"];
+    "ES2" [label=<ES2>; color="#143065"; fillcolor="#d2e6ff"];
+    
+    /* EDGES */
+    "ES1" -> "SW1" [color="#e6194b"];
+    "SW1" -> "SW4" [color="#e6194b"];
+    "SW4" -> "SW6" [color="#e6194b"];
+    "SW6" -> "ES9" [color="#e6194b"];
+    "ES1" -> "SW1" [color="#3cb44b"];
+    "SW1" -> "SW2" [color="#3cb44b"];
+    "SW2" -> "ES4" [color="#3cb44b"];
+    "ES4" -> "SW2" [color="#ffe119"];
+    "SW2" -> "SW1" [color="#ffe119"];
+    "SW1" -> "ES10" [color="#ffe119"];
+    "ES5" -> "SW4" [color="#4363d8"];
+    "SW4" -> "SW2" [color="#4363d8"];
+    "SW2" -> "SW3" [color="#4363d8"];
+    "SW3" -> "ES3" [color="#4363d8"];
+    "ES5" -> "SW4" [color="#f58231"];
+    "SW4" -> "SW6" [color="#f58231"];
+    "SW6" -> "ES9" [color="#f58231"];
+    "ES5" -> "SW4" [color="#911eb4"];
+    "SW4" -> "SW5" [color="#911eb4"];
+    "SW5" -> "ES6" [color="#911eb4"];
+    "ES7" -> "SW5" [color="#46f0f0"];
+    "SW5" -> "SW4" [color="#46f0f0"];
+    "SW4" -> "ES8" [color="#46f0f0"];
+    "ES8" -> "SW6" [color="#f032e6"];
+    "SW6" -> "SW4" [color="#f032e6"];
+    "SW4" -> "SW2" [color="#f032e6"];
+    "SW2" -> "SW3" [color="#f032e6"];
+    "SW3" -> "ES2" [color="#f032e6"];
+    "ES10" -> "SW1" [color="#bcf60c"];
+    "SW1" -> "SW2" [color="#bcf60c"];
+    "SW2" -> "SW3" [color="#bcf60c"];
+    "SW3" -> "ES2" [color="#bcf60c"];
+}
