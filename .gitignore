@@ -7,5 +7,6 @@ config.ini
 test_cases/test_batch_1/output/
 test_cases/test_batch_2/output/
 test_cases/test_batch_3/output/
+test_cases/test_batch_4/output/
 test_cases/ORION/output/
 test_cases/GeneralMotors/output/

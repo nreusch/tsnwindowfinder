@@ -583,7 +583,9 @@ class IterativeOptimizer(object):
             os.makedirs(output_folder + subfolder, exist_ok=True)
 
         # Generate output
-        write_windows(output_folder + subfolder + "{}.txt".format('windows'),
+        write_windows(output_folder + subfolder + "{}.txt".format('windows_initial'),
+                      output_data.initial_solution.switches)
+        write_windows(output_folder + subfolder + "{}.txt".format('windows_final'),
                       output_data.final_solution.switches)
         render_bar_graph(output_folder + subfolder + "{}.png".format('INITIAL_deadline_and_wcd_graph'),
                          output_data.initial_solution.streams, output_data.initial_wcds, False)
@@ -596,8 +598,10 @@ class IterativeOptimizer(object):
                          output_data.initial_port_costs, output_data.final_port_costs,
                          output_data.runtime)
         pickle_data(output_folder + subfolder + "{}.pickle".format('output_data'), output_data)
-        w = WindowVisualizer(output_data.final_solution)
-        w.export(output_folder + subfolder + "{}.svg".format('windows'))
+        w = WindowVisualizer(output_data.initial_solution)
+        w.export(output_folder + subfolder + "{}.svg".format('windows_initial'))
+        w2 = WindowVisualizer(output_data.final_solution)
+        w2.export(output_folder + subfolder + "{}.svg".format('windows_final'))
 
         #
         print('Output Files written to: ' + output_folder + subfolder)
