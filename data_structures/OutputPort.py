@@ -30,6 +30,10 @@ class OutputPort(object):
         self._lower_bound = 0
         self._free_period = -1
 
+        # TODO: CP
+        self._M_WindowsVar = np.empty(
+            shape=[0, 3])  # Window Matrix (<=8 Rows, 3 Columns), [[start0, end0, period0], ...]
+
     def associate_stream_to_queue(self, stream_uid: str, stream_length: int, stream_period: int,
                                   stream_priority: int):
         """
@@ -50,6 +54,8 @@ class OutputPort(object):
             self.queues[stream_priority].add_stream(stream_uid, stream_length, stream_period)
             # Add Row in window matrix for this queue
             self._M_Windows = np.append(self._M_Windows, [[0, 0, 0]], axis=0)
+            # TODO: CP
+            self._M_WindowsVar = np.append(self._M_WindowsVar, [[{}, {}, {}]], axis=0)
             return True
         else:
             self.queues[stream_priority].add_stream(stream_uid, stream_length, stream_period)
@@ -71,6 +77,11 @@ class OutputPort(object):
         """
         return min([q.window_percentage for q in self.queues.values()])
 
+    def delete_queue(self, priority: int):
+        matrix_index = self.get_sorted_queuenrs().index(priority)
+        np.delete(self._M_Windows, (matrix_index), axis=0)
+        self.queues.pop(priority)
+
     def set_window(self, priority: int, offset: int, length: int, period: int):
         """
         Sets a window of a given priority. Should only be done if all desired priority queues already exist! (First add all streams, then set windows)
@@ -84,6 +95,7 @@ class OutputPort(object):
         """
         matrix_index = self.get_sorted_queuenrs().index(priority)
         self._M_Windows[matrix_index] = [offset, offset + length, period]
+
 
     def get_window(self, priority: int):
         """
@@ -147,9 +159,12 @@ class OutputPort(object):
                 # If free period doesnt change anymore
                 return False
 
-        period_array = np.full(self._M_Windows.shape[0], self._M_Windows[len(self.queues) - 1][1] + self._free_period)
-        self._M_Windows[:,2] = period_array
+        self.set_period_for_all(self._M_Windows[len(self.queues) - 1][1] + self._free_period)
         return True
+
+    def set_period_for_all(self, value):
+        period_array = np.full(self._M_Windows.shape[0], value)
+        self._M_Windows[:, 2] = period_array
 
     def get_occupation_percentage(self):
         """
@@ -170,7 +185,62 @@ class OutputPort(object):
         return occupied_time / total_time
 
     def get_hyperperiod(self):
-        return vector_lcm(self._M_Windows[:, 2:])
+        return int(vector_lcm(self._M_Windows[:, 2:]))
+
+    def get_minimum_period_with_current_windows(self):
+        max_end = 0
+        for row in self._M_Windows:
+            if row[1] > max_end:
+                max_end = row[1]
+        return int(max_end)
+
+    def set_period_for_priority(self, value, priority):
+        self.get_window(priority)[2] = value
+
+    # TODO: CP
+
+    def set_window_var(self, priority: int, offset, length, period):
+        """
+        Sets a window of a given priority. Should only be done if all desired priority queues already exist! (First add all streams, then set windows)
+
+        Args:
+            priority (int): Window Priority
+            offset (int): Window Offset
+            length (int):  Window Length
+            period (int): Window Period
+
+        """
+        matrix_index = self.get_sorted_queuenrs().index(priority)
+        self._M_WindowsVar[matrix_index] = [offset, length, period]
+
+    def get_window_var(self, priority: int):
+        """
+
+        Args:
+            priority (int): Window Priority
+
+        Returns:
+            [offset, offset+length, period] for window with given priority
+        """
+        matrix_index = self.get_sorted_queuenrs().index(priority)
+        return self._M_WindowsVar[matrix_index]
+
+    def get_maximium_period(self, priority: int):
+        matrix_index = self.get_sorted_queuenrs().index(priority)
+        return int(self._M_Windows[matrix_index][2])
+
+    def get_minimium_period(self, priority: int):
+        matrix_index = self.get_sorted_queuenrs().index(priority)
+        return int(self._M_Windows[matrix_index][1]) #- self._M_Windows[matrix_index][0]
+
+    def get_sum_of_window_lengths(self):
+        return int(self._M_Windows[len(self.queues) - 1][1])
+
+    def get_minimum_window_length(self, priority: int):
+        return int(self.get_minimium_period(priority))
+
+    def get_maximum_window_length(self, priority: int):
+        return int(self.get_maximium_period(priority) - self.get_sum_of_window_lengths() + self.get_minimum_window_length(priority))
 
 class Queue(object):
     """A Queue on an output port. Keeps track of the streams associated to it."""

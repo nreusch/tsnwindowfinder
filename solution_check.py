@@ -15,19 +15,34 @@ def debug_print(s, end='\n'):
         print(s, end=end)
 
 
+def is_actually_infinity(stream_uid, streams, infinite_queues):
+    stream = streams[stream_uid]
+
+    i = 0
+    for node in stream.route[:-1]:
+        portstring = "{} -> {}".format(node.uid, stream.route[i+1].uid)
+        if portstring in infinite_queues:
+            if stream.priority in infinite_queues[portstring]:
+                return True
+
+        i = i + 1
+    return False
+
 class SolutionChecker(object):
     """Checks solutions represented by TestCase objects and returns their feasibility and if infeasible the exceeding
     percentages of streams """
 
-    def __init__(self, wcdtool_path: str, wcdtool_testcase_subpath: str):
+    def __init__(self, wcdtool_path: str, wcdtool_testcase_subpath: str, wcdanalysis_timeout: int):
         """
 
         Args:
             wcdtool_path (str): Path to WCDTool executable
             wcdtool_testcase_subpath (str): Relative path from WCDTool executable to testcase folder
+            wcdanalysis_timeout (int): Timeout in seconds
         """
         self.wcdtool_testcase_subpath = wcdtool_testcase_subpath
         self.wcdtool_path = wcdtool_path
+        self.timeout = wcdanalysis_timeout
 
     def serialize_solution(self, s: TestCase):
         """
@@ -95,7 +110,7 @@ class SolutionChecker(object):
             proc = subprocess.run(
                 args=[self.wcdtool_path + 'TSNNetCal.exe', "{}".format(self.wcdtool_testcase_subpath + tc_name)],
                 stdout=subprocess.PIPE, timeout=timeout)
-            if str(proc.stdout).startswith('b\'OK'):
+            if str(proc.stdout).startswith('b\'OK') or str(proc.stdout).startswith('b\'Create object failed!'):
                 # SUCCESS
                 wcportdelay_file_path = "{}\\out\\{}".format(
                     self.wcdtool_path + self.wcdtool_testcase_subpath + tc_name,
@@ -132,14 +147,14 @@ class SolutionChecker(object):
 
         return wce2edelay_list, wcportdelay_list
 
-    def check_solution(self, s: TestCase, timeout: int):
+    def check_solution(self, s: TestCase):
         """
 
         Args:
             s (TestCase): Solution to be checked
             timeout (int): timeout for waiting for result of wcd-analysis, in seconds
 
-        Returns: True if non infinite worst case, decreasingly sorted exceeding percentages of all streams that missed their deadline stored in List of tuples
+        Returns: isValid?,isFeasible?, decreasingly sorted exceeding percentages of all streams that missed their deadline stored in List of tuples
         (Percentage(float), stream uid(str)), OrderedDict(stream uid, wcd (e2e) as string)
         """
         streams = s.streams
@@ -147,13 +162,37 @@ class SolutionChecker(object):
 
         infeasible_streams_percentages = []
         wcd_dict = OrderedDict()
+        infinite_streams = []
+        infinite_queues = {} # Map(portstring, list of priorities)
 
         # Serialize Solution & Run Tool
         written_lines = self.serialize_solution(s)
         # DEBUG
         debug_print('Solution serialized')
-        wce2elist, wcportdelay_list = self.read_wcd_output(tc_name, timeout)
+        wce2elist, wcportdelay_list = self.read_wcd_output(tc_name, self.timeout)
 
+        debug_print('Windows: ', end='')
+        for sw in s.switches.values():
+            for port_name in sw.output_ports.keys():
+                debug_print('{},{}: {} '.format(sw.uid, port_name, str(sw.output_ports[port_name]._M_Windows)), end='')
+        debug_print('')
+        debug_print('Induced Port Delay: ', end='')
+        for line in wcportdelay_list:
+            match = re.search('(.*): (.*), priority (\d)', line)
+            debug_print('{}; '.format(line[:-13]), end='')
+            if match is not None:
+                if match.group(2) is "0":
+                    if match.group(1) in infinite_queues.keys():
+                        infinite_queues[match.group(1)].append(int(match.group(3)))
+                    else:
+                        infinite_queues[match.group(1)] = [int(match.group(3))]
+
+
+        debug_print('')
+        debug_print('End-to-end Delay: ', end='')
+        for line in wce2elist:
+            debug_print('{}; '.format(line[:-1]), end='')
+        debug_print('')
         valid = True
         feasible = True
 
@@ -166,13 +205,11 @@ class SolutionChecker(object):
             for line in wce2elist:
                 match = re.search('(.*),.*:(.*)', line)
                 if match is not None:
-                    wcd_dict[match.group(1)] = match.group(2)
-                    if match.group(2).endswith('INF'):
-                        valid = False
-                        feasible = False
-                        debug_print('!! Solution is invalid (Infinite WCD found) !!')
-                        break
+                    if match.group(2).endswith('INF') or is_actually_infinity(match.group(1), streams, infinite_queues):
+                        debug_print('!! (Infinite WCD found) !!')
+                        infinite_streams.append(match.group(1))
                     else:
+                        wcd_dict[match.group(1)] = match.group(2)
                         stream_uid = match.group(1)
                         wcd = float(match.group(2))
                         ddl = streams[stream_uid].deadline
@@ -193,4 +230,4 @@ class SolutionChecker(object):
             debug_print('!! Solution is valid !!')
 
         infeasible_streams_percentages.sort(key=itemgetter(0), reverse=True)
-        return valid, feasible, infeasible_streams_percentages, wcd_dict
+        return valid, feasible, infeasible_streams_percentages, wcd_dict, infinite_streams

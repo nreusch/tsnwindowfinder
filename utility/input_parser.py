@@ -145,4 +145,4 @@ def parse_testcase(test_case_path: str, wcdtool_path: str, wcdtool_testcase_path
                     i += 1
 
     ##### 4. Return TestCase #####
-    return TestCase(switches, streams, tc_name)
+    return TestCase(switches, streams, tc_name, len(_nodes)-len(switches))

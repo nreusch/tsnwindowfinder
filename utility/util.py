@@ -55,21 +55,22 @@ def create_binary_matrix(M_port: np.ndarray, gcd: int, lcm: int):
             length = row[1] - offset
             period = row[2]
 
-            a = np.zeros((int(offset / gcd)), dtype=bool)
-            if len(a) > 0:
-                a = np.concatenate((a, np.ones((int(length / gcd)), dtype=bool)), axis=0)
-            else:
-                a = np.ones((int(length / gcd)), dtype=bool)
-            a = np.concatenate((a, np.zeros((int((period - offset - length) / gcd)), dtype=bool)), axis=0)
-            a = np.tile(a, int(lcm / period))
-            debug_print('Resulting binary with length {}: '.format(len(a)))
-            debug_print(a)
-            M_binary = np.append(M_binary, [a], 0)
+            if period != 0:
+                a = np.zeros((int(offset / gcd)), dtype=bool)
+                if len(a) > 0:
+                    a = np.concatenate((a, np.ones((int(length / gcd)), dtype=bool)), axis=0)
+                else:
+                    a = np.ones((int(length / gcd)), dtype=bool)
+                a = np.concatenate((a, np.zeros((int((period - offset - length) / gcd)), dtype=bool)), axis=0)
+                a = np.tile(a, int(lcm / period))
+                debug_print('Resulting binary with length {}: '.format(len(a)))
+                debug_print(a)
+                M_binary = np.append(M_binary, [a], 0)
 
-            # DEBUG
-            debug_print('Window with offset {}, length {}, period {}'.format(offset, length, period))
-            debug_print('Resulting binary with length {}: '.format(len(a)))
-            debug_print(a)
+                # DEBUG
+                debug_print('Window with offset {}, length {}, period {}'.format(offset, length, period))
+                debug_print('Resulting binary with length {}: '.format(len(a)))
+                debug_print(a)
 
         # DEBUG
         debug_print('Final Binary Matrix: ')

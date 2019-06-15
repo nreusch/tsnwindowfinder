@@ -1,0 +1,39 @@
+Statistic for TestCase: iterativeOptimizationExample
+
+Feasible Streams: 2 Infeasible Streams: 0
+ES: 3;SW: 3;Streams: 2
+Streams to be solved initially: 2; Steps it took: 2
+
+Initial Cost: 0.42
+Initial Cost (Mean): 0.13999999999999999
+Initial Cost (Standard Deviation): 0.0282842712474619
+
+Final Cost: 0.8116961228833164
+Final Cost (Mean): 0.2705653742944388
+Final Cost (Standard Deviation): 0.04658647434115128
+
+Mean E2E-Delay: 556.2945
+Optimization Runtime (s): 1.7568231165022155
+
+Initial Port Costs (Port Occupation Percentages): 
+SW1,SW2: 12.0%
+SW2,SW3: 12.0%
+SW3,ES3: 18.0%
+
+Final Port Costs (Port Occupation Percentages): 
+SW1,SW2: 23.76%
+SW2,SW3: 23.76%
+SW3,ES3: 33.64%
+
+For parsing: 
+3
+3
+2
+2
+162.5
+2
+14.0
+27.06
+2.83
+4.66
+1.76

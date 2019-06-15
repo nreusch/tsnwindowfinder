@@ -71,3 +71,33 @@ class TestCost(TestCase):
         d = cc.port_costs(tc)
         self.assertEqual(True, d['SW1,SW2'] == 20/100)
         self.assertEqual(True, d['SW2,ES2'] == 50/100)
+
+    def test_port_costs(self):
+        p = OutputPort('SW2')
+
+
+        M = np.array([
+            [0, 20, 80],
+            [20, 50, 90],
+            [50, 70, 100]
+        ])
+
+        tl = 0
+        hp = 3600
+        for r in M:
+            tl = tl + hp/r[2]*(r[1]-r[0])
+        tp = tl/hp
+
+        p._M_Windows = M
+
+
+        s1 = Switch('SW1')
+
+
+        s1.output_ports = {'ES2': p}
+
+        tc = TC({'SW1': s1}, {}, '')
+
+        cc = cost_check.CostChecker()
+        cp = cc.cost(tc)
+        self.assertEqual(True, cp < tp)

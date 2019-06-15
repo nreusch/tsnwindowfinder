@@ -4,60 +4,24 @@ import math
 import os
 import pickle
 import time
-from typing import NamedTuple
 
-import matplotlib.pyplot as plt
-import numpy as np
 from graphviz import render
 
 from cost_check import CostChecker
 from data_structures import Stream
 from data_structures.TestCase import TestCase
+from optimizers.initialSolution_generator import create_initial_solution
 from solution_check import SolutionChecker
+from utility.output_serializer import OutputData, write_windows, write_statistics, append_to_collections, \
+    render_bar_graph, render_network_topology, pickle_data, render_windows
 from utility.window_visualizer import WindowVisualizer
 
+DEBUG = True
 
-def create_initial_solution(testCase: TestCase):
-    """
 
-    Args:
-        testCase (TestCase): initial testcase (without windows)
-
-    Returns:
-        Initial Solution as TestCase Object (with windows set)
-    """
-    for switch in testCase.switches.values():
-        for port in switch.output_ports.values():
-            max_port_period = 0
-
-            # 1. Calculate Length & Period for each queue. Determine Max Period
-            for queuenr in port.get_sorted_queuenrs():
-                queue = port.queues[queuenr]
-
-                length = queue.total_sending_time + queue.highest_sending_time
-                period = math.floor(queue.total_sending_time * (1 / queue.window_percentage))
-
-                if period > max_port_period:
-                    max_port_period = period
-
-                port.set_window(queuenr, 0, length, period)
-
-            # 2. Scale all other queues to Max Period. Set Offsets
-            current_offset = 0
-            for queuenr in port.get_sorted_queuenrs():
-                queue = port.queues[queuenr]
-                period = port.get_window(queuenr)[2]
-
-                scale_factor = max_port_period / period
-
-                # Only the total sending time has to be scaled up
-                length = queue.total_sending_time * scale_factor + queue.highest_sending_time
-                period = max_port_period
-
-                port.set_window(queuenr, current_offset, length, period)
-                current_offset += length
-
-    return testCase
+def debug_print(s, end='\n'):
+    if DEBUG:
+        print(s, end=end)
 
 
 def get_worst_stream(s: TestCase, exceeding_percentages: dict):
@@ -81,76 +45,7 @@ def get_worst_stream(s: TestCase, exceeding_percentages: dict):
     return s.streams[worst_stream_uid]
 
 
-# TODO: Fix
-def iterative_optimization(solution: TestCase, p: float, cost_checker: CostChecker, solution_checker: SolutionChecker):
-    """
-
-    Args:
-        solution (TestCase): Initial Solution as TestCase object
-        p (float):  period adjustment percentage
-        cost_checker (CostChecker): CostChecker object
-        solution_checker (SolutionChecker): SolutionChecker object
-
-    Returns:
-        Final Solution as TestCase object or None, if solution not solvable
-    """
-    initial_solution = copy.deepcopy(solution)
-    print('\n#########################\nTest Case: {} |Iterative Optimization\n#########################\n'.format(
-        solution.name))
-
-    ##### 1. Algorithm #####
-    t_start = time.clock()
-    is_solvable, is_feasible, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
-    if not is_solvable:
-        print('\n----------------- ERROR: Infinite WCD after initial soltuion -----------------')
-        return None
-
-    initial_cost = cost_checker.cost(solution)
-    final_wcds = initial_wcds
-
-    t_old = t_start
-    worst_stream = get_worst_stream(solution, exceeding_percentages)
-    while worst_stream is not None:
-        # Optimize Worst Stream
-        t_now = time.clock()
-        if t_now - t_old > 10.0:
-            print('\nStreams left to solve: ' + str(len(exceeding_percentages)), flush=True)
-            t_old = t_now
-
-        # Iterate through ports on route (ES sliced out), decrease period
-        i = 1
-        for node in worst_stream.route[1:-1]:
-            print('.', end='', flush=True)
-            # Get switch object
-            assert (node.type == 'SW')
-            switch = solution.switches[node.uid]
-
-            # Determine Port
-            port_uid = worst_stream.route[i + 1].uid
-            port = switch.output_ports[port_uid]
-
-            # Decrease Period
-            port.multipy_period(p)
-
-            # Check if stream is feasible now. If yes break.
-            is_solvable, is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution, 30)
-            new_worst_stream = get_worst_stream(solution, exceeding_percentages)
-            if not worst_stream == new_worst_stream:
-                worst_stream = new_worst_stream
-                break
-
-            i += 1
-
-    cost = cost_checker.cost(solution)
-    runtime = time.clock() - t_start
-    print('\n----------------- Solved with cost: {} -----------------'.format(cost))
-
-    ##### 2. Prepare Output Data & Return #####
-    output_data = OutputData(initial_solution, solution, initial_wcds, final_wcds, runtime, initial_cost, cost)
-    return output_data
-
-
-def dq_reset_ports_bounds_on_stream_route(solution: TestCase, stream: Stream):
+def reset_ports_bounds_on_stream_route(solution: TestCase, stream: Stream):
     i = 1
     for node in stream.route[1:-1]:
         # Get switch object
@@ -167,9 +62,9 @@ def dq_reset_ports_bounds_on_stream_route(solution: TestCase, stream: Stream):
         i = i + 1
 
 
-def dq_optimize_ports_for_stream(solution: TestCase, stream: Stream, solution_checker: SolutionChecker):
+def optimize_ports_for_stream(solution: TestCase, stream: Stream, solution_checker: SolutionChecker):
     lower = True
-    dq_reset_ports_bounds_on_stream_route(solution, stream)
+    reset_ports_bounds_on_stream_route(solution, stream)
 
     while True:
         print('.', end='', flush=True)
@@ -191,7 +86,7 @@ def dq_optimize_ports_for_stream(solution: TestCase, stream: Stream, solution_ch
 
             i = i + 1
 
-        is_valid, _, exceeding_percentages, _ = solution_checker.check_solution(solution, 20)
+        is_valid, _, exceeding_percentages, _, _ = solution_checker.check_solution(solution)
         assert is_valid
 
         lower = False
@@ -202,22 +97,25 @@ def dq_optimize_ports_for_stream(solution: TestCase, stream: Stream, solution_ch
         if end:
             for tuple in exceeding_percentages:
                 if stream.uid == tuple[1]:
-                    raise ValueError('Stream ' + stream.uid + 'cannot be made feasible')
+                    print('\n!!! Stream ' + stream.uid + ' cannot be made feasible !!!')
             break
 
     return solution
 
 
-def generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, cost_checker, solution):
+def generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, cost_checker, solution,
+                                             infinite_streams):
     sum_ep = 0
     for t in exceeding_percentages:
         sum_ep = sum_ep + t[0]
     sum_wcd = 0
     for x in final_wcds.values():
-        sum_wcd = sum_wcd + float(x)
+        if not x.endswith('INF'):
+            sum_wcd = sum_wcd + float(x)
     cost = cost_checker.cost(solution)
-    solved_stream_number = len(solution.streams) - len(exceeding_percentages)
-    print('\n' + str(len(exceeding_percentages)) + ' stream to be solved')
+    solved_stream_number = len(solution.streams) - len(exceeding_percentages) - len(infinite_streams)
+    print('\n' + str(len(infinite_streams)) + ' infinite streams')
+    print(str(len(exceeding_percentages)) + ' streams to be solved')
     print(str(solved_stream_number) + ' solved streams')
     print('Exceeding percentage sum: ' + str(sum_ep))
     print('Worst-case delay sum: ' + str(sum_wcd))
@@ -226,13 +124,13 @@ def generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, 
     return (cost, sum_wcd, sum_ep, solved_stream_number)
 
 
-def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostChecker,
+def divideconquer_optimization(solution: TestCase, options: dict, cost_checker: CostChecker,
                                solution_checker: SolutionChecker):
     """
 
     Args:
         solution (TestCase): Initial Solution as TestCase object
-        p (float):  period adjustment percentage
+        options (dict): directory of options specified by user
         cost_checker (CostChecker): CostChecker object
         solution_checker (SolutionChecker): SolutionChecker object
 
@@ -244,23 +142,41 @@ def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostC
         '\n#########################\nTest Case: {} | Divide & Conquer Optimization\n#########################\n'.format(
             solution.name))
 
+    print('Amount of streams: ' + str(len(initial_solution.streams)))
     t_start = time.clock()
-    is_valid, is_feasible, exceeding_percentages, initial_wcds = solution_checker.check_solution(solution, 20)
+    is_valid, is_feasible, exceeding_percentages, initial_wcds, infinite_streams = solution_checker.check_solution(
+        solution)
     if not is_valid:
-        print('\n----------------- ERROR: Infinite WCD after initial soltuion -----------------')
+        print('\n----------------- Testcase invalid -----------------')
         return None
+
+    if len(infinite_streams) > 0:
+        print('\n----------------- Unsolvable streams found -----------------')
+        for uid in infinite_streams:
+            print(uid + ' ', end='')
+        print('')
 
     initial_cost = cost_checker.cost(solution)
     initial_port_costs = cost_checker.port_costs(solution)
     final_wcds = initial_wcds
     iteration_data = []
+    initial_nr_of_stream_tobesolved = len(exceeding_percentages)
+    final_step_amount = 0
+    sum = 0
+    for tuple in exceeding_percentages:
+        sum = sum + tuple[0]
+    if len(exceeding_percentages) > 0:
+        initial_ep_mean = sum / len(exceeding_percentages)
+    else:
+        initial_ep_mean = 0
 
     ##### 1. Algorithm #####
     if not is_feasible:
         # OUTPUT
 
         iteration_data.append(
-            generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, cost_checker, solution))
+            generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, cost_checker, solution,
+                                                     infinite_streams))
         i = 0
         # ALGORITHM
         for tuple in exceeding_percentages:
@@ -275,16 +191,16 @@ def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostC
 
                     # Optimize Stream
                     stream = solution.streams[stream_uid]
-                    solution = dq_optimize_ports_for_stream(solution, stream, solution_checker)
+                    solution = optimize_ports_for_stream(solution, stream, solution_checker)
 
                     # Check new solution
-                    is_valid, is_feasible, exceeding_percentages, final_wcds = solution_checker.check_solution(solution,
-                                                                                                               20)
+                    is_valid, is_feasible, exceeding_percentages, final_wcds, infinite_streams = solution_checker.check_solution(
+                        solution)
 
                     # OUTPUT
                     iteration_data.append(
                         generate_iteration_data_tuple_and_output(exceeding_percentages, final_wcds, cost_checker,
-                                                                 solution))
+                                                                 solution, infinite_streams))
                     break
 
             if is_feasible:
@@ -293,253 +209,24 @@ def divideconquer_optimization(solution: TestCase, p: float, cost_checker: CostC
     cost = cost_checker.cost(solution)
     final_port_costs = cost_checker.port_costs(solution)
     runtime = time.clock() - t_start
-    print('\n----------------- Solved with cost: {} -----------------'.format(cost))
+    final_step_amount = len(iteration_data)
+    is_valid, is_feasible, exceeding_percentages, final_wcds, infinite_streams = solution_checker.check_solution(
+        solution)
+    print('\n----------------- Solved with cost: {} Infeasible streams: {} -----------------'.format(cost, len(
+        infinite_streams + exceeding_percentages)))
 
     output_data = OutputData(initial_solution, solution, initial_wcds, final_wcds, runtime, initial_cost, cost,
-                             initial_port_costs, final_port_costs, iteration_data)
+                             initial_port_costs, final_port_costs, iteration_data, infinite_streams,
+                             exceeding_percentages, initial_nr_of_stream_tobesolved, final_step_amount, initial_ep_mean)
     return output_data
-
-
-class OutputData(NamedTuple):
-    """Immutable Tuple to store all the information needed to generate the output files"""
-    initial_solution: TestCase
-    final_solution: TestCase
-    initial_wcds: dict  # Dict(Stream Name, wcd)
-    final_wcds: dict  # Dict(Stream Name, wcd)
-    runtime: float
-    initial_cost: float
-    final_cost: float
-    initial_port_costs: dict # Dict('SW1,SW2', 0.01)
-    final_port_costs: dict # Dict('SW1,SW2', 0.1)
-    iteration_data: list # (cost, sum_wcd, sum_ep, solved_stream_number)
-
-
-def write_windows(filename: str, switches: dict):
-    """
-
-    Args:
-        filename (str): File to write to
-        switches (dict): Switches dict
-
-    """
-    windows_file = open(filename, 'w+')
-    lines = ['#open time, close time, period, priority\n']
-
-    for switch in switches.values():
-        for dest_name in switch.output_ports.keys():
-            port = switch.output_ports[dest_name]
-            lines.append('{},{}\n'.format(switch.uid, dest_name))
-
-            i = 0
-            for priority in port.get_sorted_queuenrs():
-                row = port._M_Windows[i]
-                offset = row[0]
-                end = row[1]
-                period = row[2]
-                lines.append(
-                    '{}\t{}\t{}\t{}\n'.format(offset, end, period,
-                                              priority))
-                i += 1
-
-            lines.append('\n')
-
-    windows_file.write(''.join(lines))
-    windows_file.write('#')  # comment out last line, since no empty last line is allowed
-    windows_file.close()
-
-
-def render_bar_graph(filename: str, streams: dict, wcds: dict, final: bool):
-    """
-
-    Args:
-        filename (str): File to write to
-        streams (dict): Dict(Stream Name, Stream)
-        wcds (dict): Dict(Stream Name, wcd)
-        final (boolean): wcds of final(True) or initial solution?
-
-    """
-    n_groups = len(wcds.keys())
-    label_list = []
-    wcd_list = []
-    ddl_list = []
-
-    for stream_uid in wcds.keys():
-        wcd_string = wcds[stream_uid]
-        if wcd_string.endswith('INF'):
-            wcd_list.append(0)
-            # TODO: Visualize Infinity
-        else:
-            wcd = int(float(wcd_string))
-        deadline = streams[stream_uid].deadline
-
-        label_list.append(stream_uid)
-        wcd_list.append(wcd)
-        ddl_list.append(deadline)
-
-    fig, ax = plt.subplots()
-
-    index = np.arange(n_groups)
-    bar_width = 0.35
-
-    opacity = 0.4
-
-    rects1 = ax.bar(index, ddl_list, bar_width,
-                    alpha=opacity, color='r',
-                    label='Deadline')
-
-    rects2 = ax.bar(index + bar_width, wcd_list, bar_width,
-                    alpha=opacity, color='b',
-                    label='WCD')
-
-    ax.set_xlabel('Streams')
-    ax.set_ylabel('Deadlines & Worst Case Delays')
-    if final:
-        ax.set_title('Deadlines & Worst Case Delays for all streams - Final Solution')
-    else:
-        ax.set_title('Deadlines & Worst Case Delays for all streams - Initial Solution')
-    ax.set_xticks(index + bar_width / 2)
-    ax.set_xticklabels(wcds.keys())
-    ax.legend()
-
-    fig.tight_layout()
-    plt.savefig(filename)
-
-
-def render_network_topology(filename_without_ending: str, streams: dict):
-    """
-    Renders the network topology defined by the streams routes to a .dot and a .svg file.
-
-    Args:
-        filename_without_ending (str): File to write to, without file ending
-        streams (dict): Dict(Stream Name, Stream)
-
-    """
-    nodes = {}
-
-    # Add all nodes
-    for stream in streams.values():
-        color_counter = 0
-        for node in stream.route:
-            if node.uid not in nodes:
-                # Create node if not existant
-                nodes[node.uid] = []
-
-            if color_counter > 0:
-                # Except for first node add all nodes on routes as neighbours of previous node, if not there yet
-                if node.uid not in nodes[stream.route[color_counter - 1].uid]:
-                    nodes[stream.route[color_counter - 1].uid].append(node.uid)
-            color_counter += 1
-
-    colors = [
-        '#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe',
-        '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080',
-        '#000000'
-    ]
-
-    lines = []
-    lines.append('digraph G {')
-    lines.append('    forcelabels=true;')
-    lines.append('    overlap=false;')
-    lines.append('    layout="neato";')
-    lines.append('    node [style="filled,bold"];')
-    lines.append('    node [shape=circle];')
-
-    # Nodes:
-    lines.append('    ')
-    lines.append('    /* NODES */')
-
-    # Switch: color="#c53039"; fillcolor="#faced0"; shape="box"
-    # ES: color="#143065"; fillcolor="#d2e6ff"
-
-    for node in nodes.keys():
-        if node.startswith("SW"):
-            lines.append('    "{}" [label=<{}>; color="#c53039"; fillcolor="#faced0"; shape="box"];'.format(node, node))
-        else:
-            lines.append('    "{}" [label=<{}>; color="#143065"; fillcolor="#d2e6ff"];'.format(node, node))
-
-    # Edges:
-    lines.append('    ')
-    lines.append('    /* EDGES */')
-
-    # Physical Links - Edges
-    # lines.append('    subgraph Rel1 {')
-    # lines.append('        edge [dir=none, color=black]')
-    # for node in nodes.keys():
-    #    for neighbour in nodes[node]:
-    #        lines.append('    "{}" -> "{}";'.format(node, neighbour))
-    # lines.append('    }')
-
-    # Streams - Edges
-    color_counter = 0
-
-    for stream in streams.values():
-        j = 0
-        for node in stream.route[:-1]:
-            lines.append('    "{}" -> "{}" [color="{}"];'.format(node.uid,
-                                                                 stream.route[j + 1].uid, colors[color_counter]))
-            j += 1
-        color_counter = color_counter + 1
-        if color_counter >= 11:
-            color_counter = 0
-
-    # Footer:
-    lines.append('}')
-
-    graphviz_file = open(filename_without_ending + '.dot', 'w+')
-    graphviz_file.write('\n'.join(lines))
-    graphviz_file.close()
-
-    render('neato', 'pdf', filename_without_ending + '.dot')
-
-
-def write_statistics(filename: str, final_solution: TestCase, initial_cost: float, final_cost: float,
-                     initial_port_costs: dict, final_port_costs: dict, runtime: float):
-    """
-
-    Args:
-        filename (str): File to write to
-        final_solution (TestCase): Final Solution as TestCase object
-        initial_cost (float): Cost of initial solution
-        final_cost (float): Cost of final solution
-        runtime (float): Runtime of optimization
-        initial_port_costs (dict):
-        final_port_costs (dict):
-
-    """
-    statistics_file = open(filename, 'w+')
-    lines = []
-
-    lines.append('Statistic for TestCase: ' + final_solution.name)
-    lines.append('')
-    lines.append('Initial Cost: ' + str(initial_cost))
-    lines.append('Final Cost: ' + str(final_cost))
-    lines.append('Optimization Runtime (s): ' + str(runtime))
-
-    lines.append('')
-    lines.append('Initial Port Costs (Port Occupation Percentages): ')
-    for k, v in initial_port_costs.items():
-        lines.append('{}: {}%'.format(k, str(round(v * 100, 2))))
-
-    lines.append('')
-    lines.append('Final Port Costs (Port Occupation Percentages): ')
-    for k, v in final_port_costs.items():
-        lines.append('{}: {}%'.format(k, str(round(v * 100, 2))))
-
-    statistics_file.write('\n'.join(lines))
-    statistics_file.close()
-
-
-def pickle_data(filename: str, output_data: OutputData):
-    pickle_out = open(filename, "wb")
-    pickle.dump(output_data, pickle_out)
-    pickle_out.close()
 
 
 class IterativeOptimizer(object):
     """Finds a solution to the testcase by constructivly generating a good initial solution. Then proceeds to make
     all stream feasible (catch their deadline), by reducing the periods of the ports on their route """
 
-    def run(self, testcase: TestCase, wcdtool_path: str, wcdtool_testcase_subpath: str, output_folder: str, p: float):
+    def run(self, testcase: TestCase, wcdtool_path: str, wcdtool_testcase_subpath: str, output_folder: str,
+            options: dict):
         """
 
         Args:
@@ -547,28 +234,35 @@ class IterativeOptimizer(object):
             wcdtool_path (str): Path to WCDTool executable
             wcdtool_testcase_subpath (str): Relative path from WCDTool executable to testcase folder
             output_folder (str): Path to output folder
-            p (float): period adjustment percentage
+            options (dict): directory of options specified by user
 
         Returns:
             TestCase object for final solution or None, if no solution found
         """
+
+        # Initial Solution
         initial_solution = create_initial_solution(testcase)
-        output_data = divideconquer_optimization(initial_solution, p, CostChecker(),
-                                                 SolutionChecker(wcdtool_path, wcdtool_testcase_subpath))
+
+        # Optimization
+        output_data = divideconquer_optimization(initial_solution, options, CostChecker(),
+                                                 SolutionChecker(wcdtool_path, wcdtool_testcase_subpath, options['wcdanalysis_timeout']))
+
+        # Output Results
         if output_data != None:
-            self.generate_output(output_data, output_folder, 'DivideConquerOptimization')
-            return output_data.final_solution
+            self.generate_output(output_data, output_folder, 'IterativeOptimization', options)
+            return copy.deepcopy(output_data.final_solution)
         else:
             return None
 
-    def generate_output(self, output_data: OutputData, output_folder: str, optimization_type_string: str):
+    def generate_output(self, output_data: OutputData, output_folder: str, optimization_type_string: str,
+                        options: dict):
         """
 
         Args:
             output_data (OutputData): all the information needed to generate the output files
             output_folder (str): Path to output folder
             optimization_type_string (str): A string representing the optimization type
-
+            options (dict): directory of options specified by user
         """
         tc_name = output_data.initial_solution.name
         subfolder = tc_name + '_' + datetime.datetime.now().strftime(
@@ -587,21 +281,24 @@ class IterativeOptimizer(object):
                       output_data.initial_solution.switches)
         write_windows(output_folder + subfolder + "{}.txt".format('windows_final'),
                       output_data.final_solution.switches)
-        render_bar_graph(output_folder + subfolder + "{}.png".format('INITIAL_deadline_and_wcd_graph'),
-                         output_data.initial_solution.streams, output_data.initial_wcds, False)
-        render_bar_graph(output_folder + subfolder + "{}.png".format('FINAL_deadline_and_wcd_graph'),
-                         output_data.initial_solution.streams, output_data.final_wcds, True)
-        render_network_topology(output_folder + subfolder + "{}".format('network_graph'),
-                                output_data.final_solution.streams)
         write_statistics(output_folder + subfolder + "{}.txt".format('statistics'),
-                         output_data.final_solution, output_data.initial_cost, output_data.final_cost,
-                         output_data.initial_port_costs, output_data.final_port_costs,
-                         output_data.runtime)
-        pickle_data(output_folder + subfolder + "{}.pickle".format('output_data'), output_data)
-        w = WindowVisualizer(output_data.initial_solution)
-        w.export(output_folder + subfolder + "{}.svg".format('windows_initial'))
-        w2 = WindowVisualizer(output_data.final_solution)
-        w2.export(output_folder + subfolder + "{}.svg".format('windows_final'))
+                         output_data)
+
+        if options['aggregate'] is True:
+            append_to_collections(output_folder, output_data)
+
+        if options['visualize'] is True:
+            render_bar_graph(output_folder + subfolder + "{}.png".format('INITIAL_deadline_and_wcd_graph'),
+                             output_data.initial_solution.streams, output_data.initial_wcds, False)
+            render_bar_graph(output_folder + subfolder + "{}.png".format('FINAL_deadline_and_wcd_graph'),
+                             output_data.initial_solution.streams, output_data.final_wcds, True)
+            render_network_topology(output_folder + subfolder + "{}".format('network_graph'),
+                                    output_data.final_solution.streams)
+            render_windows(output_folder + subfolder + "{}.svg".format('windows_initial'), output_data.initial_solution)
+            render_windows(output_folder + subfolder + "{}.svg".format('windows_final'), output_data.final_solution)
+
+        if options['pickle'] is True:
+            pickle_data(output_folder + subfolder + "{}.pickle".format('output_data'), output_data)
 
         #
         print('Output Files written to: ' + output_folder + subfolder)

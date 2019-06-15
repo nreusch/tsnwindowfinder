@@ -1,0 +1,23 @@
+digraph G {
+    forcelabels=true;
+    overlap=false;
+    layout="neato";
+    node [style="filled,bold"];
+    node [shape=circle];
+    
+    /* NODES */
+    "ES1" [label=<ES1>; color="#143065"; fillcolor="#d2e6ff"];
+    "SW1" [label=<SW1>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "SW2" [label=<SW2>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "SW3" [label=<SW3>; color="#c53039"; fillcolor="#faced0"; shape="box"];
+    "ES3" [label=<ES3>; color="#143065"; fillcolor="#d2e6ff"];
+    "ES2" [label=<ES2>; color="#143065"; fillcolor="#d2e6ff"];
+    
+    /* EDGES */
+    "ES1" -> "SW1" [color="#e6194b"];
+    "SW1" -> "SW2" [color="#e6194b"];
+    "SW2" -> "SW3" [color="#e6194b"];
+    "SW3" -> "ES3" [color="#e6194b"];
+    "ES2" -> "SW3" [color="#3cb44b"];
+    "SW3" -> "ES3" [color="#3cb44b"];
+}

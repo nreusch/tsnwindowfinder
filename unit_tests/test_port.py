@@ -298,6 +298,10 @@ class TestPort(TestCase):
 
     def test_dq_period_lower(self):
         p = OutputPort('SW1')
+        p.queues = {None}
+        p._M_Windows = np.array([
+            [0, 0, 100]
+        ])
 
         p._free_period = 100
 
@@ -321,6 +325,10 @@ class TestPort(TestCase):
 
     def test_dq_period_normal(self):
         p = OutputPort('SW1')
+        p.queues = {None}
+        p._M_Windows = np.array([
+            [0, 0, 100]
+        ])
 
         p._free_period = 100
 
@@ -338,6 +346,10 @@ class TestPort(TestCase):
 
     def test_dq_period_unevenstart(self):
         p = OutputPort('SW1')
+        p.queues = {None}
+        p._M_Windows = np.array([
+            [0, 0, 100]
+        ])
 
         p._free_period = 1337
 
@@ -387,3 +399,111 @@ class TestPort(TestCase):
         ret = p.dq_modify_period(False)
         self.assertEqual(p._free_period, 30)
         self.assertEqual(ret, False)
+
+    def test_dq_period_yero(self):
+        p = OutputPort('SW1')
+        s1_uid = 'tt1'
+        s1_length = 10
+        s1_period = 100
+
+        s2_uid = 'tt2'
+        s2_length = 50
+        s2_period = 100
+
+        s3_uid = 'tt3'
+        s3_length = 10
+        s3_period = 100
+
+        # Test Queue Association
+        self.assertEqual(p.associate_stream_to_queue(s1_uid, s1_length, s1_period, 0), True)
+        self.assertEqual(p.associate_stream_to_queue(s2_uid, s2_length, s2_period, 1), True)
+        self.assertEqual(p.associate_stream_to_queue(s3_uid, s3_length, s3_period, 2), True)
+
+        # Test initial window creation
+        self.assertEqual(p._M_Windows.shape[0], 3)
+
+        # Test window assignment
+        p.set_window(0, 0, 10, 100)
+        p.set_window(1, 10, 50, 100)
+        p.set_window(2, 60, 40, 100)
+
+        ret = p.dq_modify_period(True)
+        self.assertEqual(p._free_period, 0)
+        self.assertEqual(100, p._M_Windows[0][2])
+
+    def test_minimum_period(self):
+        p = OutputPort('SW1')
+
+        s1_uid = 'tt1'
+        s1_length = 10
+        s1_period = 100
+
+        s2_uid = 'tt2'
+        s2_length = 50
+        s2_period = 100
+
+        s3_uid = 'tt3'
+        s3_length = 10
+        s3_period = 100
+
+        # Test Queue Association
+        self.assertEqual(p.associate_stream_to_queue(s1_uid, s1_length, s1_period, 0), True)
+        self.assertEqual(p.associate_stream_to_queue(s2_uid, s2_length, s2_period, 1), True)
+        self.assertEqual(p.associate_stream_to_queue(s3_uid, s3_length, s3_period, 2), True)
+
+        # Test initial window creation
+        self.assertEqual(p._M_Windows.shape[0], 3)
+
+        # Test window assignment
+        p.set_window(0, 0, 10, 100)
+        p.set_window(1, 10, 50, 100)
+        p.set_window(2, 60, 10, 100)
+
+        self.assertEqual(70, p.get_minimum_period_with_current_windows())
+
+        p.set_window(0, 50, 30, 100)
+        p.set_window(1, 10, 20, 100)
+        p.set_window(2, 0, 60, 100)
+
+        self.assertEqual(80, p.get_minimum_period_with_current_windows())
+
+        p.set_window(0, 0, 10, 100)
+        p.set_window(1, 10, 50, 100)
+        p.set_window(2, 80, 10, 100)
+
+        self.assertEqual(90, p.get_minimum_period_with_current_windows())
+
+    def test_set_period(self):
+        p = OutputPort('SW1')
+
+        s1_uid = 'tt1'
+        s1_length = 10
+        s1_period = 100
+
+        s2_uid = 'tt2'
+        s2_length = 50
+        s2_period = 100
+
+        s3_uid = 'tt3'
+        s3_length = 10
+        s3_period = 100
+
+        # Test Queue Association
+        self.assertEqual(p.associate_stream_to_queue(s1_uid, s1_length, s1_period, 0), True)
+        self.assertEqual(p.associate_stream_to_queue(s2_uid, s2_length, s2_period, 1), True)
+        self.assertEqual(p.associate_stream_to_queue(s3_uid, s3_length, s3_period, 2), True)
+
+        # Test initial window creation
+        self.assertEqual(p._M_Windows.shape[0], 3)
+
+        # Test window assignment
+        p.set_window(0, 0, 10, 100)
+        p.set_window(1, 10, 50, 100)
+        p.set_window(2, 60, 10, 100)
+
+        p.set_period_for_priority(70, 2)
+        self.assertEqual(70, p.get_window(2)[2])
+
+        p.set_period_for_priority(99, 2)
+        self.assertEqual(99, p.get_window(2)[2])
+

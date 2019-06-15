@@ -1,0 +1,12 @@
+vl0 : ES_1,SW_SW_2 ; SW_SW_2,SW_SW_1 ; SW_SW_1,SW_SW_3 ; SW_SW_3,ES_4 ;
+vl1 : ES_3,SW_SW_3 ; SW_SW_3,SW_SW_1 ; SW_SW_1,SW_SW_2 ; SW_SW_2,ES_1 ;
+vl2 : ES_1,SW_SW_2 ; SW_SW_2,ES_2 ;
+vl3 : ES_4,SW_SW_3 ; SW_SW_3,ES_3 ;
+vl4 : ES_3,SW_SW_3 ; SW_SW_3,ES_4 ;
+vl5 : ES_1,SW_SW_2 ; SW_SW_2,SW_SW_1 ; SW_SW_1,SW_SW_3 ; SW_SW_3,ES_3 ;
+vl6 : ES_2,SW_SW_2 ; SW_SW_2,SW_SW_1 ; SW_SW_1,SW_SW_3 ; SW_SW_3,ES_4 ;
+vl7 : ES_4,SW_SW_3 ; SW_SW_3,SW_SW_1 ; SW_SW_1,SW_SW_2 ; SW_SW_2,ES_2 ;
+vl8 : ES_2,SW_SW_2 ; SW_SW_2,ES_1 ;
+vl9 : ES_4,SW_SW_3 ; SW_SW_3,SW_SW_1 ; SW_SW_1,SW_SW_2 ; SW_SW_2,ES_1 ;
+vl10 : ES_2,SW_SW_2 ; SW_SW_2,SW_SW_1 ; SW_SW_1,SW_SW_3 ; SW_SW_3,ES_3 ;
+#

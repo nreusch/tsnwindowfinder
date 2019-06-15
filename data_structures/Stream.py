@@ -22,10 +22,8 @@ class Stream(object):
         self.period = period
         self.priority = priority
 
-        # 1 Byte takes 0.008us at 1000Mbits, 42bit header for ethernet packet. Round down.
-        self.sending_time = math.ceil((self.size + 42) * 0.008)
-        # TODO: If following Ethernet Specifications, each 1500 Byte block needs a 42 byte header
-        # TODO: Check with Luxi how sending time is calculated
+        # 1 Byte takes 0.008us at 1000Mbits, round up
+        self.sending_time = math.ceil(self.size * 0.008)
 
     def __repr__(self):
         rtstring = ''
